@@ -25,7 +25,7 @@ opts.expDir = fullfile('data', sprintf('city-%s', opts.modelType)) ;
 opts.train.numEpochs = numel(opts.train.learningRate) ;
 [opts, varargin] = vl_argparse(opts, varargin) ;
 
-opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
+% opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
 opts.imdbPath = fullfile(opts.expDir, 'imdb.mat');
 opts.whitenData = true ;
 opts.contrastNormalization = true ;
@@ -55,19 +55,11 @@ end
 % --------------------------------------------------------------------
 %                                                                Train
 % --------------------------------------------------------------------
-[net, info] = cnn_train(net, imdb, @getBatch, ...
+[net, info] = cnn_train(net, imdb, @getCityBatch, ...
     opts.train, ...
     'val', find(imdb.images.set == 3)) ;  % what does these two variables mean?
 end
 
-% --------------------------------------------------------------------
-function [im, labels] = getBatch(imdb, batch)
-% --------------------------------------------------------------------
-im = imdb.images.data(:,:,:,batch) ;
-labels = imdb.images.labels(1,batch) ;
-if rand > 0.5, im=fliplr(im) ; 
-end
-end
 
 
 
