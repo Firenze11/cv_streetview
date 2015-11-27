@@ -40,10 +40,33 @@ labels = labels(1,dataperm);
 names = names(1,dataperm);
 
 imdb.images.id = 1:numel(names) ;
-imdb.images.labels = single(labels) ;
+imdb.images.label = single(labels) ;
 imdb.images.name = names ; 
 imdb.images.set = set ; 
 
 imdb.classes.name = classes;
 imdb.imageDir = fullfile(opts.dataDir) ;
+
+% -------------------------------------------------------------------------
+%                                                            Postprocessing
+% -------------------------------------------------------------------------
+
+if opts.lite
+  % pick a small number of images for the first 10 classes
+  % this cannot be done for test as we do not have test labels
+  clear keep ;
+  for i=1:10
+    sel = find(imdb.images.label == i) ;
+    train = sel(imdb.images.set(sel) == 1) ;
+    val = sel(imdb.images.set(sel) == 2) ;
+    train = train(1:256) ;
+    val = val(1:40) ;
+    keep{i} = [train val] ;
+  end
+  test = find(imdb.images.set == 3) ;
+  keep = sort(cat(2, keep{:}, test(1:1000))) ;
+  imdb.images.id = imdb.images.id(keep) ;
+  imdb.images.name = imdb.images.name(keep) ;
+  imdb.images.set = imdb.images.set(keep) ;
+  imdb.images.label = imdb.images.label(keep) ;
 end

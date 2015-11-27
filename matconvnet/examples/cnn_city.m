@@ -1,50 +1,50 @@
-function [net, info] = cnn_city(varargin)
-% CNN_CIFAR   Demonstrates MatConvNet on CIFAR-10
-%    The demo includes two standard model: LeNet and Network in
-%    Network (NIN). Use the 'modelType' option to choose one.
+function cnn_city(varargin)
+% CNN_IMAGENET   Demonstrates training a CNN on ImageNet
+%   This demo demonstrates training the AlexNet, VGG-F, VGG-S, VGG-M,
+%   VGG-VD-16, and VGG-VD-19 architectures on ImageNet data.
 
 run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
-opts.modelType = 'lenet' ;
+opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
+opts.modelType = 'alexnet' ;
+opts.networkType = 'simplenn' ;
+opts.batchNormalization = false ;
+opts.weightInitMethod = 'gaussian' ;
 [opts, varargin] = vl_argparse(opts, varargin) ;
 
-switch opts.modelType
-  case 'lenet'
-    opts.train.learningRate = [0.05*ones(1,15) 0.005*ones(1,10) 0.0005*ones(1,5)] ;
-    opts.train.weightDecay = 0.0001 ;
-  case 'nin'
-    opts.train.learningRate = [0.5*ones(1,30) 0.1*ones(1,10) 0.02*ones(1,10)] ;
-    opts.train.weightDecay = 0.0005 ;
-  otherwise
-    error('Unknown model type %s', opts.modelType) ;
+sfx = opts.modelType ;
+if opts.batchNormalization, sfx = [sfx '-bnorm'] ; end
+opts.expDir = fullfile('data', sprintf('city-%s-%s', ...
+                                       sfx, opts.networkType)) ;
+[opts, varargin] = vl_argparse(opts, varargin) ;
+
+opts.numFetchThreads = 12 ;
+opts.lite = false ;
+opts.imdbPath = fullfile(opts.expDir, 'imdb.mat');
+opts.train.batchSize = 256 ;
+opts.train.numSubBatches = 1 ;
+opts.train.continue = true ;
+opts.train.gpus = [] ;
+opts.train.prefetch = true ;
+opts.train.sync = false ;
+opts.train.cudnn = true ;
+opts.train.expDir = opts.expDir ;
+if ~opts.batchNormalization
+  opts.train.learningRate = logspace(-2, -4, 60) ;
+else
+  opts.train.learningRate = logspace(-1, -4, 20) ;
 end
-opts.expDir = fullfile('data', sprintf('city-%s', opts.modelType)) ;
 [opts, varargin] = vl_argparse(opts, varargin) ;
 
 opts.train.numEpochs = numel(opts.train.learningRate) ;
-[opts, varargin] = vl_argparse(opts, varargin) ;
-
-% opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
-opts.imdbPath = fullfile(opts.expDir, 'imdb.mat');
-opts.whitenData = true ;
-opts.contrastNormalization = true ;
-opts.train.batchSize = 100 ;
-opts.train.continue = true ;
-opts.train.gpus = [] ;
-opts.train.expDir = opts.expDir ;
 opts = vl_argparse(opts, varargin) ;
 
-% --------------------------------------------------------------------
-%                                               Prepare data and model
-% --------------------------------------------------------------------
+% -------------------------------------------------------------------------
+%                                                   Database initialization
+% -------------------------------------------------------------------------
 
-switch opts.modelType
-  case 'lenet', net = cnn_cifar_init(opts) ;
-  case 'nin',   net = cnn_cifar_init_nin(opts) ;
-end
-
-if exist(opts.imdbPath, 'file')
+if exist(opts.imdbPath)
   imdb = load(opts.imdbPath) ;
 else
   imdb = getCityImdb(opts) ;
@@ -52,14 +52,113 @@ else
   save(opts.imdbPath, '-struct', 'imdb') ;
 end
 
-% --------------------------------------------------------------------
-%                                                                Train
-% --------------------------------------------------------------------
-[net, info] = cnn_train(net, imdb, @getCityBatch, ...
-    opts.train, ...
-    'val', find(imdb.images.set == 3)) ;  % what does these two variables mean?
+% -------------------------------------------------------------------------
+%                                                    Network initialization
+% -------------------------------------------------------------------------
+
+net = cnn_imagenet_init('model', opts.modelType, ...
+                        'batchNormalization', opts.batchNormalization, ...
+                        'weightInitMethod', opts.weightInitMethod) ;
+bopts = net.normalization ;
+bopts.numThreads = opts.numFetchThreads ;
+
+% compute image statistics (mean, RGB covariances etc)
+imageStatsPath = fullfile(opts.expDir, 'imageStats.mat') ;
+if exist(imageStatsPath)
+  load(imageStatsPath, 'averageImage', 'rgbMean', 'rgbCovariance') ;
+else
+  [averageImage, rgbMean, rgbCovariance] = getImageStats(imdb, bopts) ;
+  save(imageStatsPath, 'averageImage', 'rgbMean', 'rgbCovariance') ;
 end
 
+% One can use the average RGB value, or use a different average for
+% each pixel
+%net.normalization.averageImage = averageImage ;
+net.normalization.averageImage = rgbMean ;
 
+switch lower(opts.networkType)
+  case 'simplenn'
+  case 'dagnn'
+    net = dagnn.DagNN.fromSimpleNN(net, 'canonicalNames', true) ;
+    net.addLayer('error', dagnn.Loss('loss', 'classerror'), ...
+                 {'prediction','label'}, 'top1error') ;
+  otherwise
+    error('Unknown netowrk type ''%s''.', opts.networkType) ;
+end
 
+% -------------------------------------------------------------------------
+%                                               Stochastic gradient descent
+% -------------------------------------------------------------------------
 
+[v,d] = eig(rgbCovariance) ;
+bopts.transformation = 'stretch' ;
+bopts.averageImage = rgbMean ;
+bopts.rgbVariance = 0.1*sqrt(d)*v' ;
+useGpu = numel(opts.train.gpus) > 0 ;
+
+switch lower(opts.networkType)
+  case 'simplenn'
+    fn = getBatchSimpleNNWrapper(bopts) ;
+    [net,info] = cnn_train(net, imdb, fn, opts.train, 'conserveMemory', true) ;
+  case 'dagnn'
+    fn = getBatchDagNNWrapper(bopts, useGpu) ;
+    opts.train = rmfield(opts.train, {'sync', 'cudnn'}) ;
+    info = cnn_train_dag(net, imdb, fn, opts.train) ;
+end
+
+% -------------------------------------------------------------------------
+function fn = getBatchSimpleNNWrapper(opts)
+% -------------------------------------------------------------------------
+fn = @(imdb,batch) getBatchSimpleNN(imdb,batch,opts) ;
+
+% -------------------------------------------------------------------------
+function [im,labels] = getBatchSimpleNN(imdb, batch, opts)
+% -------------------------------------------------------------------------
+images = strcat([imdb.imageDir filesep], imdb.images.name(batch)) ;
+im = getCityBatch(images, opts, ...
+                            'prefetch', nargout == 0) ;
+labels = imdb.images.label(batch) ;
+
+% -------------------------------------------------------------------------
+function fn = getBatchDagNNWrapper(opts, useGpu)
+% -------------------------------------------------------------------------
+fn = @(imdb,batch) getBatchDagNN(imdb,batch,opts,useGpu) ;
+
+% -------------------------------------------------------------------------
+function inputs = getBatchDagNN(imdb, batch, opts, useGpu)
+% -------------------------------------------------------------------------
+images = strcat([imdb.imageDir filesep], imdb.images.name(batch)) ;
+im = getCityBatch(images, opts, ...
+                            'prefetch', nargout == 0) ;
+if nargout > 0
+  if useGpu
+    im = gpuArray(im) ;
+  end
+  inputs = {'input', im, 'label', imdb.images.label(batch)} ;
+end
+
+% -------------------------------------------------------------------------
+function [averageImage, rgbMean, rgbCovariance] = getImageStats(imdb, opts)
+% -------------------------------------------------------------------------
+train = find(imdb.images.set == 1) ;
+train = train(1: 101: end);
+bs = 256 ;
+fn = getBatchSimpleNNWrapper(opts) ;
+for t=1:bs:numel(train)
+  batch_time = tic ;
+  batch = train(t:min(t+bs-1, numel(train))) ;
+  fprintf('collecting image stats: batch starting with image %d ...', batch(1)) ;
+  temp = fn(imdb, batch) ;
+  z = reshape(permute(temp,[3 1 2 4]),3,[]) ;
+  n = size(z,2) ;
+  avg{t} = mean(temp, 4) ;
+  rgbm1{t} = sum(z,2)/n ;
+  rgbm2{t} = z*z'/n ;
+  batch_time = toc(batch_time) ;
+  fprintf(' %.2f s (%.1f images/s)\n', batch_time, numel(batch)/ batch_time) ;
+end
+averageImage = mean(cat(4,avg{:}),4) ;
+rgbm1 = mean(cat(2,rgbm1{:}),2) ;
+rgbm2 = mean(cat(3,rgbm2{:}),3) ;
+rgbMean = rgbm1 ;
+rgbCovariance = rgbm2 - rgbm1*rgbm1' ;
