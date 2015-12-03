@@ -6,11 +6,12 @@ function cnn_city(varargin)
 run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
-opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
+opts.dataDir = fullfile('/home/ubuntu/Valid') ; % change this!
 opts.modelType = 'alexnet' ;
 opts.networkType = 'simplenn' ;
 opts.batchNormalization = false ;
 opts.weightInitMethod = 'gaussian' ;
+%opts.weightInitMethod = 'xavierimproved' ;
 [opts, varargin] = vl_argparse(opts, varargin) ;
 
 sfx = opts.modelType ;
@@ -25,7 +26,7 @@ opts.imdbPath = fullfile(opts.expDir, 'imdb.mat');
 opts.train.batchSize = 256 ;
 opts.train.numSubBatches = 1 ;
 opts.train.continue = true ;
-opts.train.gpus = [] ;
+opts.train.gpus = [1] ;
 opts.train.prefetch = true ;
 opts.train.sync = false ;
 opts.train.cudnn = true ;
@@ -43,20 +44,25 @@ opts = vl_argparse(opts, varargin) ;
 % -------------------------------------------------------------------------
 %                                                   Database initialization
 % -------------------------------------------------------------------------
-
-if exist(opts.imdbPath)
-  imdb = load(opts.imdbPath) ;
+if(0)
+    if exist(opts.imdbPath)
+        imdb = load(opts.imdbPath) ;
+    else
+        imdb = getCityImdb(opts) ;
+        mkdir(opts.expDir) ;
+        save(opts.imdbPath, '-struct', 'imdb') ;
+    end
 else
-  imdb = getCityImdb(opts) ;
-  mkdir(opts.expDir) ;
-  save(opts.imdbPath, '-struct', 'imdb') ;
+    imdb = getCityImdb(opts) ;
+    mkdir(opts.expDir) ;
+    save(opts.imdbPath, '-struct', 'imdb') ;
 end
 
 % -------------------------------------------------------------------------
 %                                                    Network initialization
 % -------------------------------------------------------------------------
 
-net = cnn_imagenet_init('model', opts.modelType, ...
+net = cnn_city_init('model', opts.modelType, ...
                         'batchNormalization', opts.batchNormalization, ...
                         'weightInitMethod', opts.weightInitMethod) ;
 bopts = net.normalization ;
