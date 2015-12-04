@@ -141,6 +141,7 @@ for epoch=start+1:opts.numEpochs
   end
 
   % save
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   if evaluateMode, sets = {'val'} ; else sets = {'train', 'val'} ; end
   for f = sets
     f = char(f) ;
@@ -180,6 +181,7 @@ for epoch=start+1:opts.numEpochs
   end
   drawnow ;
   print(1, modelFigPath, '-dpdf') ;
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 end
 
 % -------------------------------------------------------------------------
