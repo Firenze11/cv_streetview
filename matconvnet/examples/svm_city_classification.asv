@@ -21,8 +21,8 @@ test_features = extract_features(test_ims(1:100));
 
 % train and test a linear svm model
 % svm = svmtrain(trn_features,trn_labels(1:100),'-s 0 -t 0 '); % linear kernel
-options = '-s 0 -t 0 '; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% not used yet!
-test_predictions = multisvm(trn_features,trn_labels(1:100),test_features);
+options = '-s 0 -t 0 ';
+multisvm(trn_features,trn_labels(1:100),test_features,options);
 %TODO: test some C values
 %[test_predictions] = svmpredict(test_features,test_labels(1:100),svm); % vector of predicted labels
-accuracy = sum(test_labels(1:100)==test_predictions)/length(test_labels)
+accuracy = sum(test_labels==test_predictions)/length(test_labels)

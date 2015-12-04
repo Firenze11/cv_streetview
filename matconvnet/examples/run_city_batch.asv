@@ -56,14 +56,7 @@ end
 % false classification rates
 tot = zeros(1,10);
 for i = 1:10
-  tot (i) = length(names(labels==i)); 
+  tot (i) = length 
 end
-confusion_rate = confusion*100 ./ double(repmat(tot,10,1));
-false_rate = sum(confusion_rate);
 
-save('test_stats.mat','names','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
-
-%% visualization
 city_names = imdb.classes.name;
-
-

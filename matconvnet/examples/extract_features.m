@@ -18,8 +18,8 @@ for i=1:length(images)
 im = imread(sprintf('C:/Users/lezhi/Dropbox/___6869/_streetview_valid/%s',images{i})) ;
 im_ = single(im) ; % note: 0-255 range
 im_ = imresize(im_, net.normalization.imageSize(1:2)) ;
-for i = 1:3
-im_(:,:,i)=im_(:,:,i)-net.normalization.averageImage(i);
+for j = 1:3
+im_(:,:,j)=im_(:,:,j)-net.normalization.averageImage(j);
 end
 
 % run the CNN
@@ -27,6 +27,6 @@ res = vl_simplenn(net, im_) ;
 
 % extract features
 features(i,:) = res(end-2).x(:)'; % for alexNet, we want this FC7 layer
-
+i % print process
 end
 
