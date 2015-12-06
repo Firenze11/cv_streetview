@@ -101,7 +101,7 @@ end
 
 %% visualization-confusion
 % http://stackoverflow.com/questions/3942892/how-do-i-visualize-a-matrix-with-colors-and-values-displayed
-mat = confusion_rate_c2;           
+mat = confusion_rate;           
 imagesc(mat);            
 colormap(flipud(gray));  %# Change the colormap to gray (so higher values are
                          %#   black and lower values are white)
@@ -146,6 +146,9 @@ end
 
 % variables for storing test statistics
 confusion_c = zeros(10); % confusion matrix
+predLabels_c = zeros(1,length(names)); 
+bestScores_c = zeros(1,length(names));
+ownScores_c = zeros(1,length(names));
 
 for k = [1,9] % swap singapore and boston
 for i = 1:length(names_cat{k})
@@ -175,32 +178,53 @@ for i = 1:length(names_cat{k})
   % to the corresponding cell in confusion matix
   if best ~= k 
     score_diff = bestScore - ownscore;
-    confusion_c(best,k) = confusion_c(best,k) + score_diff; % row for target label, column for ground truth label
+    confusion_c(best,labels(i)) = confusion_c(best,labels(i)) + score_diff; % row for target label, column for ground truth label
   end
 
   [k,i] % print process
 end
 end
+%%
 
+
+
+% get vector of image names
+currentCity = imdb.images.names(imdb.images.label(test)==2); % label 2 for Boston
+compareTo = imdb.images.names(imdb.images.label(test)~=2); % all labels that are not Boston
+
+% from compareTo, use enough images to compare to the Boston dataset
+for i = 1: length(currentCity)
+    
+    % histogram matching
+    swapped = imhistmatch(imread(currentCity(i)), imread(compareTo(i)));
+
+    % save image to folder
+    filename = strcat('swapped_', currentCity(i));
+    whereToStore=fullfile('swapped_histogram_boston' ,filename);
+    saveas(gcf, whereToStore); 
+end
+%% evaluate
+
+
+
+
+%% save stats
 % divide confusion matrix by the total number in each category, to get
 % false classification rates
 tot = zeros(1,10);
 for i = 1:10
   tot (i) = length(names(labels==i)); 
 end
-confusion_rate_c = confusion_c*100 ./ double(repmat(tot,10,1));
-false_rate_c = sum(confusion_rate_c);
+confusion_rate = confusion*100 ./ double(repmat(tot,10,1));
+false_rate = sum(confusion_rate);
 
-confusion_rate_c2 = confusion_rate;
-confusion_rate_c2(:,[1,9]) = confusion_rate_c(:,[1,9]);
+coords = zeros(length(names),2);
+for i = 1:length(names)
+coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
+coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
+end
 
-%% four histogram change images
-im1 = imread(sprintf(imdir,'Boston/42.347651,-71.063051_0.jpg'));
-im2 = imread(sprintf(imdir,'Singapore/1.273867,103.842282_6.jpg'));
-im1s = imhistmatch(im1, im2);
-im2s = imhistmatch(im2, im1);
-figure 
-subplot(2,2,1), imshow(im1), title('Boston');
-subplot(2,2,2), imshow(im2), title('Singapore');
-subplot(2,2,3), imshow(im1s), title('Boston with Singapore color');
-subplot(2,2,4), imshow(im2s); title('Singapore with Boston color');
+save('test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
+csvwrite('test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
+
+
