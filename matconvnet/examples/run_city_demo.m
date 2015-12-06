@@ -9,7 +9,7 @@ net.layers{1,end}.type = 'softmax';
 net.layers{1,end}.name = 'prob';
 
 % load and preprocess an image
-im = imread('C:/Users/lezhi/Dropbox/___6869/_streetview_valid/NewYork/40.71207,-74.009697_7.jpg') ;
+im = imread('C:/Users/lezhi/Dropbox/___6869/_streetview_valid/Singapore/1.273867,103.842282_2.jpg') ;
 im_ = single(im) ; % note: 0-255 range
 im_ = imresize(im_, net.normalization.imageSize(1:2)) ;
 for i = 1:3
