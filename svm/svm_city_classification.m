@@ -1,8 +1,8 @@
 % The aim here is to classify city images by training an SVM 
 % using the features extracted from FC7 layer of model
 
-%addpath utils
-%addpath utils/libsvm/matlab
+% addpath utils
+% addpath utils/libsvm/matlab
 run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
