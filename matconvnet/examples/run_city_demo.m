@@ -3,13 +3,15 @@ run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
 % load the pre-trained CNN
-trainedstuff = load('C:\Users\lezhi\Dropbox\cv project\city-alexnet-simplenn\net-epoch-31.mat'); % change this
+trainedstuff = load('C:\Users\lezhi\Dropbox\cv project\city-alexnet-simplenn\net-epoch-60.mat'); % change this
 net = trainedstuff.net;
 net.layers{1,end}.type = 'softmax';
 net.layers{1,end}.name = 'prob';
 
 % load and preprocess an image
-im = imread('C:/Users/lezhi/Dropbox/___6869/_streetview_valid/Boston/42.347651,-71.062351_7.jpg') ;
+%im = imread('C:/Users/lezhi/Dropbox/___6869/_streetview_valid/Boston/42.347651,-71.062351_7.jpg') ;
+%im = imread('C:\Users\lezhi\Dropbox\thesis\img\51.45386,-0.116771329008_0.png') ;
+im = imread('C:/Users/lezhi/Desktop/test.png');
 im_ = single(im) ; % note: 0-255 range
 im_ = imresize(im_, net.normalization.imageSize(1:2)) ;
 for i = 1:3
