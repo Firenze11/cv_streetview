@@ -11,7 +11,7 @@ In order to ﬁnd out the image features that would affect a deep learning algor
 we trained several **image categorization neural networks** using AlexNet and VGG-S CNN structures, 
 and analyzed the visual clues that helps the algorithm make categorization decisions. 
 We found out that the algorithm precisely grasps the differences between different city types, 
-and has almost **92% accuracy** for the best model. 
+and has almost **92% accuracy** on test set for the best model. 
 
 As an exploration of latent urban characteristics that can be reﬂected in the visual aspect, 
 the research proposes an alternative paradigm of computational urban morphological research 
