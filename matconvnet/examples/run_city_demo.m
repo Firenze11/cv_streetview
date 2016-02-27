@@ -3,7 +3,7 @@ run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
 % load the pre-trained CNN
-trainedstuff = load('C:\Users\lezhi\Dropbox\cv project\city-alexnet-simplenn\net-epoch-60.mat'); % change this
+trainedstuff = load('C:\Users\lezhi\Dropbox\cv project\city-alexnet-simplenn\net-epoch-31.mat'); % change this
 net = trainedstuff.net;
 net.layers{1,end}.type = 'softmax';
 net.layers{1,end}.name = 'prob';
