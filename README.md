@@ -37,4 +37,4 @@ The project is built within [MatConvNet](http://www.vlfeat.org/matconvnet/) fram
 
 ## Work in progress
 
-This project is a work in progress and you can find the latest updates in visual feature extraction and analysis mainly in the [`scripts/` folder](scripts\). 
+This project is a work in progress and you can find the latest updates in visual feature extraction and analysis mainly in the [`scripts/` folder](scripts/). 
