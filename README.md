@@ -1,6 +1,6 @@
 # cv_streetview
 
-* Code repository for deep learning urban visual characteristics analysis *
+_Code repository for deep learning urban visual characteristics analysis_
 
 ## Overview
 
@@ -21,4 +21,4 @@ where environmental aﬀordances revealed in streetlevel urban imagery are taken
 
 ## Dataset
 
-About 160,000 images were requested using Googole Streetview API (for data requesting code, please find [here](scripts/getting_data.ipynb)). Samples of the dataset can be found in the ["data"](data/) folder. 2/3 of the images were used for training, 1/6 for validating, and 1/6 for testing.
+About 160,000 images were requested using Googole Streetview API (data requesting code [here](scripts/getting_data.ipynb)). Samples of the dataset can be found in the ["data"](data/) folder. 2/3 of the images were used for training, 1/6 for validating, and 1/6 for testing.
