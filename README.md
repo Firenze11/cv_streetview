@@ -11,7 +11,7 @@ In order to ﬁnd out the image features that would affect a deep learning algor
 we trained several **image categorization neural networks** using AlexNet and VGG-S CNN structures, 
 and analyzed the visual clues that helps the algorithm make categorization decisions. 
 We found out that the algorithm precisely grasps the differences between different city types, 
-and has almost **92% accuracy** on test set for the best model. 
+and has almost 92% accuracy* on test set for the best model. 
 
 As an exploration of latent urban characteristics that can be reﬂected in the visual aspect, 
 the research proposes an alternative paradigm of computational urban morphological research 
@@ -38,3 +38,5 @@ The project is built within [MatConvNet](http://www.vlfeat.org/matconvnet/) fram
 ## Work in progress
 
 This project is a work in progress and you can find the latest updates in visual feature extraction and analysis mainly in the [`scripts/` folder](scripts/). 
+
+_(* Please refer to the paper for details and caveats, etc.)_
