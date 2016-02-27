@@ -18,7 +18,6 @@ the research proposes an alternative paradigm of computational urban morphologic
 where environmental aﬀordances revealed in streetlevel urban imagery are taken into consideration.
 
 ![CNN recognizing cities from Google streetview.](teaser.png "CNN recognizing cities from Google streetview.")
-<img src="teaser.png" align="middle">
 
 ## Dataset
 
