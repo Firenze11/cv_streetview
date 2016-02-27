@@ -1,6 +1,8 @@
 # cv_streetview
 
-### Overview
+* Code repository for deep learning urban visual characteristics analysis *
+
+## Overview
 
 The goal of this research project is to evaluate how well cities/districts can be characterized by their visual properties 
 using the readily available city imaginary data set provided by Google street view. 
@@ -16,8 +18,9 @@ the research proposes an alternative paradigm of computational urban morphologic
 where environmental aﬀordances revealed in streetlevel urban imagery are taken into consideration.
 
 ![CNN recognizing cities from Google streetview.](teaser.png "CNN recognizing cities from Google streetview.")
+<img src="teaser.png" align="middle">
 
-### M
+## Dataset
 
 The spatial distribution of falsely categorized images concentrate in urban district centers, 
 where there is usually less homogeneity and more distinctiveness. 
