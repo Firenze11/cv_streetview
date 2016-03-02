@@ -1,0 +1,464 @@
+{
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "63",
+                    "short_name": "63",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Hancock Street",
+                    "short_name": "Hancock St",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Beacon Hill",
+                    "short_name": "Beacon Hill",
+                    "types": [
+                        "neighborhood",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Boston",
+                    "short_name": "Boston",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Suffolk County",
+                    "short_name": "Suffolk County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "02114",
+                    "short_name": "02114",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "63 Hancock St, Boston, MA 02114, USA",
+            "geometry": {
+                "location": {
+                    "lat": 42.35900549999999,
+                    "lng": -71.0646804
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.3603544802915,
+                        "lng": -71.0633314197085
+                    },
+                    "southwest": {
+                        "lat": 42.3576565197085,
+                        "lng": -71.06602938029151
+                    }
+                }
+            },
+            "place_id": "ChIJCUzldZtw44kR4YoF8rQym78",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Beacon Hill",
+                    "short_name": "Beacon Hill",
+                    "types": [
+                        "neighborhood",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Boston",
+                    "short_name": "Boston",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Suffolk County",
+                    "short_name": "Suffolk County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Beacon Hill, Boston, MA, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 42.3611918,
+                        "lng": -71.0604501
+                    },
+                    "southwest": {
+                        "lat": 42.3554044,
+                        "lng": -71.0730243
+                    }
+                },
+                "location": {
+                    "lat": 42.3587999,
+                    "lng": -71.0707389
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.3611918,
+                        "lng": -71.0604501
+                    },
+                    "southwest": {
+                        "lat": 42.3554044,
+                        "lng": -71.0730243
+                    }
+                }
+            },
+            "place_id": "ChIJT84qgp5w44kR2MRBT4FBDq0",
+            "types": [
+                "neighborhood",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Boston",
+                    "short_name": "Boston",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Suffolk County",
+                    "short_name": "Suffolk County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Boston, MA, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 42.3988669,
+                        "lng": -70.9232011
+                    },
+                    "southwest": {
+                        "lat": 42.22788,
+                        "lng": -71.191113
+                    }
+                },
+                "location": {
+                    "lat": 42.3600825,
+                    "lng": -71.0588801
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.3988669,
+                        "lng": -70.9232011
+                    },
+                    "southwest": {
+                        "lat": 42.22788,
+                        "lng": -71.191113
+                    }
+                }
+            },
+            "place_id": "ChIJGzE9DS1l44kRoOhiASS_fHg",
+            "types": [
+                "locality",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "02114",
+                    "short_name": "02114",
+                    "types": [
+                        "postal_code"
+                    ]
+                },
+                {
+                    "long_name": "Boston",
+                    "short_name": "Boston",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Boston, MA 02114, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 42.371942,
+                        "lng": -71.057408
+                    },
+                    "southwest": {
+                        "lat": 42.35532509999999,
+                        "lng": -71.0792381
+                    }
+                },
+                "location": {
+                    "lat": 42.3652917,
+                    "lng": -71.0646337
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.371942,
+                        "lng": -71.057408
+                    },
+                    "southwest": {
+                        "lat": 42.35532509999999,
+                        "lng": -71.0792381
+                    }
+                }
+            },
+            "place_id": "ChIJM8_omZBw44kRyiXozKIXsn0",
+            "types": [
+                "postal_code"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Suffolk County",
+                    "short_name": "Suffolk County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Suffolk County, MA, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 42.4500959,
+                        "lng": -70.9232011
+                    },
+                    "southwest": {
+                        "lat": 42.22788,
+                        "lng": -71.191113
+                    }
+                },
+                "location": {
+                    "lat": 42.3522866,
+                    "lng": -71.0504229
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.4500959,
+                        "lng": -70.9232011
+                    },
+                    "southwest": {
+                        "lat": 42.22788,
+                        "lng": -71.191113
+                    }
+                }
+            },
+            "place_id": "ChIJ6TarW9Sc44kR4nUWuotzEyI",
+            "types": [
+                "administrative_area_level_2",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Massachusetts",
+                    "short_name": "MA",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Massachusetts, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 42.88679,
+                        "lng": -69.92855109999999
+                    },
+                    "southwest": {
+                        "lat": 41.2390448,
+                        "lng": -73.5081419
+                    }
+                },
+                "location": {
+                    "lat": 42.4072107,
+                    "lng": -71.3824374
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 42.88679,
+                        "lng": -69.92855109999999
+                    },
+                    "southwest": {
+                        "lat": 41.2390737,
+                        "lng": -73.5081419
+                    }
+                }
+            },
+            "place_id": "ChIJ_b9z6W1l44kRHA2DVTbQxkU",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "United States",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 71.3867745,
+                        "lng": -66.9502861
+                    },
+                    "southwest": {
+                        "lat": 18.9106768,
+                        "lng": 172.4458955
+                    }
+                },
+                "location": {
+                    "lat": 37.09024,
+                    "lng": -95.712891
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 49.38,
+                        "lng": -66.94
+                    },
+                    "southwest": {
+                        "lat": 25.82,
+                        "lng": -124.39
+                    }
+                }
+            },
+            "place_id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+            "types": [
+                "country",
+                "political"
+            ]
+        }
+    ],
+    "status": "OK"
+}
