@@ -1,4 +1,19 @@
 MapVis = function(_parentElement, _data, _eventHandler){
+
+    this.lng_fix = Math.cos(42.352131 * Math.PI/180.0);
+    //# barcelona   41.390298, 2.162001
+    //# boston      42.352131, -71.090669
+    //# brasilia    -15.797616, -47.891761
+    //# chicago     41.875604, -87.645203
+    //# HK          22.302156, 114.170416
+    //# london      51.507360, -0.127630
+    //# munich      48.139741, 11.565510
+    //# paris       48.857527, 2.341560
+    //# NY          40.747783, -73.968068
+    //# SF          37.767394, -122.447354
+    //# singapore   1.302876, 103.829547
+    //# tokyo       35.684226, 139.755518
+
     this.parentElement = _parentElement;
     this.data = _data.filter( function(d) { return d.M; } );
     console.log("valid:", this.data.length);
@@ -6,7 +21,7 @@ MapVis = function(_parentElement, _data, _eventHandler){
     // Create a map in the div #map
     L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
     //http://stackoverflow.com/questions/10337640/how-to-access-the-dom-element-that-correlates-to-a-d3-svg-object
-    this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.light', {
+    this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.dark', {
                   zoomControl: false
                 })
                 .setView([42.360067, -71.091809], 13);
@@ -35,27 +50,41 @@ MapVis.prototype.updateVis = function(){
     var picCircles = this.g.selectAll("circle")
                             .data(this.data);
     picCircles.enter()
-                .append("circle")
-                .attr("r", 5)
-                .attr("transform", function(d) { return "translate(" + projectPoint(d.lat, d.lng) + ")"; })
-                .style("fill", function(d) { return d.M; }); 
+        .append("circle")
+        .attr("r", 3)
+        .style("fill", function(d) { return d.M; })
+        .on("click", function(d) { console.log(d); });
     picCircles.exit().remove();
 
-    //this.map.on("viewreset", reset);
-    //reset();
+    this.map.on("viewreset", reset);
+    reset();
 
     // Reposition the SVG to cover the features.
     function reset() {
-      var bounds = that.bldg_path.bounds(that.footprintMeta),
-          topLeft = bounds[0],
-          bottomRight = bounds[1];
+        var xBounds = d3.extent(that.data, function(d) { return projectPoint(d.lat, d.lng)[0]; }),
+            yBounds = d3.extent(that.data, function(d) { return projectPoint(d.lat, d.lng)[1]; });
 
-      that.svg.attr("width", bottomRight[0] - topLeft[0])
-              .attr("height", bottomRight[1] - topLeft[1])
-              .style("left", topLeft[0] + "px")
-              .style("top", topLeft[1] + "px");
+        that.svg.attr("width", xBounds[1] - xBounds[0])
+            .attr("height", yBounds[1] - yBounds[0])
+            .style("left", xBounds[0] + "px")
+            .style("top", yBounds[0] + "px");
 
-      that.g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+        that.g.attr("transform", "translate(" + -xBounds[0] + "," + -yBounds[0] + ")");
+        picCircles
+            .attr("transform", function(d) {
+                var psudoLat = d.lat,
+                    psudoLng = d.lng;
+                var sep = 0.0004;
+
+                if (d.dir == 2) {psudoLat = d.lat - sep; }
+                if (d.dir == 0) {psudoLat = d.lat + sep; }
+
+                if (d.dir == 3) {psudoLng = d.lng - sep/that.lng_fix; }
+                if (d.dir == 1) {psudoLng = d.lng + sep/that.lng_fix; }
+                //psudoLat = d.lat;
+
+                return "translate(" + projectPoint(psudoLat, psudoLng) + ")";
+            })
     }
 
     // Use Leaflet to implement a D3 geometric transformation.

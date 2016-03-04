@@ -21,13 +21,16 @@ $(function(){
                 if (error) { 
                     console.log(error); 
                 } else { 
-                    console.log("all:", boston.length);
+                    boston.forEach( function(d) {
+                        d.lat = +d.lat;
+                        d.lng = +d.lng;
+                        d.dir = +d.dir;
+                    })
                     return dataLoaded(boston); 
                 }
             });
     }
     startHere();
-
 })
     
 /* ==================================
