@@ -1,6 +1,7 @@
 MapVis = function(_parentElement, _data, _eventHandler){
 
     this.lng_fix = Math.cos(42.352131 * Math.PI/180.0);
+    this.imgRoot = "/Dropbox/thesis/img/boston/";
     //# barcelona   41.390298, 2.162001
     //# boston      42.352131, -71.090669
     //# brasilia    -15.797616, -47.891761
@@ -24,7 +25,7 @@ MapVis = function(_parentElement, _data, _eventHandler){
     this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.dark', {
                   zoomControl: false
                 })
-                .setView([42.360067, -71.091809], 13);
+                .setView([42.352131, -71.090669], 13);
                 //console.log(this.parentElement[0][0]);
     this.initVis();
 }
@@ -51,9 +52,13 @@ MapVis.prototype.updateVis = function(){
                             .data(this.data);
     picCircles.enter()
         .append("circle")
-        .attr("r", 3)
+        .attr("r", 4)
         .style("fill", function(d) { return d.M; })
-        .on("click", function(d) { console.log(d); });
+        .on("click", function(d) {
+            console.log(d);
+            var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
+            $("img#pic").attr('src', that.imgRoot + imgName);
+        });
     picCircles.exit().remove();
 
     this.map.on("viewreset", reset);
@@ -72,15 +77,15 @@ MapVis.prototype.updateVis = function(){
         that.g.attr("transform", "translate(" + -xBounds[0] + "," + -yBounds[0] + ")");
         picCircles
             .attr("transform", function(d) {
-                var psudoLat = d.lat,
-                    psudoLng = d.lng;
+                var psudoLat = +d.lat,
+                    psudoLng = +d.lng;
                 var sep = 0.0004;
 
-                if (d.dir == 2) {psudoLat = d.lat - sep; }
-                if (d.dir == 0) {psudoLat = d.lat + sep; }
+                if (d.dir == 2) {psudoLat = +d.lat - sep; }
+                if (d.dir == 0) {psudoLat = +d.lat + sep; }
 
-                if (d.dir == 3) {psudoLng = d.lng - sep/that.lng_fix; }
-                if (d.dir == 1) {psudoLng = d.lng + sep/that.lng_fix; }
+                if (d.dir == 3) {psudoLng = +d.lng - sep/that.lng_fix; }
+                if (d.dir == 1) {psudoLng = +d.lng + sep/that.lng_fix; }
                 //psudoLat = d.lat;
 
                 return "translate(" + projectPoint(psudoLat, psudoLng) + ")";

@@ -16,16 +16,16 @@ $(function(){
 
     var startHere = function(){
         queue()
-            .defer(d3.csv, "data/boston_color.csv")
+            .defer(d3.csv, "data/boston_color2.csv")
             .await(function(error, boston) {
                 if (error) { 
                     console.log(error); 
                 } else { 
-                    boston.forEach( function(d) {
-                        d.lat = +d.lat;
-                        d.lng = +d.lng;
-                        d.dir = +d.dir;
-                    })
+                    //boston.forEach( function(d) {
+                    //    d.lat = +d.lat;
+                    //    d.lng = +d.lng;
+                    //    d.dir = +d.dir;
+                    //})
                     return dataLoaded(boston); 
                 }
             });
