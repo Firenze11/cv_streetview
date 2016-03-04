@@ -3,231 +3,149 @@
         {
             "address_components": [
                 {
-                    "long_name": "63",
-                    "short_name": "63",
-                    "types": [
-                        "street_number"
-                    ]
-                },
-                {
-                    "long_name": "Hancock Street",
-                    "short_name": "Hancock St",
+                    "long_name": "Av. de Montrouge",
+                    "short_name": "Av. de Montrouge",
                     "types": [
                         "route"
                     ]
                 },
                 {
-                    "long_name": "Beacon Hill",
-                    "short_name": "Beacon Hill",
-                    "types": [
-                        "neighborhood",
-                        "political"
-                    ]
-                },
-                {
-                    "long_name": "Boston",
-                    "short_name": "Boston",
+                    "long_name": "Bagneux",
+                    "short_name": "Bagneux",
                     "types": [
                         "locality",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Suffolk County",
-                    "short_name": "Suffolk County",
+                    "long_name": "Hauts-de-Seine",
+                    "short_name": "Hauts-de-Seine",
                     "types": [
                         "administrative_area_level_2",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
+                    "long_name": "\u00cele-de-France",
+                    "short_name": "\u00cele-de-France",
                     "types": [
                         "administrative_area_level_1",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "02114",
-                    "short_name": "02114",
+                    "long_name": "92220",
+                    "short_name": "92220",
                     "types": [
                         "postal_code"
                     ]
                 }
             ],
-            "formatted_address": "63 Hancock St, Boston, MA 02114, USA",
+            "formatted_address": "Av. de Montrouge, 92220 Bagneux, France",
             "geometry": {
-                "location": {
-                    "lat": 42.35900549999999,
-                    "lng": -71.0646804
-                },
-                "location_type": "ROOFTOP",
-                "viewport": {
+                "bounds": {
                     "northeast": {
-                        "lat": 42.3603544802915,
-                        "lng": -71.0633314197085
+                        "lat": 48.8100499,
+                        "lng": 2.312282
                     },
                     "southwest": {
-                        "lat": 42.3576565197085,
-                        "lng": -71.06602938029151
+                        "lat": 48.8099739,
+                        "lng": 2.312226
+                    }
+                },
+                "location": {
+                    "lat": 48.8100089,
+                    "lng": 2.3122446
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 48.8113608802915,
+                        "lng": 2.313602980291502
+                    },
+                    "southwest": {
+                        "lat": 48.8086629197085,
+                        "lng": 2.310905019708498
                     }
                 }
             },
-            "place_id": "ChIJCUzldZtw44kR4YoF8rQym78",
+            "place_id": "ChIJUdf_i_tw5kcRv17p4xotvs0",
             "types": [
-                "street_address"
+                "route"
             ]
         },
         {
             "address_components": [
                 {
-                    "long_name": "Beacon Hill",
-                    "short_name": "Beacon Hill",
-                    "types": [
-                        "neighborhood",
-                        "political"
-                    ]
-                },
-                {
-                    "long_name": "Boston",
-                    "short_name": "Boston",
+                    "long_name": "Bagneux",
+                    "short_name": "Bagneux",
                     "types": [
                         "locality",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Suffolk County",
-                    "short_name": "Suffolk County",
+                    "long_name": "Hauts-de-Seine",
+                    "short_name": "Hauts-de-Seine",
                     "types": [
                         "administrative_area_level_2",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
+                    "long_name": "\u00cele-de-France",
+                    "short_name": "\u00cele-de-France",
                     "types": [
                         "administrative_area_level_1",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 }
             ],
-            "formatted_address": "Beacon Hill, Boston, MA, USA",
+            "formatted_address": "Bagneux, France",
             "geometry": {
                 "bounds": {
                     "northeast": {
-                        "lat": 42.3611918,
-                        "lng": -71.0604501
+                        "lat": 48.811124,
+                        "lng": 2.326339
                     },
                     "southwest": {
-                        "lat": 42.3554044,
-                        "lng": -71.0730243
+                        "lat": 48.784871,
+                        "lng": 2.2922061
                     }
                 },
                 "location": {
-                    "lat": 42.3587999,
-                    "lng": -71.0707389
+                    "lat": 48.796696,
+                    "lng": 2.31002
                 },
                 "location_type": "APPROXIMATE",
                 "viewport": {
                     "northeast": {
-                        "lat": 42.3611918,
-                        "lng": -71.0604501
+                        "lat": 48.811124,
+                        "lng": 2.326339
                     },
                     "southwest": {
-                        "lat": 42.3554044,
-                        "lng": -71.0730243
+                        "lat": 48.784871,
+                        "lng": 2.2922061
                     }
                 }
             },
-            "place_id": "ChIJT84qgp5w44kR2MRBT4FBDq0",
-            "types": [
-                "neighborhood",
-                "political"
-            ]
-        },
-        {
-            "address_components": [
-                {
-                    "long_name": "Boston",
-                    "short_name": "Boston",
-                    "types": [
-                        "locality",
-                        "political"
-                    ]
-                },
-                {
-                    "long_name": "Suffolk County",
-                    "short_name": "Suffolk County",
-                    "types": [
-                        "administrative_area_level_2",
-                        "political"
-                    ]
-                },
-                {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
-                    "types": [
-                        "administrative_area_level_1",
-                        "political"
-                    ]
-                },
-                {
-                    "long_name": "United States",
-                    "short_name": "US",
-                    "types": [
-                        "country",
-                        "political"
-                    ]
-                }
-            ],
-            "formatted_address": "Boston, MA, USA",
-            "geometry": {
-                "bounds": {
-                    "northeast": {
-                        "lat": 42.3988669,
-                        "lng": -70.9232011
-                    },
-                    "southwest": {
-                        "lat": 42.22788,
-                        "lng": -71.191113
-                    }
-                },
-                "location": {
-                    "lat": 42.3600825,
-                    "lng": -71.0588801
-                },
-                "location_type": "APPROXIMATE",
-                "viewport": {
-                    "northeast": {
-                        "lat": 42.3988669,
-                        "lng": -70.9232011
-                    },
-                    "southwest": {
-                        "lat": 42.22788,
-                        "lng": -71.191113
-                    }
-                }
-            },
-            "place_id": "ChIJGzE9DS1l44kRoOhiASS_fHg",
+            "place_id": "ChIJve_xYN1w5kcRlQX7pYZxqCY",
             "types": [
                 "locality",
                 "political"
@@ -236,66 +154,66 @@
         {
             "address_components": [
                 {
-                    "long_name": "02114",
-                    "short_name": "02114",
+                    "long_name": "92220",
+                    "short_name": "92220",
                     "types": [
                         "postal_code"
                     ]
                 },
                 {
-                    "long_name": "Boston",
-                    "short_name": "Boston",
+                    "long_name": "Bagneux",
+                    "short_name": "Bagneux",
                     "types": [
                         "locality",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
+                    "long_name": "\u00cele-de-France",
+                    "short_name": "\u00cele-de-France",
                     "types": [
                         "administrative_area_level_1",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 }
             ],
-            "formatted_address": "Boston, MA 02114, USA",
+            "formatted_address": "92220 Bagneux, France",
             "geometry": {
                 "bounds": {
                     "northeast": {
-                        "lat": 42.371942,
-                        "lng": -71.057408
+                        "lat": 48.8111344,
+                        "lng": 2.3263291
                     },
                     "southwest": {
-                        "lat": 42.35532509999999,
-                        "lng": -71.0792381
+                        "lat": 48.7848707,
+                        "lng": 2.2922602
                     }
                 },
                 "location": {
-                    "lat": 42.3652917,
-                    "lng": -71.0646337
+                    "lat": 48.8015298,
+                    "lng": 2.311905
                 },
                 "location_type": "APPROXIMATE",
                 "viewport": {
                     "northeast": {
-                        "lat": 42.371942,
-                        "lng": -71.057408
+                        "lat": 48.8111344,
+                        "lng": 2.3263291
                     },
                     "southwest": {
-                        "lat": 42.35532509999999,
-                        "lng": -71.0792381
+                        "lat": 48.7848707,
+                        "lng": 2.2922602
                     }
                 }
             },
-            "place_id": "ChIJM8_omZBw44kRyiXozKIXsn0",
+            "place_id": "ChIJ9WRQDOdw5kcRcH_Y4caCCxw",
             "types": [
                 "postal_code"
             ]
@@ -303,59 +221,59 @@
         {
             "address_components": [
                 {
-                    "long_name": "Suffolk County",
-                    "short_name": "Suffolk County",
+                    "long_name": "Hauts-de-Seine",
+                    "short_name": "Hauts-de-Seine",
                     "types": [
                         "administrative_area_level_2",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
+                    "long_name": "\u00cele-de-France",
+                    "short_name": "\u00cele-de-France",
                     "types": [
                         "administrative_area_level_1",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 }
             ],
-            "formatted_address": "Suffolk County, MA, USA",
+            "formatted_address": "Hauts-de-Seine, France",
             "geometry": {
                 "bounds": {
                     "northeast": {
-                        "lat": 42.4500959,
-                        "lng": -70.9232011
+                        "lat": 48.950193,
+                        "lng": 2.336461
                     },
                     "southwest": {
-                        "lat": 42.22788,
-                        "lng": -71.191113
+                        "lat": 48.729351,
+                        "lng": 2.145702
                     }
                 },
                 "location": {
-                    "lat": 42.3522866,
-                    "lng": -71.0504229
+                    "lat": 48.828508,
+                    "lng": 2.2188068
                 },
                 "location_type": "APPROXIMATE",
                 "viewport": {
                     "northeast": {
-                        "lat": 42.4500959,
-                        "lng": -70.9232011
+                        "lat": 48.950193,
+                        "lng": 2.336461
                     },
                     "southwest": {
-                        "lat": 42.22788,
-                        "lng": -71.191113
+                        "lat": 48.729351,
+                        "lng": 2.145702
                     }
                 }
             },
-            "place_id": "ChIJ6TarW9Sc44kR4nUWuotzEyI",
+            "place_id": "ChIJIX9UJN165kcRQCuLaMOCCwM",
             "types": [
                 "administrative_area_level_2",
                 "political"
@@ -364,51 +282,51 @@
         {
             "address_components": [
                 {
-                    "long_name": "Massachusetts",
-                    "short_name": "MA",
+                    "long_name": "\u00cele-de-France",
+                    "short_name": "\u00cele-de-France",
                     "types": [
                         "administrative_area_level_1",
                         "political"
                     ]
                 },
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 }
             ],
-            "formatted_address": "Massachusetts, USA",
+            "formatted_address": "\u00cele-de-France, France",
             "geometry": {
                 "bounds": {
                     "northeast": {
-                        "lat": 42.88679,
-                        "lng": -69.92855109999999
+                        "lat": 49.241504,
+                        "lng": 3.5590069
                     },
                     "southwest": {
-                        "lat": 41.2390448,
-                        "lng": -73.5081419
+                        "lat": 48.1200811,
+                        "lng": 1.44617
                     }
                 },
                 "location": {
-                    "lat": 42.4072107,
-                    "lng": -71.3824374
+                    "lat": 48.8499198,
+                    "lng": 2.6370411
                 },
                 "location_type": "APPROXIMATE",
                 "viewport": {
                     "northeast": {
-                        "lat": 42.88679,
-                        "lng": -69.92855109999999
+                        "lat": 49.241504,
+                        "lng": 3.5590069
                     },
                     "southwest": {
-                        "lat": 41.2390737,
-                        "lng": -73.5081419
+                        "lat": 48.1200811,
+                        "lng": 1.44617
                     }
                 }
             },
-            "place_id": "ChIJ_b9z6W1l44kRHA2DVTbQxkU",
+            "place_id": "ChIJF4ymA8Th5UcRcCWLaMOCCwE",
             "types": [
                 "administrative_area_level_1",
                 "political"
@@ -417,43 +335,43 @@
         {
             "address_components": [
                 {
-                    "long_name": "United States",
-                    "short_name": "US",
+                    "long_name": "France",
+                    "short_name": "FR",
                     "types": [
                         "country",
                         "political"
                     ]
                 }
             ],
-            "formatted_address": "United States",
+            "formatted_address": "France",
             "geometry": {
                 "bounds": {
                     "northeast": {
-                        "lat": 71.3867745,
-                        "lng": -66.9502861
+                        "lat": 51.0891658,
+                        "lng": 9.560067799999999
                     },
                     "southwest": {
-                        "lat": 18.9106768,
-                        "lng": 172.4458955
+                        "lat": 41.3423276,
+                        "lng": -5.1423076
                     }
                 },
                 "location": {
-                    "lat": 37.09024,
-                    "lng": -95.712891
+                    "lat": 46.227638,
+                    "lng": 2.213749
                 },
                 "location_type": "APPROXIMATE",
                 "viewport": {
                     "northeast": {
-                        "lat": 49.38,
-                        "lng": -66.94
+                        "lat": 51.0891658,
+                        "lng": 9.5597934
                     },
                     "southwest": {
-                        "lat": 25.82,
-                        "lng": -124.39
+                        "lat": 41.3423276,
+                        "lng": -5.142141899999999
                     }
                 }
             },
-            "place_id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+            "place_id": "ChIJMVd4MymgVA0R99lHx5Y__Ws",
             "types": [
                 "country",
                 "political"

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Urban Viz</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <style>
+    body {
+        font-size: 12px;
+    }
+
+    svg {
+        position: relative;
+    }
+
+    #mapVis {
+        position: absolute;
+        height: 100%;
+        /*width: 100%;*/
+        background-color: #333;
+        
+    }
+
+   
+</style>
+
+    <!-- JS Libraries -->
+    <script type="text/javascript" src="libs/d3.js"></script>
+    <script type="text/javascript" src="libs/queue.js"></script>
+    <script type="text/javascript" src="libs/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="libs/topojson.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.js"></script>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>   
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+
+    <!-- Custom JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/mapvis.js"></script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Visualization Section -->
+    <div class="container">
+        <div class="row">            
+            <div id="mapVis" class="col-lg-12" > </div>
+        </div>
+    </div>
+
+</body>    
