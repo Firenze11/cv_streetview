@@ -16,7 +16,7 @@ MapVis = function(_parentElement, _data, _eventHandler){
     //# tokyo       35.684226, 139.755518
 
     this.parentElement = _parentElement;
-    this.data = _data.filter( function(d) { return d.M; } );
+    this.data = _data//.filter( function(d) { return d.M; } );
     console.log("valid:", this.data.length);
     this.eventHandler = _eventHandler;
     // Create a map in the div #map
@@ -37,8 +37,20 @@ MapVis.prototype.initVis = function(){
     // default
     //this.options = {"type": "publication", "groupby": "dptm", "year":2014};
     this.options = {};
+    this.c20b = d3.scale.category20()
+        .domain(unique(this.data.map( function(d) {
+            return d.label;
+        })));
     this.wrangleData(this.options); // filter, aggregate, modify data   
     this.updateVis(); // call the update method
+
+    function unique(list) {
+        var result = [];
+        $.each(list, function(i, e) {
+            if ($.inArray(e, result) == -1) result.push(e);
+        });
+        return result;
+    }
 }
 
 MapVis.prototype.updateVis = function(){
@@ -53,9 +65,9 @@ MapVis.prototype.updateVis = function(){
     picCircles.enter()
         .append("circle")
         .attr("r", 4)
-        .style("fill", function(d) { return d.M; })
+        .style("fill", function(d) { return that.c20b(d.label); })
         .on("click", function(d) {
-            console.log(d);
+            console.log(d.label);
             var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
             $("img#pic").attr('src', that.imgRoot + imgName);
         });
