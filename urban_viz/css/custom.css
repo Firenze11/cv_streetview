@@ -17,15 +17,21 @@ body{
     color: #cccccc;
 }
 
-#control>ul{
-    padding-left: 0px;
+#control>ul, #all_maps>ul{
+    padding: 0px;
     list-style-type: none; /* remove bullet */
 }
 
-#control hr{
+#control hr, #all_maps hr {
     border-top-color: #888877;
-    margin-top:22px;
-    margin-bottom:4px;
+}
+#control hr{
+    margin-top:18px;
+    margin-bottom:5px;
+}
+#all_maps hr{
+    margin-top:0px;
+    margin-bottom:0px;
 }
 
 #control h4{
@@ -36,6 +42,12 @@ body{
 
 #control li{
     padding-left: 6px;
+}
+#control li:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+#all_maps li:hover{
+    background-color: rgba(255,255,255,0.05);
 }
 
 /* overwriting default checkboxes */
@@ -52,6 +64,22 @@ body{
     color: #959595;
 }
 
+#all_maps{
+    color: #080808;
+    margin-top: 15px;
+    bottom:0px
+}
+#all_maps li{
+    padding-top: 15px;
+}
+
+#all_maps img {
+    border-radius: 50%;
+    max-width:84%; /**********need to query browser size*/
+    max-height:84%;
+    min-width: 100px;
+    min-heignt: 100px;
+}
     /*[type="checkbox"]:disabled:not(:checked) + label:before,
     .custom-checkbox > [type="checkbox"]:disabled:checked + label:before*/
 

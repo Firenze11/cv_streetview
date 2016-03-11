@@ -16,55 +16,108 @@
             <div class="col-md-12">
                 <h1 id="header">Urban Viz</h1>
             </div>
-            <div class="col-md-3 col-lg-2" id="control">
+            <div class="col-md-2 " id="control">
                     <!-- custom checkboxes http://www.bootply.com/ugwCnanAfm -->
                 <ul id="ctrl_segment">
                     <hr>
                     <h4>Segmentation Mask</h4>
                     <li class="custom-checkbox">
-                        <input type="checkbox" id="cb1">
-                        <label for="cb1">Fancy Checkbox</label>
+                        <input type="checkbox" id="cb1_1">
+                        <label for="cb1_1">All</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" checked="" id="cb2">
-                        <label for="cb2">&nbsp;</label>
+                        <input type="checkbox" checked="" id="cb1_2">
+                        <label for="cb1_2">Buildings</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" disabled="" checked="" id="cb3">
-                        <label for="cb3">Disabled</label>
+                        <input type="checkbox" id="cb1_3">
+                        <label for="cb1_3">Trees, Greens</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" id="cb4">
-                        <label for="cb4">Indeterminate</label>
+                        <input type="checkbox" id="cb1_4">
+                        <label for="cb1_4">Sky</label>
                     </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb1_5">
+                        <label for="cb1_5">Road, Pedestrians</label>
+                    </li>
+                    <!-- DISABLED EXAMPLE: <li class="custom-checkbox">
+                        <input type="checkbox" disabled="" checked="" id="cb2_3">
+                        <label for="cb2_3">Disabled</label>
+                    </li> -->
                 </ul>
                 <ul id="ctrl_feature">
                     <hr>
-                    <h4>Segmentation Mask</h4>
+                    <h4>Image Features</h4>
                     <li class="custom-checkbox">
-                        <input type="checkbox" id="cb1">
-                        <label for="cb1">Fancy Checkbox</label>
+                        <input type="checkbox" id="cb2_1">
+                        <label for="cb2_1">All</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" checked="" id="cb2">
-                        <label for="cb2">&nbsp;</label>
+                        <input type="checkbox" id="cb2_2">
+                        <label for="cb2_2">Color Histogram</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" disabled="" checked="" id="cb3">
-                        <label for="cb3">Disabled</label>
+                        <input type="checkbox" id="cb2_3">
+                        <label for="cb2_3">Vertical Edges</label>
                     </li>
                     <li class="custom-checkbox">
-                        <input type="checkbox" id="cb4">
-                        <label for="cb4">Indeterminate</label>
+                        <input type="checkbox" id="cb2_4">
+                        <label for="cb2_4">Horizontal Edges</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" checked="" id="cb2_5">
+                        <label for="cb2_5">Entropy</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb2_6">
+                        <label for="cb2_6">Deep Features</label>
+                    </li>
+                </ul>
+                <ul id="ctrl_region">
+                    <hr>
+                    <h4>Regions</h4>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb3_1">
+                        <label for="cb3_1">All</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb3_2">
+                        <label for="cb3_2">Residential</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" checked="" id="cb3_3">
+                        <label for="cb3_3">Retail</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb3_4">
+                        <label for="cb3_4">Green Space</label>
+                    </li>
+                    <li class="custom-checkbox">
+                        <input type="checkbox" id="cb3_5">
+                        <label for="cb3_5">Industrial</label>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-9 col-lg-10" >
+            <div class="col-md-8 " >
 
             </div>
         </div>
-        <div class="row">
-
+        <div class="row" id="all_maps">
+            <ul class="col-md-12">
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Barcelona</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Boston</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Brasilia</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Chicago</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Hong Kong</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>London</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Munich</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>New York</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Paris</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>San Francisco</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Singapore</h4>  <hr>  </li>
+                <li class="col-md-2 text-center">  <img class="img-circle" src="img/test.png">  <h4>Tokyo</h4>  <hr>  </li>
+            </ul>
         </div>
     </div>
     <script type="text/javascript" src="js/pca_main.js"></script>
