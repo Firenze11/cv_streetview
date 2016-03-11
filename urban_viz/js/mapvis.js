@@ -16,7 +16,7 @@ MapVis = function(_parentElement, _data, _eventHandler){
     //# tokyo       35.684226, 139.755518
 
     this.parentElement = _parentElement;
-    this.data = _data//.filter( function(d) { return d.M; } );
+    this.data = _data.filter( function(d) { return d.M; } );
     console.log("valid:", this.data.length);
     this.eventHandler = _eventHandler;
     // Create a map in the div #map
@@ -65,7 +65,7 @@ MapVis.prototype.updateVis = function(){
     picCircles.enter()
         .append("circle")
         .attr("r", 4)
-        .style("fill", function(d) { return that.c20b(d.label); })
+        .style("fill", function(d) { return d.M;})//return that.c20b(d.label); })
         .on("click", function(d) {
             console.log(d.label);
             var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";

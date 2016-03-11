@@ -17,7 +17,7 @@ $(function(){
     var startHere = function(){
         console.log(queue);
         queue()
-            .defer(d3.csv, "data/test.csv")
+            .defer(d3.csv, "data/boston_color2.csv")
             .await(function(error, boston) {
                 if (error) { 
                     console.log(error); 
