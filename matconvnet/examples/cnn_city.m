@@ -6,7 +6,7 @@ function cnn_city(varargin)
 run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
-opts.dataDir = fullfile('/home/ubuntu/Valid') ; % change this!
+opts.dataDir = fullfile('C:/Users/lezhi/Dropbox/thesis') ; % change this!
 opts.modelType = 'alexnet' ;
 opts.networkType = 'simplenn' ;
 opts.batchNormalization = false ;
@@ -26,7 +26,7 @@ opts.imdbPath = fullfile(opts.expDir, 'imdb.mat');
 opts.train.batchSize = 256 ;
 opts.train.numSubBatches = 1 ;
 opts.train.continue = true ;
-opts.train.gpus = [1] ;
+opts.train.gpus = [] ;  % change to [1] if using gpu
 opts.train.prefetch = true ;
 opts.train.sync = false ;
 opts.train.cudnn = true ;
@@ -44,20 +44,14 @@ opts = vl_argparse(opts, varargin) ;
 % -------------------------------------------------------------------------
 %                                                   Database initialization
 % -------------------------------------------------------------------------
-if(0)
-    if exist(opts.imdbPath)
-        imdb = load(opts.imdbPath) ;
-    else
-        imdb = getCityImdb(opts) ;
-        mkdir(opts.expDir) ;
-        save(opts.imdbPath, '-struct', 'imdb') ;
-    end
+
+if exist(opts.imdbPath)
+    imdb = load(opts.imdbPath) ;
 else
     imdb = getCityImdb(opts) ;
     mkdir(opts.expDir) ;
     save(opts.imdbPath, '-struct', 'imdb') ;
 end
-
 % -------------------------------------------------------------------------
 %                                                    Network initialization
 % -------------------------------------------------------------------------

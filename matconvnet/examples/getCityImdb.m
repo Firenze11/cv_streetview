@@ -1,72 +1,73 @@
-function imdb = getCityImdb(opts)
-% Preapre the imdb structure, returns image data with mean image subtracted
+function imdb = getCityImdb(~)
+%% Raw Data Format: 
+% 1     2              3        4      5          6                     7
+%	   lat	          lng	   dir	 city	    label	              filename
+% 0	42.298631	-71.08309388	0	boston	Mount Bowdoin	boston/42.298631,-71.0830938769_0.png
+% 1	42.298631	-71.08309388	1	boston	Mount Bowdoin	boston/42.298631,-71.0830938769_1.png
+% 2	42.298631	-71.08309388	2	boston	Mount Bowdoin	boston/42.298631,-71.0830938769_2.png
 
-opts.dataDir = fullfile('/home/ubuntu/Valid') ; % change this!
-opts.lite = false ;
-% opts = vl_argparse(opts, varargin) ;
 
-dirs = dir(opts.dataDir);
-dirFlags = [dirs.isdir]; % Get a logical vector that tells which is a directory.
-subFolders = dirs(dirFlags); % Extract only those that are directories.
+%% prepare cell
+IMAGE_PATH = 'C:/Users/lezhi/Dropbox/thesis/img'% '/media/senseable-beast/beast-brain-1/Data/streetviewdata/img'; % change this
+LIST_PATH = 'C:/Users/lezhi/Dropbox/thesis/data/bos_sin_labels.csv';  % change this
 
-labels = {};
-names = {};
-classes = {};
+fileID = fopen(LIST_PATH);
+formatSpec = '%d %f %f %d %s %s %s %s';
+csv_title = textscan(fileID,'%s ',7,'Delimiter',',');
+csv_data = textscan(fileID,formatSpec,'Delimiter',',');
 
-% loop through all city folders
-for k = 3 : length(subFolders) % 3 is to ignore ./ and ../	
-    files = dir(fullfile(opts.dataDir, subFolders(k).name, '*.jpg'));
-    imnum = numel(files);
-    fprintf('found %s with %d images\n', subFolders(k).name, imnum );
-    
-    labels{end+1} = (k-2)*ones(1,imnum); 
-    names{end+1} = strcat([subFolders(k).name, filesep], {files.name}) ;
-    classes{end+1} = subFolders(k).name;    
-end % finish city folders loop
+length_d = single(length(csv_data{1}));
+length_c = single(length(unique(csv_data{6}))); 
 
-names = horzcat(names{:}) ; % convert to horizontal array
-labels = horzcat(labels{:}) ;
 
-% train/validate/test set fractions
-trainfrac = double(4)/6;  validatefrac = double(1)/6;
-trainnum = int32(size(labels,2)*trainfrac); 
-validatenum = int32(size(labels,2)* validatefrac);
 
-set = [ones(1,trainnum), 2*ones(1,validatenum),...
-       3*ones(1,size(labels,2)-trainnum-validatenum)];
+%% prepare imdb.classes.name
+class_name = unique(csv_data{6})';
+class_name = regexprep(class_name,'[^\w'']',''); %delete space
+imdb.classes.name =class_name;
 
-dataperm = randperm(size(labels,2)); % shuffle image order, together with labels 
-labels = labels(1,dataperm);
-names = names(1,dataperm);
+%% prepare imdb.imageDir
+imdb.imageDir = IMAGE_PATH;
 
-imdb.images.id = 1:numel(names) ;
-imdb.images.label = single(labels) ;
-imdb.images.name = names ; 
-imdb.images.set = set ; 
+%% prepare imdb.images.id
+imdb.images.id = (double(csv_data{1}+1))';
+%% prepare imdb.images.label
 
-imdb.classes.name = classes;
-imdb.imageDir = fullfile(opts.dataDir) ;
-
-% -------------------------------------------------------------------------
-%                                                            Postprocessing
-% -------------------------------------------------------------------------
-
-if opts.lite
-  % pick a small number of images for the first 10 classes
-  % this cannot be done for test as we do not have test labels
-  clear keep ;
-  for i=1:10
-    sel = find(imdb.images.label == i) ;
-    train = sel(imdb.images.set(sel) == 1) ;
-    val = sel(imdb.images.set(sel) == 2) ;
-    train = train(1:256) ;
-    val = val(1:40) ;
-    keep{i} = [train val] ;
-  end
-  test = find(imdb.images.set == 3) ;
-  keep = sort(cat(2, keep{:}, test(1:1000))) ;
-  imdb.images.id = imdb.images.id(keep) ;
-  imdb.images.name = imdb.images.name(keep) ;
-  imdb.images.set = imdb.images.set(keep) ;
-  imdb.images.label = imdb.images.label(keep) ;
+for i = 1:length_c
+    classname_dict.(class_name{i}) =i; % build a dictionary to map name to number
 end
+
+label = 1:length_d;
+for i = 1:length_d
+    name = regexprep(csv_data{6}{i},'[^\w'']',''); %delete space
+    label(i) = classname_dict.(name);
+end
+
+imdb.images.label = label;
+
+%% prepare imdb.images.name
+imdb.images.name = (strcat(csv_data{7} ,', ', csv_data{8}))';
+
+imdb.images.name = strrep(imdb.images.name,'"','');
+
+%% prepare imdb.images.set
+set = rand(1,length_d);
+for i = 1:length_d
+     if     (set(i)<2/3) 
+         set(i) = 1;
+     elseif (set(i)<5/6) 
+         set(i) = 2;
+     else
+         set(i) = 3;
+     end
+     set(i)= set(i);
+end 
+imdb.images.set = set;
+
+end
+
+
+
+
+
+

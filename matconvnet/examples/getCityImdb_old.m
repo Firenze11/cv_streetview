@@ -1,7 +1,7 @@
 function imdb = getCityImdb(opts)
 % Preapre the imdb structure, returns image data with mean image subtracted
 
-opts.dataDir = fullfile('C:\Users\lezhi\Dropbox\cv project') ; % change this!
+opts.dataDir = fullfile('/home/ubuntu/Valid') ; % change this!
 opts.lite = false ;
 % opts = vl_argparse(opts, varargin) ;
 

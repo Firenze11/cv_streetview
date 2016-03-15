@@ -64,8 +64,9 @@ MapVis.prototype.updateVis = function(){
                             .data(this.data);
     picCircles.enter()
         .append("circle")
-        .attr("r", 4)
+        .attr("r", 7)
         .style("fill", function(d) { return d.M;})//return that.c20b(d.label); })
+        .style('opacity', 0.5)
         .on("click", function(d) {
             console.log(d.label);
             var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
