@@ -9,6 +9,22 @@
     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/custom.css">
+
+
+    <script type="text/javascript" src="libs/d3.js"></script>
+    <script type="text/javascript" src="libs/queue.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.js"></script>
+
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #fff;
+            shape-rendering: crispEdges;
+        }
+    </style>
+
 </head>
 <body>
     <div class="container-fluid">
@@ -99,7 +115,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-8 " >
+            <div class="col-md-8 " id="scatterVis">
 
             </div>
         </div>
@@ -120,6 +136,8 @@
             </ul>
         </div>
     </div>
-    <script type="text/javascript" src="js/pca_main.js"></script>
+    <script type="text/javascript" src="js/main_pca.js"></script>
+    <script type="text/javascript" src="js/pca.js"></script>
+    <script type="text/javascript" src="js/scattervis.js"></script>
 </body>
 </html>
