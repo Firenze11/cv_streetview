@@ -17,11 +17,12 @@ $(function(){
     var startHere = function(){
         console.log(queue);
         queue()
-            .defer(d3.csv, "data/boston_color2.csv")
+            .defer(d3.csv, "data/coordinates_for_request.csv")
             .await(function(error, boston) {
-                if (error) { 
+                if (error) {
                     console.log(error); 
-                } else { 
+                } else {
+                    console.log(boston);
                     //boston.forEach( function(d) {
                     //    d.lat = +d.lat;
                     //    d.lng = +d.lng;
