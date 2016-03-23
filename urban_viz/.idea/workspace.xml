@@ -2,17 +2,1081 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55574edf-b76b-4e2e-828b-076d2781922d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/mapvis_cat.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/cylinder_projection.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/test.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/test.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/workfile.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/workfile.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/workfile2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/.ipynb_checkpoints/gettingAllCoors-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../scripts/gettingAllCoors.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/app/models/SubjectViews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/app/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/config/db.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/lib/read.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/lib/types/json.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/lib/types/raw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/lib/types/text.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/lib/types/urlencoded.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/bytes/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/depd/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/Changelog.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/dbcs-codec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/dbcs-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/internal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/sbcs-codec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/sbcs-data-generated.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/sbcs-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/big5-added.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/cp936.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/cp949.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/cp950.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/eucjp.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/gbk-added.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/shiftjis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/encodings/utf16.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/lib/extend-node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/lib/streams.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/iconv-lite/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/media-typer/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/media-typer/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/media-typer/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/media-typer/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/media-typer/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/qs/.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/qs/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/qs/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/qs/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/qs/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/raw-body/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/raw-body/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/raw-body/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/raw-body/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/raw-body/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/SOURCES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/lib/custom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/lib/mime.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/lib/node.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/test/mime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/test/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/node_modules/type-is/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/body-parser/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/express.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/middleware/init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/middleware/query.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/request.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/response.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/router/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/router/layer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/router/route.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/lib/view.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/SOURCES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/lib/custom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/lib/mime.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/lib/node.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/mime-types/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/lib/charset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/lib/encoding.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/lib/language.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/lib/mediaType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/lib/negotiator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/node_modules/negotiator/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/accepts/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/buffer-crc32/tests/crc.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie-signature/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/cookie/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/node_modules/ms/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/node_modules/ms/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/node_modules/ms/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/node_modules/ms/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/debug/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/depd/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/escape-html/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/finalhandler/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/finalhandler/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/finalhandler/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/finalhandler/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/finalhandler/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/fresh/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/media-typer/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/media-typer/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/media-typer/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/media-typer/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/media-typer/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/merge-descriptors/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/merge-descriptors/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/merge-descriptors/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/merge-descriptors/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/merge-descriptors/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/methods/test/methods.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/parseurl/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/parseurl/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/parseurl/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/parseurl/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/path-to-regexp/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/Cakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/ipaddr.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/lib/ipaddr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/src/ipaddr.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js/test/ipaddr.test.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/proxy-addr/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/qs/.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/qs/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/qs/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/qs/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/qs/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/range-parser/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/lib/send.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/node_modules/ee-first/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/finished/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/mime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/types/mime.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/mime/types/node.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/ms/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/ms/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/ms/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/node_modules/ms/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/send/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/parseurl/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/parseurl/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/parseurl/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/parseurl/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/parseurl/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/lib/send.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/debug/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/node_modules/ee-first/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/finished/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/mime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/types/mime.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/mime/types/node.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/ms/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/ms/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/ms/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/node_modules/ms/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/node_modules/send/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/serve-static/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/SOURCES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/lib/custom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/lib/mime.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/lib/node.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/node_modules/mime-types/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/type-is/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/utils-merge/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/utils-merge/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/utils-merge/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/utils-merge/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/utils-merge/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/node_modules/vary/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/express/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/methods/test/methods.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/parseurl/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/parseurl/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/parseurl/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/parseurl/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/node_modules/vary/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/method-override/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/.coveralls.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/.nyc_output/81699.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/conf.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/admin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/aggregation_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/apm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/bulk/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/bulk/ordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/bulk/unordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/command_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/db.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/gridfs-stream/download.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/gridfs-stream/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/gridfs-stream/upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/gridfs/chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/gridfs/grid_store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/metadata.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/mongo_client.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/mongos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/read_preference.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/replset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/topology_base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/url_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/dist/es6-promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/dist/es6-promise.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise.umd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/-internal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/asap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/enumerator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/polyfill.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/promise/all.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/promise/race.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/promise/reject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/promise/resolve.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/lib/es6-promise/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/es6-promise/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/.coveralls.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/TESTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/conf.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/gssapi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/mongocr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/plain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/scram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/sspi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/auth/x509.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/connection/commands.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/connection/connection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/connection/logger.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/connection/pool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/connection/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/tools/smoke_plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/command_result.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/mongos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/read_preference.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset_state.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/session.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/strategies/ping.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_4_support.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/3_2_support.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/commands.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/HISTORY" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/alternate_parsers/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/alternate_parsers/faster_bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/browser_build/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/browser_build/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/deserializer_bak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/binary.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/binary_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/code.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/db_ref.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/double.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/float_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/long.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/max_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/min_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/parser/calculate_size.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/parser/deserializer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/parser/serializer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/regexp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/symbol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/lib/bson/timestamp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/bson/tools/gleak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/.bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/.bin/semver.cmd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/resolve-from/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/resolve-from/license" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/resolve-from/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/resolve-from/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/range.bnf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/semver.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/big-numbers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/clean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/gtr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/ltr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/node_modules/semver/test/major-minor-patch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/node_modules/require_optional/test/require_optional_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/mongodb-core/simple_2_document_limit_toArray.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/duplex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/lib/_stream_readable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/lib/_stream_writable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/passthrough.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/readable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/transform.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/node_modules/readable-stream/writable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongodb/test.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/bin/mongoose.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/contRun.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/aggregate/aggregate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/aggregate/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/aggregate/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/doc-methods.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/connection-sharing/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/connection-sharing/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/connection-sharing/modelA.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/connection-sharing/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/express/connection-sharing/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/geospatial/geoJSONSchema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/geospatial/geoJSONexample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/geospatial/geospatial.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/geospatial/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/geospatial/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/globalschemas/gs_example.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/globalschemas/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/lean/lean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/lean/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/lean/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/mapreduce/mapreduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/mapreduce/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/mapreduce/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-across-three-collections.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-basic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-of-existing-doc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-of-multiple-existing-docs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-options.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/population/population-plain-objects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/promises/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/promises/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/promises/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/querybuilder/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/querybuilder/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/querybuilder/querybuilder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/replicasets/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/replicasets/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/replicasets/replica-sets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/schema/schema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/schema/storing-schemas-as-json/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/schema/storing-schemas-as-json/schema.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/statics/person.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/examples/statics/statics.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/aggregate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/connection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/connectionstate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/document.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/drivers/SPEC.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/drivers/node-mongodb-native/binary.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/drivers/node-mongodb-native/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/cast.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/divergentArray.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/messages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/missingSchema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/overwriteModel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/validation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/validator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/error/version.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/internal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/query.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/queryhelpers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/querystream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/array.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/boolean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/buffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/date.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/documentarray.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/mixed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/number.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schema/string.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schemadefault.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/schematype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/statemachine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/array.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/buffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/documentarray.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/embedded.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/types/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/lib/virtualtype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/hooks.alt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/hooks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/hooks/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/admin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/aggregation_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_cr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_gssapi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_plain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_scram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_sspi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/auth/mongodb_x509.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/aggregation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/batch/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/batch/ordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/batch/unordered.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/commands.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/geo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/query.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/collection/shared.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/command_cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/base_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/db_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/delete_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/get_more_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/insert_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/kill_cursor_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/query_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/commands/update_command.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/connection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/connection_pool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/connection_utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/mongos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/read_preference.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/ha.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/options.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set_state.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/ping_strategy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/statistics_strategy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/server_capabilities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/url_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/cursor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/cursorstream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/db.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/gridfs/chunk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/gridfs/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/gridfs/gridstore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/gridfs/readstream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/mongo_client.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/responses/mongo_reply.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/scope.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/lib/mongodb/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/HISTORY" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/binding.gyp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/browser_build/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/browser_build/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/build_browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/bson.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/bson.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/win32/ia32/bson.node" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/win32/x64/bson.node" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/ext/wscript" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/binary.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/binary_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/bson.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/bson_new.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/code.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/db_ref.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/double.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/float_parser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/long.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/max_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/min_key.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/objectid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/symbol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/timestamp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/.dntrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/appveyor.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/include_dirs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/nan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/nan_implementation_12_inl.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/nan_implementation_pre_12_inl.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/nan_new.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/nan_string_bytes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/node_modules/nan/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/gleak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/MIT.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/bson/tools/jasmine-1.1.0/jasmine_favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/binding.gyp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/auth_processes/mongodb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/base64.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/base64.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberos.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberos_context.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberos_context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberosgss.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/kerberosgss.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/sspi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/base64.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/base64.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos_sspi.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/kerberos_sspi.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/worker.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/worker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_context.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_credentials.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/worker.cc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/worker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/.dntrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/appveyor.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/include_dirs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/nan.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/nan_implementation_12_inl.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/nan_implementation_pre_12_inl.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/nan_new.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/nan_string_bytes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/node_modules/nan/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/kerberos_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/kerberos_win32_test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/win32/security_buffer_descriptor_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/win32/security_buffer_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/win32/security_credentials_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/duplex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_readable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_writable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/passthrough.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/readable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/transform.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/writable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mongodb/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpath/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/jsLibraryMappings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/libraries/Node_js_Dependencies_for_mpromise.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/mpromise.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/other.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/lib/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/test/promise.domain.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/test/promise.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mpromise/test/promises.Aplus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/collection/collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/collection/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/collection/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/env.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/mquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/permissions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/lib/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/any.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/assert.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/async.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/bluebird.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/call_get.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/cancel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/captured_trace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/catch_filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/direct_resolve.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/each.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/errors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/errors_api_rejection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/es5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/finally.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/generators.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/join.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/nodeify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/progress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_array.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_resolver.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promisify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/props.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/queue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/race.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/reduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/schedule.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/settle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/some.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/synchronous_inspection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/thenables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/timers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/using.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/any.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/assert.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/async.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/bluebird.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/call_get.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/cancel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/captured_trace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/catch_filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/direct_resolve.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/each.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/errors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/errors_api_rejection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/es5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/filter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/finally.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/generators.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/join.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/nodeify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/progress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/promise.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/promise_array.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/promise_resolver.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/promisify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/props.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/queue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/race.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/reduce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/schedule.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/settle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/some.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/synchronous_inspection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/thenables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/timers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/using.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/zalgo/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/zalgo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/debug/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/debug/debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/debug/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/debug/lib/debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/node_modules/debug/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/collection/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/collection/mongo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/collection/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/env.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/mquery/test/utils.test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/ms.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/test/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/test/support/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/ms/test/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/lib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/muri/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/regexp-clone/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/History.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/bench.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/lib/sliced.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/node_modules/sliced/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/release-items.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/static.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/node_modules/mongoose/website.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/dc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/font/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/font/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/font/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/font/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/font/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/ie/PIE.htc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/ie/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/ie/v8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/ie/v9.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/images/mobileUI-site-nav-opener-bg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/images/toggle.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/skel-noscript.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/style-1000px.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/style-desktop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/style-mobile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/css/stylenew.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/images/banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/images/pics02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/Dashboard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/crossfilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/d3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/dc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/queue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/skel-panels.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/public/js/skel.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node-dc-mongo/server.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../scripts/RemoveImages.m" afterPath="$PROJECT_DIR$/../scripts/RemoveImages.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pca.html" afterPath="$PROJECT_DIR$/pca.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mapvis.js" afterPath="$PROJECT_DIR$/js/mapvis.js" />
     </list>
     <ignored path="urban_viz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,65 +1097,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="pca.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pca.html">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mongodb_sample_project1/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.696968">
-              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node-dc-mongo/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.397351">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.939394">
-              <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapvis_cat.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/mapvis_cat.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.522293">
-              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-              <folding>
-                <element signature="e#5190#5231#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_pca.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main_pca.js">
+      <file leaf-file-name="collectionDriver.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongodb_sample_project1/collectionDriver.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -125,8 +1145,12 @@
         <option value="$PROJECT_DIR$/node-dc-mongo/config/db.js" />
         <option value="$PROJECT_DIR$/node-dc-mongo/public/app.js" />
         <option value="$PROJECT_DIR$/node-dc-mongo/app.js" />
-        <option value="$PROJECT_DIR$/js/mapvis.js" />
         <option value="$PROJECT_DIR$/js/mapvis_cat.js" />
+        <option value="$PROJECT_DIR$/node-dc-mongo/app/routes.js" />
+        <option value="$PROJECT_DIR$/node-dc-mongo/package.json" />
+        <option value="$PROJECT_DIR$/js/mapvis.js" />
+        <option value="$PROJECT_DIR$/mongodb_sample_project1/collectionDriver.js" />
+        <option value="$PROJECT_DIR$/mongodb_sample_project1/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
       </list>
@@ -139,9 +1163,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1042" />
+    <option name="y" value="-1800" />
+    <option name="width" value="1657" />
+    <option name="height" value="1751" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -184,6 +1208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -213,7 +1238,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node-dc-mongo" />
+              <option name="myItemId" value="mongodb_sample_project1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,11 +1252,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node-dc-mongo" />
+              <option name="myItemId" value="mongodb_sample_project1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urban_viz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urban_viz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb_sample_project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urban_viz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urban_viz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb_sample_project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -265,7 +1330,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,17 +1406,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-1800" width="1657" height="1751" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14347357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2294455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21856639" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20192307" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23871906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -380,6 +1444,83 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pca.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mapvis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pca.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mapvis_cat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#5190#5231#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main_pca.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pca.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -505,33 +1646,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node-dc-mongo/config/db.js">
+    <entry file="file://$PROJECT_DIR$/js/main_pca.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04477612">
-          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-dc-mongo/app/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26865673">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-dc-mongo/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.031847134">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pca.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.696968">
+        <state vertical-scroll-proportion="0.0">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -539,53 +1663,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node-dc-mongo/app.js">
+    <entry file="file://$PROJECT_DIR$/js/mapvis_cat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.205298">
+          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+          <folding>
+            <element signature="e#5190#5231#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37748346">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/mapvis.js">
+    <entry file="file://$PROJECT_DIR$/mongodb_sample_project1/node_modules/jade/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.090909">
-          <caret line="13" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="123" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main_pca.js">
+    <entry file="file://$PROJECT_DIR$/mongodb_sample_project1/collectionDriver.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.939394">
-          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.8570213">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/js/mapvis.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.37748346">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/mapvis_cat.js">
+    <entry file="file://$PROJECT_DIR$/mongodb_sample_project1/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.522293">
-          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <element signature="e#5190#5231#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.397351">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

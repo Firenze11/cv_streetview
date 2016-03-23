@@ -1,11 +1,11 @@
 clear all
 close all
 
-inputDir = '/media/senseable-beast/beast-brain-1/Data/streetviewdata/img';
-outputDir = '/media/senseable-beast/beast-brain-1/Data/streetviewdata/img2';
+inputDir = '/media/senseable-beast/beast-brain-1/Data/streetviewdata/img_dense';
+outputDir = '/media/senseable-beast/beast-brain-1/Data/streetviewdata/img_dense2';
 
-% inputDir = 'C:\Users\lezhi\Dropbox\thesis\streetviewdata\img';
-% outputDir = 'C:\Users\lezhi\Dropbox\thesis\streetviewdata\img2';
+% inputDir = 'C:\Users\lezhi\Dropbox\thesis\img_dense';
+% outputDir = 'C:\Users\lezhi\Dropbox\thesis\img_dense2';
 
 allCityNames = dir(inputDir);
 allCityNames = {allCityNames([allCityNames.isdir]).name};
