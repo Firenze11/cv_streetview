@@ -1,8 +1,8 @@
 % imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
-% netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-net-epoch-50.mat';
-% imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
+% netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-net-epoch-40.mat';
+% imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-imdb.mat';
 % 
-% num_cat = 40; % number of categories, change this
+% num_cat = 20; % number of categories, change this
 % %% evaluate
 % % initialize MatConvNet
 % run(fullfile(fileparts(mfilename('fullpath')), ...
@@ -18,7 +18,6 @@
 % imdb = load(imdbdir); % change this
 % names = imdb.images.name(imdb.images.set~=1);
 % labels = imdb.images.label(imdb.images.set~=1);
-% classNames = imdb.classes.name;
 % 
 % % variables for storing test statistics
 % confusion = zeros(num_cat); % confusion matrix
@@ -75,48 +74,50 @@
 % coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
 % end
 % 
-% save('boston_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
-% csvwrite('boston_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
+% save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
+% csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
 
-% %% visualization-top10
-% addpath('lib');
-% city_names = imdb.classes.name;
-% for i = 31:num_cat
-%     if mod(i,10) == 1
-%         figure
-%         ha = tight_subplot(10,10,[0.018,0.001]);%,[.1 .01],[.01 .01]);
-%     end    
-%     b_scores_sub = bestScores(labels==i);
-%     o_scores_sub = ownScores(labels==i);
-%     names_sub = names(labels==i);
-%     p_labels_sub = predLabels(labels==i);
-%     [~,index] = sort(o_scores_sub,'descend'); % highest possibilities in each category
-%     
-%     for j = 1:20 
-%         if mod(j,2) == 0 
-%             j2 = j/2;
-%             axisind = mod(i*10-10+j2,100);
-%             if axisind == 0
-%               axisind = 100;
-%             end
-%             axes(ha(axisind)); 
-%             im = imread(sprintf(imdir,names_sub{index(j)}));
-%             imagesc(im); 
-%             % without strrep, matlab will mess up the display of an
-%             % underscore
-%             th = title(sprintf('%s: %0.2f',strrep(classNames{i},'_','\_'),o_scores_sub(index(j)) ));
-% %             set(th,'Fontname','Timesnewroman');
-%             set(th,'Fontsize',8);
-%             set(th,'Position',[240,427,0]); % change this position according to image dimension
-%         end
-%     end
-%     set(ha(1:100),'XTickLabel',''); set(ha,'YTickLabel','');
-% end
+%% visualization-top10
+addpath('lib');
+city_names = imdb.classes.name;
+for i = 1:num_cat
+    if mod(i,10) == 1
+        figure
+        ha = tight_subplot(10,10,[0.018,0.001]);%,[.1 .01],[.01 .01]);
+    end    
+    b_scores_sub = bestScores(labels==i);
+    o_scores_sub = ownScores(labels==i);
+    names_sub = names(labels==i);
+    p_labels_sub = predLabels(labels==i);
+    [~,index] = sort(o_scores_sub,'descend'); % highest possibilities in each category
+    
+    for j = 1:20 
+        if mod(j,2) == 0 
+            j2 = j/2;
+            axisind = mod(i*10-10+j2,100);
+            if axisind == 0
+              axisind = 100;
+            end
+            axes(ha(axisind)); 
+            im = imread(sprintf(imdir,names_sub{index(j)}));
+            imagesc(im); 
+            % without strrep, matlab will mess up the display of an
+            % underscore
+            th = title(sprintf('%s: %0.2f',strrep(imdb.classes.name{i},'_','\_'),o_scores_sub(index(j)) ));
+%             set(th,'Fontname','Timesnewroman');
+            set(th,'Fontsize',8);
+            set(th,'Position',[240,427,0]); % change this position according to image dimension
+        end
+    end
+    set(ha(1:100),'XTickLabel',''); set(ha,'YTickLabel','');
+end
 
 %% visualization-confusion
 % http://stackoverflow.com/questions/3942892/how-do-i-visualize-a-matrix-with-colors-and-values-displayed
 mat = confusion_rate;           
-imagesc(mat);            
+fig = imagesc(mat);      
+xlabel('Ground Truth');
+ylabel('Predicted');
 colormap(flipud(gray));  %# Change the colormap to gray (so higher values are
                          %#   black and lower values are white)
 
@@ -134,10 +135,10 @@ set(hStrings,{'Color'},num2cell(textColors,2));  %# Change the text colors
 
 % ax.XTickLabelRotation=45;
 set(gca,'XTick',1:num_cat,...                         %# Change the axes tick marks
-        'XTickLabel',arrayfun(strrep,classNames,'_','\_'),...  %#   and tick labels
-        'XTickLabelRotation',45,...
+        'XTickLabel',strrep(imdb.classes.name,'_','\_'),...  %#   and tick labels
+        'XTickLabelRotation',30,...
         'YTick',1:num_cat,...
-        'YTickLabel',strrep(classNames{i},'_','\_'),...
+        'YTickLabel',strrep(imdb.classes.name,'_','\_'),...
         'TickLength',[0 0]);
     
 %% evaluate - histogram swapping
