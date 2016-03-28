@@ -1,116 +1,116 @@
-% imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
-% netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-net-epoch-40.mat';
+imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
+netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-net-epoch-40.mat';
 imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
-% 
-% num_cat = 20; % number of categories, change this
-% %% evaluate
-% % initialize MatConvNet
-% run(fullfile(fileparts(mfilename('fullpath')), ...
-%   '..', 'matlab', 'vl_setupnn.m')) ;
-% 
-% % load the pre-trained CNN
-% trainedstuff = load(netdir); % change this
-% net = trainedstuff.net;
-% net.layers{1,end}.type = 'softmax';
-% net.layers{1,end}.name = 'prob';
-% 
-% % loop through test images and estimate results
-% imdb = load(imdbdir); % change this
-% names = imdb.images.name(imdb.images.set~=1);
-% labels = imdb.images.label(imdb.images.set~=1);
-% 
-% % variables for storing test statistics
-% confusion = zeros(num_cat); % confusion matrix
-% predLabels = zeros(1,length(names)); 
-% bestScores = zeros(1,length(names));
-% ownScores = zeros(1,length(names));
-% for i = 1:length(names)
-% im = imread(sprintf(imdir,names{i})); % change this
-% im_ = single(im) ; % note: 0-255 range
-% im_ = im_(1:256,:,:);
-% im_ = imresize(im_, net.meta.normalization.imageSize(1:2));
-% for j = 1:3
-%   im_(:,:,j)=im_(:,:,j)-net.meta.normalization.averageImage(j);
-% end
-% 
-% % run the CNN
-% res = vl_simplenn(net, im_) ;
-% 
-% % show the classification result
-% scores = squeeze(gather(res(end).x)) ;
-% [bestScore, best] = max(scores) ;
-% [sortedscores,index] = sort(scores,'descend');
-% ownscore = scores(labels(i)); 
-% 
-% % remember the prodicted category and their corresponding scores
-% predLabels(i) = best; 
-% bestScores(i) = bestScore;
-% ownScores(i) = ownscore;
-% 
-% % if categorized wrongly, 
-% % add the score difference between the top score and the score for the gound truth category
-% % to the corresponding cell in confusion matix
-% if best ~= labels(i) 
-%   score_diff = bestScore - ownscore;
-%   confusion(best,labels(i)) = confusion(best,labels(i)) + score_diff; % row for target label, column for ground truth label
-% end
-% 
-% i % print process
-% end
-% 
-% %% save stats
-% % divide confusion matrix by the total number in each category, to get
-% % false classification rates
-% tot = zeros(1,num_cat);
-% for i = 1:num_cat
-%   tot (i) = length(names(labels==i)); 
-% end
-% confusion_rate = confusion*100 ./ double(repmat(tot,num_cat,1));
-% false_rate = sum(confusion_rate);
-% 
-% coords = zeros(length(names),2);
-% for i = 1:length(names)
-% coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
-% coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
-% end
-% 
-% save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
-% csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
 
-% %% visualization-top10
-% addpath('lib');
-% city_names = imdb.classes.name;
-% for i = 1:num_cat
-%     if mod(i,10) == 1
-%         figure
-%         ha = tight_subplot(10,10,[0.018,0.001]);%,[.1 .01],[.01 .01]);
-%     end    
-%     b_scores_sub = bestScores(labels==i);
-%     o_scores_sub = ownScores(labels==i);
-%     names_sub = names(labels==i);
-%     p_labels_sub = predLabels(labels==i);
-%     [~,index] = sort(o_scores_sub,'descend'); % highest possibilities in each category
-%     
-%     for j = 1:20 
-%         if mod(j,2) == 0 
-%             j2 = j/2;
-%             axisind = mod(i*10-10+j2,100);
-%             if axisind == 0
-%               axisind = 100;
-%             end
-%             axes(ha(axisind)); 
-%             im = imread(sprintf(imdir,names_sub{index(j)}));
-%             imagesc(im); 
-%             % without strrep, matlab will mess up the display of an
-%             % underscore
-%             th = title(sprintf('%s: %0.2f',strrep(imdb.classes.name{i},'_','\_'),o_scores_sub(index(j)) ));
-% %             set(th,'Fontname','Timesnewroman');
-%             set(th,'Fontsize',8);
-%             set(th,'Position',[240,427,0]); % change this position according to image dimension
-%         end
-%     end
-%     set(ha(1:100),'XTickLabel',''); set(ha,'YTickLabel','');
-% end
+num_cat = 20; % number of categories, change this
+%% evaluate
+% initialize MatConvNet
+run(fullfile(fileparts(mfilename('fullpath')), ...
+  '..', 'matlab', 'vl_setupnn.m')) ;
+
+% load the pre-trained CNN
+trainedstuff = load(netdir); % change this
+net = trainedstuff.net;
+net.layers{1,end}.type = 'softmax';
+net.layers{1,end}.name = 'prob';
+
+% loop through test images and estimate results
+imdb = load(imdbdir); % change this
+names = imdb.images.name(imdb.images.set~=1);
+labels = imdb.images.label(imdb.images.set~=1);
+
+% variables for storing test statistics
+confusion = zeros(num_cat); % confusion matrix
+predLabels = zeros(1,length(names)); 
+bestScores = zeros(1,length(names));
+ownScores = zeros(1,length(names));
+for i = 1:length(names)
+im = imread(sprintf(imdir,names{i})); % change this
+im_ = single(im) ; % note: 0-255 range
+im_ = im_(1:256,:,:);
+im_ = imresize(im_, net.meta.normalization.imageSize(1:2));
+for j = 1:3
+  im_(:,:,j)=im_(:,:,j)-net.meta.normalization.averageImage(j);
+end
+
+% run the CNN
+res = vl_simplenn(net, im_) ;
+
+% show the classification result
+scores = squeeze(gather(res(end).x)) ;
+[bestScore, best] = max(scores) ;
+[sortedscores,index] = sort(scores,'descend');
+ownscore = scores(labels(i)); 
+
+% remember the prodicted category and their corresponding scores
+predLabels(i) = best; 
+bestScores(i) = bestScore;
+ownScores(i) = ownscore;
+
+% if categorized wrongly, 
+% add the score difference between the top score and the score for the gound truth category
+% to the corresponding cell in confusion matix
+if best ~= labels(i) 
+  score_diff = bestScore - ownscore;
+  confusion(best,labels(i)) = confusion(best,labels(i)) + score_diff; % row for target label, column for ground truth label
+end
+
+i % print process
+end
+
+%% save stats
+% divide confusion matrix by the total number in each category, to get
+% false classification rates
+tot = zeros(1,num_cat);
+for i = 1:num_cat
+  tot (i) = length(names(labels==i)); 
+end
+confusion_rate = confusion*100 ./ double(repmat(tot,num_cat,1));
+false_rate = sum(confusion_rate);
+
+coords = zeros(length(names),2);
+for i = 1:length(names)
+coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
+coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
+end
+
+save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
+csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
+csvwrite('boston_confusion.csv',{imdb.classes.name; confusion_rate});
+%% visualization-top10
+addpath('lib');
+city_names = imdb.classes.name;
+for i = 1:num_cat
+    if mod(i,10) == 1
+        figure
+        ha = tight_subplot(10,10,[0.018,0.001]);%,[.1 .01],[.01 .01]);
+    end    
+    b_scores_sub = bestScores(labels==i);
+    o_scores_sub = ownScores(labels==i);
+    names_sub = names(labels==i);
+    p_labels_sub = predLabels(labels==i);
+    [~,index] = sort(o_scores_sub,'descend'); % highest possibilities in each category
+    
+    for j = 1:20 
+        if mod(j,2) == 0 
+            j2 = j/2;
+            axisind = mod(i*10-10+j2,100);
+            if axisind == 0
+              axisind = 100;
+            end
+            axes(ha(axisind)); 
+            im = imread(sprintf(imdir,names_sub{index(j)}));
+            imagesc(im); 
+            % without strrep, matlab will mess up the display of an
+            % underscore
+            th = title(sprintf('%s: %0.2f',strrep(imdb.classes.name{i},'_','\_'),o_scores_sub(index(j)) ));
+%             set(th,'Fontname','Timesnewroman');
+            set(th,'Fontsize',8);
+            set(th,'Position',[240,427,0]); % change this position according to image dimension
+        end
+    end
+    set(ha(1:100),'XTickLabel',''); set(ha,'YTickLabel','');
+end
 
 %% visualization-confusion
 % http://stackoverflow.com/questions/3942892/how-do-i-visualize-a-matrix-with-colors-and-values-displayed
