@@ -16,7 +16,7 @@ net.layers{1,end}.name = 'prob';
 
 % loop through test images and estimate results
 imdb = load(imdbdir); % change this
-names = imdb.images.name(imdb.images.set~=1);
+names = imdb.images.name(imdb.images.set~=1); %both test and validation set
 labels = imdb.images.label(imdb.images.set~=1);
 
 % variables for storing test statistics
