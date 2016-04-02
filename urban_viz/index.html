@@ -56,11 +56,22 @@
     <!-- Visualization Section -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3" >
-                <div id="control"></div>
+            <div class="col-lg-2 col-md-3 col-sm-4" >
+
+                <div id="control">
+
+                    <select id="sel_cate" class="selectpicker">
+                        <option value="color">Main Color</option>
+                        <option value="entropy">Visual Entropy</option>
+                        <option value="sky">Sky Area</option>
+                        <option value="deep_clusters">Deep Features</option>
+                        <option value="confusion">District Confusion</option>
+                    </select>
+
+                </div>
                 <img id="pic">
             </div>
-            <div class="col-lg-9" style="height:100%">
+            <div class="col-lg-10 col-md-9 col-sm-8" style="height:100%">
                 <div id="mapVis" > </div>
             </div>
         </div>

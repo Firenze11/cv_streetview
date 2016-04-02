@@ -1,6 +1,6 @@
 imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
 netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-net-epoch-40.mat';
-imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
+% imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
 
 num_cat = 20; % number of categories, change this
 %% evaluate
@@ -74,9 +74,25 @@ coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
 coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
 end
 
-save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate')
-csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
+save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate');
+% csvwrite('boston_test_stats_num.csv',[names',labels',ownScores',predLabels',bestScores']);
+% csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
 csvwrite('boston_confusion.csv',{imdb.classes.name; confusion_rate});
+
+fid = fopen('boston_test_stats.csv','wt');
+ if fid>0
+     for i=1:length(names)
+%          fprintf(fid,'%s\n',names{k,:});
+        row = strsplit(names{i}(1:end-4),{'/',',','_'},'CollapseDelimiters',true);
+        for j=2:length(row)
+            fprintf(fid,'%s,',row{j}); %{k,:}
+        end
+        fprintf(fid,'%s,%f,%f,%s,%f,%f\n', ...
+            imdb.classes.name{labels(i)},labels(i),ownScores(i),...
+            imdb.classes.name{predLabels(i)},predLabels(i),bestScores(i));
+     end
+     fclose(fid);
+ end
 %% visualization-top10
 addpath('lib');
 city_names = imdb.classes.name;

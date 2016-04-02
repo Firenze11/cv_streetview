@@ -7,20 +7,22 @@ run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
 
 % read from imdb.mat
-netdir = 'C:\Users\lezhi\Dropbox\cv project\city-alexnet-simplenn\';
-imdb = load(strcat(netdir,'imdb.mat'));
+netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-net-epoch-50.mat';
+imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
 
 % read train and test images
-trn_ims = (imdb.images.name(imdb.images.set==1))'; % name vector, cell array
-trn_labels = (imdb.images.label(imdb.images.set==1))'; % label vector, single vector
-test_ims = (imdb.images.name(imdb.images.set==3))';
-test_labels = (imdb.images.label(imdb.images.set==3))';
+% trn_ims = (imdb.images.name(imdb.images.set==1))'; % name vector, cell array
+% trn_labels = (imdb.images.label(imdb.images.set==1))'; % label vector, single vector
+test_ims = (imdb.images.name(imdb.images.set~=1))';
+test_labels = (imdb.images.label(imdb.images.set~=1))';
+csvwrite('deep_features_boston.csv',test_features); % record image features
+
 % NOTE: it should be okay for the above not to be transposes, should output
 % same result because of how the functions handle them
 
 % extract gradient features
-trn_features = extract_features(trn_ims(1:100));
-test_features = extract_features(test_ims(1:100));
+% trn_features = extract_features(trn_ims);
+test_features = extract_features(test_ims);
 
 % train and test a linear svm model
 % svm = svmtrain(trn_features,trn_labels(1:100),'-s 0 -t 0 '); % linear kernel
