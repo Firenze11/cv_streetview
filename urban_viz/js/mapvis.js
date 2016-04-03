@@ -1,6 +1,6 @@
 MapVis = function(_parentElement, _eventHandler){
 
-    this.imgRoot = "/Dropbox/thesis/img_dense/boston/";
+    this.imgRoot = "/Dropbox/thesis/img/boston/";
 
     this.parentElement = _parentElement;
     this.options = {};
@@ -13,20 +13,23 @@ MapVis = function(_parentElement, _eventHandler){
     //http://stackoverflow.com/questions/10337640/how-to-access-the-dom-element-that-correlates-to-a-d3-svg-object
     this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.dark', {
                   zoomControl: false
-                });
-                //.setView( centers[cityname], 13);
-    //this.initVis();
-}
+                }).setView([42.352131, -71.090669], 13);
+    this.initVis();
+};
 
-//MapVis.prototype.initVis = function(){
-//    var that = this;
-//    //this.svg = d3.select(this.map.getPanes().overlayPane).append("svg"),
-//    //this.g = this.svg.append("g").attr("class", "leaflet-zoom-hide");
-//
-//    // default
-//    //this.options = {"type": "publication", "groupby": "dptm", "year":2014};
-//
-//}
+MapVis.prototype.initVis = function(){
+    var that = this;
+    //$.getJSON("data/boundary_boston.geojson", function(data) {
+    //    L.geoJson(data, {
+    //        //style: function (feature) {
+    //        //    return {color: feature.properties.color};
+    //        //},
+    //        //onEachFeature: function (feature, layer) {
+    //        //    layer.bindPopup(feature.properties.description);
+    //        //}
+    //    }).addTo(that.map);
+    //});
+};
 
 MapVis.prototype.updateVis = function(){
     var that = this;
@@ -35,15 +38,14 @@ MapVis.prototype.updateVis = function(){
     this.map.setView( centers[this.options.cityname], 13);
 
     this.c20b = d3.scale.category20()
-        .domain(unique(this.data.map( function(d) {
-            return d.label;
-        })));
+        .domain( Array.apply(null, Array(20)).map(function (_, i) {return i;}) );
 
     var dotColor = function(d) {
         if(that.options.category === 'color') {
             return d.M;
         } else {
-            return that.c20b(d.predLabel_num);
+            //console.log(d.cat_from_20, that.c20b(d.cat_from_20));
+            return that.c20b(d.cat_from_7);
         }
     };
     this.data.forEach( function(d) {
@@ -58,6 +60,7 @@ MapVis.prototype.updateVis = function(){
             //console.log(d.label);
             var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
             $("img#pic").attr('src', that.imgRoot + imgName);
+            console.log(d.label, d.cat_from_7, d.predLabel);
         }).addTo(that.map);
     });
 
