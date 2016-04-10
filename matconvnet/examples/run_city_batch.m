@@ -1,9 +1,9 @@
 imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
 netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-net-epoch-40.mat';
-% imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\boston-imdb.mat';
+imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\singapore-imdb.mat';
 
 num_cat = 20; % number of categories, change this
-%% evaluate
+% evaluate
 % initialize MatConvNet
 run(fullfile(fileparts(mfilename('fullpath')), ...
   '..', 'matlab', 'vl_setupnn.m')) ;
@@ -14,7 +14,7 @@ net = trainedstuff.net;
 net.layers{1,end}.type = 'softmax';
 net.layers{1,end}.name = 'prob';
 
-% loop through test images and estimate results
+loop through test images and estimate results
 imdb = load(imdbdir); % change this
 names = imdb.images.name(imdb.images.set~=1); %both test and validation set
 labels = imdb.images.label(imdb.images.set~=1);
@@ -58,7 +58,7 @@ end
 i % print process
 end
 
-%% save stats
+% save stats
 % divide confusion matrix by the total number in each category, to get
 % false classification rates
 tot = zeros(1,num_cat);
@@ -75,11 +75,11 @@ coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
 end
 
 save('singapore_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate');
-% csvwrite('boston_test_stats_num.csv',[names',labels',ownScores',predLabels',bestScores']);
-% csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
-csvwrite('boston_confusion.csv',{imdb.classes.name; confusion_rate});
+% % csvwrite('boston_test_stats_num.csv',[names',labels',ownScores',predLabels',bestScores']);
+% % csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
+csvwrite('singapore_confusion.csv',confusion_rate);
 
-fid = fopen('boston_test_stats.csv','wt');
+fid = fopen('singapore_test_stats.csv','wt');
  if fid>0
      for i=1:length(names)
 %          fprintf(fid,'%s\n',names{k,:});

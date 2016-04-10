@@ -19,12 +19,12 @@ ScatterVis = function(_parentElement, _data, _eventHandler){
     //# singapore   1.302876, 103.829547
     //# tokyo       35.684226, 139.755518
 
-    this.parentElement = _parentElement;
+    this._parentElement = _parentElement;
     this.data = _data.filter( function(d) { return d[0]; } );
     console.log("valid:", this.data.length);
     this.eventHandler = _eventHandler;
 
-    // console.log(this.parentElement.node());
+    // console.log(this._parentElement.node());
     this.initVis();
 }
 
@@ -32,7 +32,7 @@ ScatterVis.prototype.initVis = function(){
     var that = this;
 
     this.margin = {top: 20, right: 20, bottom: 30, left: 40};
-    this.width = $(this.parentElement.node()).width() - this.margin.left - this.margin.right;
+    this.width = $(this._parentElement.node()).width() - this.margin.left - this.margin.right;
     this.height = 500 - this.margin.top - this.margin.bottom;
 
     this.x = d3.scale.linear()
@@ -52,7 +52,7 @@ ScatterVis.prototype.initVis = function(){
         .scale(this.y)
         .orient("left");
 
-    this.svg = this.parentElement.append("svg")
+    this.svg = this._parentElement.append("svg")
         .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")

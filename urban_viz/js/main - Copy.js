@@ -21,7 +21,7 @@ $(function(){
     
 
     var MyEventHandler = new Object();
-    myMapVis= new MapView(new MapModel(data), "mapVis");
+    myMapVis= new MapView(d3.select("#mapVis"), MyEventHandler);
 
     // initially load color data
     var selectedVal = $('#sel_cate option[selected]').val();

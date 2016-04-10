@@ -1,4 +1,4 @@
-MapVis = function(_parentElement, _data, _eventHandler){
+MapView = function(_parentElement, _data, _eventHandler){
 
     this.lng_fix = Math.cos(42.352131 * Math.PI/180.0);
     this.imgRoot = "/Dropbox/thesis/img/boston/";
@@ -15,22 +15,22 @@ MapVis = function(_parentElement, _data, _eventHandler){
     //# singapore   1.302876, 103.829547
     //# tokyo       35.684226, 139.755518
 
-    this.parentElement = _parentElement;
+    this._parentElement = _parentElement;
     this.data = _data;//.filter( function(d) { return d.M; } );
     console.log("valid:", this.data.length);
     this.eventHandler = _eventHandler;
     // Create a map in the div #map
     L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
     //http://stackoverflow.com/questions/10337640/how-to-access-the-dom-element-that-correlates-to-a-d3-svg-object
-    this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.dark', {
+    this.map = L.mapbox.map(this._parentElement[0][0], 'mapbox.dark', {
             zoomControl: false
         })
         .setView([42.352131, -71.090669], 13);
-    //console.log(this.parentElement[0][0]);
+    //console.log(this._parentElement[0][0]);
     this.initVis();
 }
 
-MapVis.prototype.initVis = function(){
+MapView.prototype.initVis = function(){
     var that = this;
     this.svg = d3.select(this.map.getPanes().overlayPane).append("svg"),
         this.g = this.svg.append("g").attr("class", "leaflet-zoom-hide");
@@ -53,10 +53,10 @@ MapVis.prototype.initVis = function(){
     }
 }
 
-MapVis.prototype.updateVis = function(){
+MapView.prototype.updateVis = function(){
     var that = this;
 
-    // these two statements can be moved to initvis but projectpoint will need to be attached to MapVis directly, and the "this" in projectpoint need to be changed in order to refer to "point" in "{point: this.projectPoint}" below...
+    // these two statements can be moved to initvis but projectpoint will need to be attached to MapView directly, and the "this" in projectpoint need to be changed in order to refer to "point" in "{point: this.projectPoint}" below...
     // this.transform = d3.geo.transform({point: projectPoint}); //d3.geo.transform(methods): Creates a new stream transform using the specified hash of methods. The hash may contain implementations of any of the standard stream listener methods: sphere, point, lineStart, lineEnd, polygonStart and polygonStartonEnd
     // this.bldg_path = d3.geo.path().projection(this.transform); //projection(location): Projects forward from spherical coordinates (in degrees) to Cartesian coordinates (in pixels). Returns an array [x, y] given the input array [longitude, latitude].
 
@@ -114,7 +114,7 @@ MapVis.prototype.updateVis = function(){
     }
 }
 
-MapVis.prototype.wrangleData= function(_options){
+MapView.prototype.wrangleData= function(_options){
     // var that = this;
 
     //   if (_options.type) {
