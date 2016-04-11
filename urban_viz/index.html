@@ -59,7 +59,16 @@
             <div class="col-lg-2 col-md-3 col-sm-4" >
 
                 <div id="control">
+                    <h6>Select City:</h6>
+                    <select id="sel_layout" class="selectpicker">
+                        <option value="all" selected="selected">All</option>
+                        <option value="boston">Boston</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="newyork">New York</option>
+                        <option value="sanfrancisco">San Francisco</option>
+                    </select>
 
+                    <h6>Select Visual Feature:</h6>
                     <select id="sel_cate" class="selectpicker">
                         <option value="color">Main Color</option>
                         <option value="entropy">Visual Entropy</option>
@@ -67,8 +76,10 @@
                         <option value="deep_clusters">Deep Features</option>
                         <option value="confusion" selected="selected">District Confusion</option>
                     </select>
-
                 </div>
+
+                <div id="statsVis"></div>
+
                 <img id="pic">
             </div>
             <div class="col-lg-10 col-md-9 col-sm-8" style="height:100%">
@@ -79,4 +90,5 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/mapmodel.js"></script>
     <script type="text/javascript" src="js/mapview.js"></script>
+    <script type="text/javascript" src="js/barchart.js"></script>
 </body>    

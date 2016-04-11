@@ -1,4 +1,4 @@
-MapView = function(_parentElement, _eventHandler){
+MapVis = function(_parentElement, _eventHandler){
 
     this.imgRoot = "/Dropbox/thesis/img/boston/";
 
@@ -17,7 +17,7 @@ MapView = function(_parentElement, _eventHandler){
     this.initVis();
 };
 
-MapView.prototype.initVis = function(){
+MapVis.prototype.initVis = function(){
     var that = this;
     //$.getJSON("data/boundary_boston.geojson", function(data) {
     //    L.geoJson(data, {
@@ -31,13 +31,13 @@ MapView.prototype.initVis = function(){
     //});
 };
 
-MapView.prototype.updateVis = function(){
+MapVis.prototype.updateVis = function(){
     var that = this;
     $('.imgCircle').remove();
 
     this.map.setView( centers[this.options.cityname], 13);
 
-    this.c20b = d3.scale.category20()
+    this.palette = d3.scale.category20()
         .domain( Array.apply(null, Array(20)).map(function (_, i) {return i;}) );
 
     var outof = 4;
@@ -46,13 +46,13 @@ MapView.prototype.updateVis = function(){
         if(that.options.category === 'color') {
             return d.M;
         } else if (that.options.category === 'deep_clusters'){
-            return that.c20b(d.label_num);
+            return that.palette(d.label_num);
         } else if (that.options.category === 'confusion'){
             //console.log(d.properties.NAME, that.dataMap.get(d.properties.NAME), that.dataMap.get('Allston'));
-            return that.c20b(19-that.dataMap.get(d.properties.NAME)['cluster_outof_'+outof]);
+            return that.palette(19-that.dataMap.get(d.properties.NAME)['cluster_outof_'+outof]);
         }  else {
-            //console.log(d.cat_from_20, that.c20b(d.cat_from_20));
-            return that.c20b(d['color_for_'+that.options.category]);
+            //console.log(d.cat_from_20, that.palette(d.cat_from_20));
+            return that.palette(d['color_for_'+that.options.category]);
         }
     };
 
@@ -108,13 +108,13 @@ MapView.prototype.updateVis = function(){
     }
 };
 
-MapView.prototype.wrangleData= function(_options){
+MapVis.prototype.wrangleData= function(_options){
     var that = this;
 
     this.updateVis(); // call the update method
 };
 
-MapView.prototype.onDataChange= function(_data, _options) {
+MapVis.prototype.onDataChange= function(_data, _options) {
     this.data = _data;
 
     this.options = _options;

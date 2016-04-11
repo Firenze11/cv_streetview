@@ -1,27 +1,32 @@
 // this function is called after the HTML document is fully loaded 
 $(function(){
-    centers = {
-        barcelona   :[41.390298, 2.162001],
-        boston      :[42.352131, -71.090669],
-        brasilia    :[-15.797616, -47.891761],
-        chicago     :[41.875604, -87.645203],
-        hongkong    :[22.302156, 114.170416],
-        london      :[51.507360, -0.127630],
-        munich      :[48.139741, 11.565510],
-        paris       :[48.857527, 2.341560],
-        newyork     :[40.747783, -73.968068],
-        sanfrancisco:[37.767394, -122.447354],
-        singapore   :[1.302876, 103.829547],
-        tokyo       :[35.684226, 139.755518]
-    };
 
-    // variables keeping global knowledge of the data
-    var data = [];
-    var myMapVis;
-    
+
+    // model
+    var data = []; //for map view
+    var statsData = []; //for stats view
+    var currentStatus = {
+        city: "all",
+        feature: 'color'
+    };
+    var cities = [  {name:"Boston", id:"boston"},
+                    {name:"Chicago", id:"chicago"},
+                    {name:"New York", id:"newyork"},
+                    {name:"San Francisco", id:"sanfrancisco"} ];
+
+    //view
+    var myMaps;
+    var myBarVis;
 
     var MyEventHandler = new Object();
-    myMapVis= new MapView(new MapModel(data), "mapVis");
+
+
+
+    myMaps = new MapView(new Model(), "mapVis");
+    myBarVis = d3.custom.barChart();
+    //d3.select("#statsVis")
+    //    .datum(statsData)
+    //    .call(myBarVis);
 
     // initially load color data
     var selectedVal = $('#sel_cate option[selected]').val();
@@ -31,8 +36,33 @@ $(function(){
 
 
     //UI
+    $('#sel_layout').on('change', function(){
+        var cityChoice = this.value;
+        var _cities = cities.filter( function(d) {
+            if(cityChoice==="all"){ return true; }
+            else { return d.id === cityChoice; }
+        });
+
+        var subMapDivs = d3.select("#mapVis").selectAll("div").data(_cities);
+        subMapDivs.enter()
+            .append("div")
+            .style("height", "100%");
+        subMapDivs
+            .attr("class", function(d) {
+                var portion = Math.floor(12/_cities.length);
+                return "col-md-"+portion;
+            })
+            .attr("id", function(d) {
+                return "map_"+d.id;
+            });
+        subMapDivs.exit().remove();
+
+        $(MyEventHandler).trigger("layoutChanged", this.value);
+    });
+
     $('#sel_cate').on('change', function(){
-        load_and_change_data(this.value, 'boston');
+        $(MyEventHandler).trigger("dataChanged", this.value);
+        //load_and_change_data(this.value, 'boston');
     });
 
     // helper functions
@@ -55,7 +85,7 @@ $(function(){
                     } else {
                         data = _data;
                     }
-                    myMapVis.onDataChange(data, {category: cate, cityname: city});
+                    //myMapVis.onDataChange(data, {category: cate, cityname: city});
                 }
             });
     }

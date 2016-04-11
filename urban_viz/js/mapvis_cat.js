@@ -1,4 +1,4 @@
-MapView = function(_parentElement, _data, _eventHandler){
+MapVis = function(_parentElement, _data, _eventHandler){
 
     this.lng_fix = Math.cos(42.352131 * Math.PI/180.0);
     this.imgRoot = "/Dropbox/thesis/img/boston/";
@@ -30,14 +30,14 @@ MapView = function(_parentElement, _data, _eventHandler){
     this.initVis();
 }
 
-MapView.prototype.initVis = function(){
+MapVis.prototype.initVis = function(){
     var that = this;
     this.svg = d3.select(this.map.getPanes().overlayPane).append("svg"),
         this.g = this.svg.append("g").attr("class", "leaflet-zoom-hide");
     // default
     //this.options = {"type": "publication", "groupby": "dptm", "year":2014};
     this.options = {};
-    this.c20b = d3.scale.category20()
+    this.palette = d3.scale.category20()
         .domain(unique(this.data.map( function(d) {
             return d.label;
         })));
@@ -53,10 +53,10 @@ MapView.prototype.initVis = function(){
     }
 }
 
-MapView.prototype.updateVis = function(){
+MapVis.prototype.updateVis = function(){
     var that = this;
 
-    // these two statements can be moved to initvis but projectpoint will need to be attached to MapView directly, and the "this" in projectpoint need to be changed in order to refer to "point" in "{point: this.projectPoint}" below...
+    // these two statements can be moved to initvis but projectpoint will need to be attached to MapVis directly, and the "this" in projectpoint need to be changed in order to refer to "point" in "{point: this.projectPoint}" below...
     // this.transform = d3.geo.transform({point: projectPoint}); //d3.geo.transform(methods): Creates a new stream transform using the specified hash of methods. The hash may contain implementations of any of the standard stream listener methods: sphere, point, lineStart, lineEnd, polygonStart and polygonStartonEnd
     // this.bldg_path = d3.geo.path().projection(this.transform); //projection(location): Projects forward from spherical coordinates (in degrees) to Cartesian coordinates (in pixels). Returns an array [x, y] given the input array [longitude, latitude].
 
@@ -65,7 +65,7 @@ MapView.prototype.updateVis = function(){
     picCircles.enter()
         .append("circle")
         .attr("r", 7)
-        .style("fill", function(d) { return that.c20b(d.label); })
+        .style("fill", function(d) { return that.palette(d.label); })
         .style('opacity', 0.5)
         .on("click", function(d) {
             console.log(d.label);
@@ -114,7 +114,7 @@ MapView.prototype.updateVis = function(){
     }
 }
 
-MapView.prototype.wrangleData= function(_options){
+MapVis.prototype.wrangleData= function(_options){
     // var that = this;
 
     //   if (_options.type) {

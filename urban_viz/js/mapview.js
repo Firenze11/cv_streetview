@@ -1,93 +1,104 @@
-MapView = function(model, parentElement) {
 
-    //this.imgRoot = "/Dropbox/thesis/img/boston/";
+d3.custom.mapVis = function(model, parentElement) {
 
-    //............................................................ INTERNAL variables
-    var _that = this;
-    var _model = model;
-    //console.log("valid:", this.data.length);
-    var _parentElement = parentElement;
-    var _map;
+    var centers = {
+        barcelona   :[41.390298, 2.162001],
+        boston      :[42.352131, -71.090669],
+        brasilia    :[-15.797616, -47.891761],
+        chicago     :[41.875604, -87.645203],
+        hongkong    :[22.302156, 114.170416],
+        london      :[51.507360, -0.127630],
+        munich      :[48.139741, 11.565510],
+        paris       :[48.857527, 2.341560],
+        newyork     :[40.747783, -73.968068],
+        sanfrancisco:[37.767394, -122.447354],
+        singapore   :[1.302876, 103.829547],
+        tokyo       :[35.684226, 139.755518]
+    };
+    var category = "geojson";
 
-    //............................................................ EVENT binding
-    this.eventHandler = $.Event(this); // event object
-    this.brushed = $.Event(this);
+    var dispatch = d3.dispatch('customHover');
 
-    $(_model.eventHandler).bind("itemChanged", function() {
-        console.log(this);
-        this.updateVis();
-    });
+    function exports(_selection) {
+        _selection.each(function (_data) {
 
-    initVis();
+            var center = centers[_data.city];
 
+            var ext = d3.extent(_data.arr, function(d) { return d.value; });
+            var palette = d3.scale.linear()
+                .domain([ext[0], 0.5*(ext[0]+ext[1]), ext[1]])
+                .range(["red", "white", "green"]);
+
+            L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
+            var map = L.mapbox.map(this[0][0], 'mapbox.dark', { //"this" here is the _selection
+                zoomControl: false
+            }).setView(center, 12);
+
+
+
+            if (category === 'geojson') {
+                L.geoJson(_data.arr, {
+                    style: function (feature) {
+                        //console.log(dotColor(feature));
+                        return {color: (category === 'color') ? feature.value : palette(feature.value),
+                                fillOpacity: 0.4};
+                    },
+                    onEachFeature: function (feature, layer) { // probably need to change to more generic representation
+                        layer.bindPopup(feature.properties.NAME + ', cluster= ' + _that.dataMap.get(feature.properties.NAME)['cluster_outof_' + outof]);
+                    },
+                    className: function(feature) {
+                        return 'imgCircle '+ feature.properpies.OBJECTID;
+                    }
+                }).addTo(map);
+
+            } else {
+                this.data.forEach(function (d) {
+                    var coor = d.dir ? psudoCoor(d) : [+d.lat, +d.lng];
+
+                    L.circleMarker(coor, {
+                        stroke: false,
+                        fillColor: (category === 'color') ? feature.value : palette(feature.value),
+                        fillOpacity: 0.5,
+                        radius: 5,
+                        className: 'imgCircle ' + d.label
+                    }).on('click', function () {
+                        console.log(d.label);
+                        var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
+                        $("img#pic").attr('src', _that.imgRoot + imgName);
+                        console.log(d.label, d.cat_from_7, d.predLabel);
+                    }).addTo(map);
+                });
+            }
+
+        });
+    }
+
+
+    exports.width = function(_x) {
+        if (!arguments.length) return width;
+        width = parseInt(_x);
+        return this;
+    };
+    exports.height = function(_x) {
+        if (!arguments.length) return height;
+        height = parseInt(_x);
+        duration = 0;
+        return this;
+    };
+    exports.gap = function(_x) {
+        if (!arguments.length) return gap;
+        gap = _x;
+        return this;
+    };
+    exports.ease = function(_x) {
+        if (!arguments.length) return ease;
+        ease = _x;
+        return this;
+    };
+    d3.rebind(exports, dispatch, 'on');
 
     this.updateVis = function () {
-        $("#"+_parentElement).find('.imgCircle').remove();
 
-        _map.setView(centers[this.options.cityname], 13);
-
-        this.c20b = d3.scale.category20()
-            .domain(Array.apply(null, Array(20)).map(function (_, i) {
-                return i;
-            }));
-
-        var outof = 4;
-
-        var dotColor = function (d) {
-            if (_that.options.category === 'color') {
-                return d.M;
-            } else if (_that.options.category === 'deep_clusters') {
-                return _that.c20b(d.label_num);
-            } else if (_that.options.category === 'confusion') {
-                //console.log(d.properties.NAME, _that.dataMap.get(d.properties.NAME), _that.dataMap.get('Allston'));
-                return _that.c20b(19 - _that.dataMap.get(d.properties.NAME)['cluster_outof_' + outof]);
-            } else {
-                //console.log(d.cat_from_20, _that.c20b(d.cat_from_20));
-                return _that.c20b(d['color_for_' + _that.options.category]);
-            }
-        };
-    //
-    //    if (_that.options.category === 'confusion') {
-    //        _that.dataMap = d3.map(_that.data, function (d) {
-    //            return d.NAME;
-    //        });
-    //        $.getJSON("data/boundary_boston.json", function (data) {
-    //            //console.log('geojson',data, data.features._map(function(d) { return d.properties.NAME; }));
-    //            // remove features with no name
-    //            //data.features = data.features.filter(function(d) { return d.properties.NAME; });
-    //            //console.log(_that.dataMap.get('Allston'));
-    //            console.log(_that.data);
-    //            L.geoJson(data, {
-    //                style: function (feature) {
-    //                    //console.log(dotColor(feature));
-    //                    return {color: dotColor(feature), fillOpacity: 0.4};
-    //                },
-    //                onEachFeature: function (feature, layer) {
-    //                    layer.bindPopup(feature.properties.NAME + ', cluster= ' + _that.dataMap.get(feature.properties.NAME)['cluster_outof_' + outof]);
-    //                },
-    //                //className: function(feature) {
-    //                //    return 'imgCircle '+ feature.properpies.OBJECTID;
-    //                //}
-    //            }).addTo(_map);
-    //        });
-    //    } else {
-    //        this.data.forEach(function (d) {
-    //            var coor = d.dir ? psudoCoor(d) : [+d.lat, +d.lng];
-    //
-    //            L.circleMarker(coor, {
-    //                stroke: false,
-    //                fillColor: dotColor(d),
-    //                fillOpacity: 0.5,
-    //                radius: 5,
-    //                className: 'imgCircle ' + d.label
-    //            }).on('click', function () {
-    //                console.log(d.label);
-    //                var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
-    //                $("img#pic").attr('src', _that.imgRoot + imgName);
-    //                console.log(d.label, d.cat_from_7, d.predLabel);
-    //            }).addTo(_map);
-    //        });
-    //    }
     };
 
     this.wrangleData = function (_options) {
@@ -111,7 +122,7 @@ MapView = function(model, parentElement) {
         //        //onEachFeature: function (feature, layer) {
         //        //    layer.bindPopup(feature.properties.description);
         //        //}
-        //    }).addTo(_that._map);
+        //    }).addTo(_that.map);
         //});
 
         this.wrangleData();
@@ -120,14 +131,6 @@ MapView = function(model, parentElement) {
 
     //............................................................ HELPER functions
 
-
-    function initVis() {
-        L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
-        //http://stackoverflow.com/questions/10337640/how-to-access-the-dom-element-that-correlates-to-a-d3-svg-object
-        _map = L.mapbox.map(_parentElement, 'mapbox.dark', {
-            zoomControl: false
-        }).setView([42.352131, -71.090669], 13);
-    }
 
     function psudoCoor(d) {
         var psudoLat = +d.lat,
@@ -150,5 +153,6 @@ MapView = function(model, parentElement) {
 
     //............................................................ RETURN self
 
-    return this;
+
+    return exports;
 };
