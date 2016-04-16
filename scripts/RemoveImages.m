@@ -9,7 +9,7 @@ outputDir = 'C:\Users\lezhi\Dropbox\thesis\img_dense2';
 
 allCityNames = dir(inputDir);
 allCityNames = {allCityNames([allCityNames.isdir]).name};
-allCityNames(ismember(allCityNames,{'.','..','boston','singapore'})) = [];
+allCityNames(ismember(allCityNames,{'.','..','boston','singapore','newyork'})) = [];
 
 for c = 1:length(allCityNames)
     allFiles = dir(fullfile(inputDir, allCityNames{c}));
