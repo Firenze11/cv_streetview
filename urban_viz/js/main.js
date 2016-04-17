@@ -1,101 +1,63 @@
 // this function is called after the HTML document is fully loaded 
+/**
+ * Created by lezhi on 3/17/2016.
+ */
+
 $(function(){
 
-
-    // model
-    var data = []; //for map view
-    var statsData = []; //for stats view
-    var currentStatus = {
-        city: "all",
-        feature: 'color'
+    var centers = {
+        barcelona   :[41.390298, 2.162001],
+        boston      :[42.352131, -71.090669],
+        brasilia    :[-15.797616, -47.891761],
+        chicago     :[41.875604, -87.645203],
+        hongkong    :[22.302156, 114.170416],
+        london      :[51.507360, -0.127630],
+        munich      :[48.139741, 11.565510],
+        paris       :[48.857527, 2.341560],
+        newyork     :[40.747783, -73.968068],
+        sanfrancisco:[37.767394, -122.447354],
+        singapore   :[1.302876, 103.829547],
+        tokyo       :[35.684226, 139.755518]
     };
-    var cities = [  {name:"Boston", id:"boston"},
-                    {name:"Chicago", id:"chicago"},
-                    {name:"New York", id:"newyork"},
-                    {name:"San Francisco", id:"sanfrancisco"} ];
 
-    //view
-    var myMaps;
-    var myBarVis;
+    //var data = [];
 
-    var MyEventHandler = new Object();
-
-
-
-    myMaps = new MapView(new Model(), "mapVis");
-    myBarVis = d3.custom.barChart();
-    //d3.select("#statsVis")
-    //    .datum(statsData)
-    //    .call(myBarVis);
-
-    // initially load color data
-    var selectedVal = $('#sel_cate option[selected]').val();
-
-    load_and_change_data(selectedVal, 'boston');
-
-
-
-    //UI
-    $('#sel_layout').on('change', function(){
-        var cityChoice = this.value;
-        var _cities = cities.filter( function(d) {
-            if(cityChoice==="all"){ return true; }
-            else { return d.id === cityChoice; }
+    var dataLoaded = function (_data) {
+        // pre-processing
+        // assigning centers to geojson objects
+        var dataCenters = [centers.boston, centers.chicago, centers.newyork, centers.sanfrancisco];
+        dataCenters = dataCenters.map( function(d) {
+            return [d[1], d[0]];
         });
-
-        var subMapDivs = d3.select("#mapVis").selectAll("div").data(_cities);
-        subMapDivs.enter()
-            .append("div")
-            .style("height", "100%");
-        subMapDivs
-            .attr("class", function(d) {
-                var portion = Math.floor(12/_cities.length);
-                return "col-md-"+portion;
-            })
-            .attr("id", function(d) {
-                return "map_"+d.id;
-            });
-        subMapDivs.exit().remove();
-
-        $(MyEventHandler).trigger("layoutChanged", this.value);
+        _data.forEach( function(d, i) {
+            d.center = dataCenters[i];
     });
 
-    $('#sel_cate').on('change', function(){
-        $(MyEventHandler).trigger("dataChanged", this.value);
-        //load_and_change_data(this.value, 'boston');
-    });
 
-    // helper functions
-    function load_and_change_data(cate, city) {
+        var myMapVis = d3.custom.mapVis();
+        d3.selectAll(".map")
+            .data(_data)
+            .call(myMapVis);
+    };
+
+    var startHere = function(){
         queue()
-            .defer(d3.csv, "data/"+ cate +"_"+ city +".csv")
-            .await(function(error, _data){
+            .defer(d3.json, "data/boundary_boston.geojson")
+            .defer(d3.json, "data/boundary_chicago.geojson")
+            .defer(d3.json, "data/boundary_newyork.geojson")
+            .defer(d3.json, "data/boundary_sanfrancisco.geojson")
+            .await(function(error, boston, chicago, newyork, sanfrancisco) {
                 if (error) {
                     console.log(error);
                 } else {
-
-                    if (!myMapVis) {
-
-                    }
-
-                    if(cate === 'color') {
-                        data = _data.filter( function(d) { return d.M; } );
-                    } else if (cate === '') {
-                        //........................................complete other preprocessing
-                    } else {
-                        data = _data;
-                    }
-                    //myMapVis.onDataChange(data, {category: cate, cityname: city});
+                    //boston.forEach( function(d) {
+                    //    for(var i= 0; i<24; i++){
+                    //        d[i] = +d[i];
+                    //    }
+                    //});
+                    return dataLoaded([boston, chicago, newyork, sanfrancisco]);
                 }
             });
     }
-});
-
-// static helper functions
-function unique(list) {
-    var result = [];
-    $.each(list, function(i, e) {
-        if ($.inArray(e, result) == -1) result.push(e);
-    });
-    return result;
-}
+    startHere();
+})
