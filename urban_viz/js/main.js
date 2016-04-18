@@ -2,10 +2,11 @@
 /**
  * Created by lezhi on 3/17/2016.
  */
+d3.custom = {};
 
 $(function(){
 
-    d3.custom = {};
+
 
     var centers = {
         barcelona   :[41.390298, 2.162001],
@@ -24,7 +25,8 @@ $(function(){
 
     //var data = [];
 
-    var dataLoaded = function (_data) {
+    var dataLoaded = function (_data, _nodeData, _linkData) {
+
         // pre-processing
         // assigning centers to geojson objects
         var dataCenters = [centers.boston, centers.chicago, centers.newyork, centers.sanfrancisco];
@@ -33,11 +35,18 @@ $(function(){
         });
         _data.forEach( function(d, i) {
             d.center = dataCenters[i];
-    });
-
+        });
+        var districtNodes = _nodeData;
+        var districtNodesMap = d3.map(districtNodes, function(d) { return d.name; });
+        _linkData.forEach( function(d) {
+            d.source = districtNodesMap.get(d.source);
+            d.target = districtNodesMap.get(d.target);
+        });
 
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
         var pointMap = d3.custom.mapVis().shapeType("point");
+        var myForceVis = d3.custom.forceVis().numClusters(3);
+
         d3.selectAll(".map-polygon")
             .data(_data)
             .call(polygonMap);
@@ -45,19 +54,26 @@ $(function(){
         //d3.selectAll(".map-point")
         //    .data(_data)
         //    .call(pointMap);
+
+        d3.select("#nodeVis")
+            .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 2.2; }) })
+            .call(myForceVis);
     };
 
     var startHere = function(){
+
         queue()
             .defer(d3.json, "data/boundary_boston.geojson")
             .defer(d3.json, "data/boundary_chicago.geojson")
             .defer(d3.json, "data/boundary_newyork.geojson")
             .defer(d3.json, "data/boundary_sanfrancisco.geojson")
+            .defer(d3.csv, "data/deep_cluster_boston.csv")
+            .defer(d3.csv, "data/link_boston.csv")
             //.defer(d3.csv, "data/labels_dense_boston.csv")
             //.defer(d3.csv, "data/labels_dense_chicago.csv")
             //.defer(d3.csv, "data/labels_dense_newyork.csv")
             //.defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
-            .await(function(error, boston, chicago, newyork, sanfrancisco) {
+            .await(function(error, boston, chicago, newyork, sanfrancisco, node, link) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -66,7 +82,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([boston, chicago, newyork, sanfrancisco]);
+                    return dataLoaded([boston, chicago, newyork, sanfrancisco], node, link);
                 }
             });
     }

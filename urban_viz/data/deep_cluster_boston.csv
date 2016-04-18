@@ -1,0 +1,41 @@
+name,cluster_outof_2,cluster_outof_3,cluster_outof_4,cluster_outof_5,cluster_outof_6,cluster_outof_7
+Agassiz,0,0,0,4,2,5
+Allston,0,0,0,0,5,4
+Area 2/MIT,0,0,0,1,1,1
+BROOKLINE_02445,0,0,0,1,4,3
+BROOKLINE_02446,0,0,0,1,4,3
+Back Bay,1,2,3,2,0,2
+Bay Village,1,2,2,1,1,1
+Beacon Hill,1,2,3,1,1,1
+Brighton,0,0,0,0,5,4
+Cambridgeport,0,0,0,1,4,3
+Charlestown,0,1,1,0,5,6
+Chinatown,1,2,3,2,0,2
+Dorchester,0,0,0,0,4,3
+Downtown,1,2,3,2,0,2
+EVERETT_02149,0,1,1,0,5,6
+East Boston,0,1,1,3,3,0
+East Cambridge,0,1,2,3,3,0
+Fenway,1,0,2,1,1,1
+Jamaica Plain,0,0,0,1,4,3
+Leather District,1,2,3,2,0,2
+Longwood Medical Area,0,0,2,1,4,3
+MEDFORD_02155,0,0,0,0,4,4
+Mid-Cambridge,0,0,2,4,2,5
+Mission Hill,0,0,2,1,4,3
+Neighborhood Nine,0,0,0,4,2,5
+North Cambridge,0,0,0,4,2,5
+North End,1,2,3,2,0,2
+Riverside,0,0,2,1,1,1
+Roxbury,0,0,0,1,1,3
+SOMERVILLE_02143,0,0,2,4,2,5
+SOMERVILLE_02144,0,0,0,4,2,5
+SOMERVILLE_02145,0,1,1,0,3,0
+South Boston,0,1,1,3,3,0
+South Boston Waterfront,1,1,1,3,3,0
+South End,1,2,2,1,1,1
+The Port,0,0,2,4,2,5
+WATERTOWN_02472,0,0,0,0,5,4
+Wellington-Harrington,0,0,2,3,3,0
+West Cambridge,0,0,0,4,2,5
+West End,1,2,2,1,1,1

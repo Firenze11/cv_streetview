@@ -62,3 +62,8 @@ select {
     border: none;
     border-bottom: solid;
 }
+
+.link {
+    stroke: #999;
+    stroke-opacity: .6;
+}

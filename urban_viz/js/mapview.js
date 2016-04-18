@@ -16,6 +16,8 @@ d3.custom.mapVis = function module() {
         // generate chart here, using `width` and `height`
         _selection.each(function(_data) {
             // generate chart here; `d` is the data and `this` is the element
+            svg = d3.select(this).append('svg');
+            svg.transition().duration(duration).attr({width: width, height: height});
 
             var projection = d3.geo.mercator()
                 .scale(132000)
@@ -25,10 +27,6 @@ d3.custom.mapVis = function module() {
             var path = d3.geo.path()
                 .projection(projection);
 
-
-            svg = d3.select(this)
-                    .append('svg');
-            svg.transition().duration(duration).attr({width: width, height: height});
 
             if(shapeType === "polygon") {
                 svg.selectAll("path")
@@ -48,8 +46,6 @@ d3.custom.mapVis = function module() {
                         return "translate("+p[0]+","+p[1]+")";
                     });
             }
-
-
         });
     }
 
@@ -72,4 +68,4 @@ d3.custom.mapVis = function module() {
     };
 
     return my;
-}
+};
