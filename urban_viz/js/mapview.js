@@ -1,8 +1,6 @@
-d3.custom = {};
-
 d3.custom.mapVis = function module() {
     var width = 265, // default width
-        height = 300, // default height
+        height = 265, // default height
         shapeType = "polygon", // OR "point"
         duration = 500;
     var svg;
@@ -20,7 +18,7 @@ d3.custom.mapVis = function module() {
             // generate chart here; `d` is the data and `this` is the element
 
             var projection = d3.geo.mercator()
-                .scale(128000)
+                .scale(132000)
                 .rotate([-_data.center[0], -_data.center[1]])  // negative!!
                 .translate([width/2, height/2]); // LONG - LAT of center point
 
@@ -44,7 +42,7 @@ d3.custom.mapVis = function module() {
                     .data(_data)
                     .enter().append("circle")
                     .attr("class", "cccc")
-                    .attr("r", 1)
+                    .attr("r", 1.2)
                     .attr("transform", function(d) {
                         var p = projection([d.lng, d.lat]);
                         return "translate("+p[0]+","+p[1]+")";

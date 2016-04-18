@@ -9,48 +9,16 @@
 
     <title>Urban Viz</title>
 
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <style>
-    body {
-        font-size: 12px;
-    }
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Jura:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
-    svg {
-        position: relative;
-    }
-    circle {
-        cursor: default;
-    }
-
-    #maps, #mapsdot {
-        /*position: absolute;*/
-        height: 300px;
-        /*width: 100%;*/
-        background-color: #ddd;
-    }
-    #pic {
-        max-width:100%;
-        max-height:100%;
-    }
-    .district{
-        stroke: #ddd;
-        fill: #fff;
-        fill-opacity: 0.6;
-    }
-    .district:hover{
-        fill: #ff0000;
-        fill-opacity: 0.2;
-    }
-
-    select {
-        border: none;
-        border-bottom: solid;
-    }
-
-</style>
 
     <!-- JS Libraries -->
     <script type="text/javascript" src="libs/d3.js"></script>
@@ -67,47 +35,118 @@
 
 <body id="page-top" class="index">
 
-    <!-- Visualization Section -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4" >
-                <div id="control">
-                    <h6>Select City:</h6>
-                    <select id="sel_layout" class="selectpicker">
-                        <option value="all" selected="selected">All</option>
-                        <option value="boston">Boston</option>
-                        <option value="chicago">Chicago</option>
-                        <option value="newyork">New York</option>
-                        <option value="sanfrancisco">San Francisco</option>
-                    </select>
 
-                    <h6>Select Visual Feature:</h6>
-                    <select id="sel_cate" class="selectpicker">
-                        <option value="color">Main Color</option>
-                        <option value="entropy">Visual Entropy</option>
-                        <option value="sky_tree">Sky Area</option>
-                        <option value="deep_clusters">Deep Features</option>
-                        <option value="confusion" selected="selected">District Confusion</option>
-                    </select>
+        <!--START of secret section-->
+        <section id="secret">
+
+            <div class="row ">
+                <h1 class="col-md-12"> Secrets Captured by Street View </h1>
+                <div class="col-md-12 control">
+                    <h6> Choose an attribute category... </h6>
+                    <h3>
+                        <select id="sel_cate" class="selectpicker">
+                            <option value="color" selected="selected">Main Color</option>
+                            <option value="entropy">Visual Entropy</option>
+                            <option value="sky_tree">Sky Area</option>
+                            <option value="all" >All</option>
+                        </select>
+                    </h3>
                 </div>
-
-                <div id="statsVis"></div>
-
-                <img id="pic">
             </div>
-        </div>
-        <div class="row" id="maps">
-            <div class="col-md-3 map"></div> <!--style="height:100%"-->
-            <div class="col-md-3 map"></div>
-            <div class="col-md-3 map"></div>
-            <div class="col-md-3 map"></div>
-        </div>
-        <div class="row" id="mapsdot">
-            <div class="col-md-3 map-dot"></div>
-            <div class="col-md-3 map-dot"></div>
-            <div class="col-md-3 map-dot"></div>
-            <div class="col-md-3 map-dot"></div>
-        </div>
+
+            <div class="row">
+                <p class="col-md-6">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes,
+                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    Nullam dictum felis eu pede mollis pretium. Integer
+                </p>
+                <div class="col-md-6 metavis">
+                    <div id="statsVis"></div>
+                    <img id="pic">
+                </div>
+            </div>
+
+            <ul class="row text-center mainVis" id="mapsdot">
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-point"></div>
+                    <h4>Boston</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-point"></div>
+                    <h4>Chicago</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-point"></div>
+                    <h4>New York</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-point"></div>
+                    <h4>San Francisco</h4>
+                    <!--<hr>-->
+                </li>
+            </ul>
+        </section>
+        <!--END of secret section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of similarity section-->
+        <section id="similarity">
+
+            <div class="row ">
+                <h1 class="col-md-12"> Which Neighborhoods Look Alike </h1>
+
+                <p class="col-md-6">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes,
+                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    Nullam dictum felis eu pede mollis pretium. Integer
+                </p>
+            </div>
+
+            <div class="row mainVis">
+                <div class="col-md-12" id="nodeVis">  </div>
+            </div>
+
+            <ul class="row text-center mainVis" id="mapspolygon">
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-polygon"></div>
+                    <h4>Boston</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-polygon"></div>
+                    <h4>Chicago</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-polygon"></div>
+                    <h4>New York</h4>
+                    <!--<hr>-->
+                </li>
+                <li class="col-md-3">
+                    <div class="fullwidth map-small map-polygon"></div>
+                    <h4>San Francisco</h4>
+                    <!--<hr>-->
+                </li>
+            </ul>
+
+        </section>
+        <!--END of similarity section-->
+
     </div>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/mapview.js"></script>

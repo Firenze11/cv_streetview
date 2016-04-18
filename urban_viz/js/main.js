@@ -5,6 +5,8 @@
 
 $(function(){
 
+    d3.custom = {};
+
     var centers = {
         barcelona   :[41.390298, 2.162001],
         boston      :[42.352131, -71.090669],
@@ -34,26 +36,27 @@ $(function(){
     });
 
 
-        //var polygonMap = d3.custom.mapVis().shapeType("polygon");
+        var polygonMap = d3.custom.mapVis().shapeType("polygon");
         var pointMap = d3.custom.mapVis().shapeType("point");
-        //d3.selectAll(".map")
-        //    .data(_data)
-        //    .call(polygonMap);
-        d3.selectAll(".map-dot")
+        d3.selectAll(".map-polygon")
             .data(_data)
-            .call(pointMap);
+            .call(polygonMap);
+
+        //d3.selectAll(".map-point")
+        //    .data(_data)
+        //    .call(pointMap);
     };
 
     var startHere = function(){
         queue()
-            //.defer(d3.json, "data/boundary_boston.geojson")
-            //.defer(d3.json, "data/boundary_chicago.geojson")
-            //.defer(d3.json, "data/boundary_newyork.geojson")
-            //.defer(d3.json, "data/boundary_sanfrancisco.geojson")
-            .defer(d3.csv, "data/labels_dense_boston.csv")
-            .defer(d3.csv, "data/labels_dense_chicago.csv")
-            .defer(d3.csv, "data/labels_dense_newyork.csv")
-            .defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
+            .defer(d3.json, "data/boundary_boston.geojson")
+            .defer(d3.json, "data/boundary_chicago.geojson")
+            .defer(d3.json, "data/boundary_newyork.geojson")
+            .defer(d3.json, "data/boundary_sanfrancisco.geojson")
+            //.defer(d3.csv, "data/labels_dense_boston.csv")
+            //.defer(d3.csv, "data/labels_dense_chicago.csv")
+            //.defer(d3.csv, "data/labels_dense_newyork.csv")
+            //.defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
             .await(function(error, boston, chicago, newyork, sanfrancisco) {
                 if (error) {
                     console.log(error);

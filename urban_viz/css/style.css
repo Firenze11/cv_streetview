@@ -1,0 +1,64 @@
+body {
+    font-family: 'Jura', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 100;
+    font-size: 12px;
+}
+h1 {
+    font-family: 'Jura', sans-serif;
+}
+.control {
+    margin-bottom: 20px;
+}
+.map-small {
+    height: 265px;
+}
+.fullwidth {
+    width: 100%;
+}
+ul {
+    list-style: none;
+    -webkit-padding-start: 0; /* otherwise there will be padding on the left*/
+}
+section {
+    padding: 100px 0 200px ;
+}
+.mainVis {
+    margin-top: 10px;
+}
+circle {
+    cursor: default;
+}
+
+#mapspolygon, #mapsdot {
+    /*position: absolute;*/
+    /*height: 300px;*/
+    /*width: 100%;*/
+    background-color: #ddd;
+    /*padding-top: 30px;*/
+    /*padding-bottom: 30px;*/
+}
+#nodeVis {
+    height: 300px;
+    border-color: #ddd;
+    border-width: 2px;
+    border-style: dashed;
+}
+#pic {
+    max-width:100%;
+    max-height:100%;
+}
+.district{
+    stroke: #ddd;
+    fill: #fff;
+    fill-opacity: 0.6;
+}
+.district:hover{
+    fill: #ff0000;
+    fill-opacity: 0.2;
+}
+
+select {
+    border: none;
+    border-bottom: solid;
+}
