@@ -115,4 +115,4 @@ d3.custom.forceVis = function module() {
     };
 
     return my;
-}
+};
