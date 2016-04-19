@@ -47,13 +47,13 @@ $(function(){
         var pointMap = d3.custom.mapVis().shapeType("point");
         var myForceVis = d3.custom.forceVis().numClusters(3);
 
-        d3.selectAll(".map-polygon")
-            .data(_data)
-            .call(polygonMap);
-
-        //d3.selectAll(".map-point")
+        //d3.selectAll(".map-polygon")
         //    .data(_data)
-        //    .call(pointMap);
+        //    .call(polygonMap);
+
+        d3.selectAll(".map-point")
+            .data(_data)
+            .call(pointMap);
 
         d3.select("#nodeVis")
             .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 2.2; }) })
@@ -63,16 +63,16 @@ $(function(){
     var startHere = function(){
 
         queue()
-            .defer(d3.json, "data/boundary_boston.geojson")
-            .defer(d3.json, "data/boundary_chicago.geojson")
-            .defer(d3.json, "data/boundary_newyork.geojson")
-            .defer(d3.json, "data/boundary_sanfrancisco.geojson")
+            //.defer(d3.json, "data/boundary_boston.geojson")
+            //.defer(d3.json, "data/boundary_chicago.geojson")
+            //.defer(d3.json, "data/boundary_newyork.geojson")
+            //.defer(d3.json, "data/boundary_sanfrancisco.geojson")
+            .defer(d3.csv, "data/labels_dense_boston.csv")
+            .defer(d3.csv, "data/labels_dense_chicago.csv")
+            .defer(d3.csv, "data/labels_dense_newyork.csv")
+            .defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
             .defer(d3.csv, "data/deep_cluster_boston.csv")
             .defer(d3.csv, "data/link_boston.csv")
-            //.defer(d3.csv, "data/labels_dense_boston.csv")
-            //.defer(d3.csv, "data/labels_dense_chicago.csv")
-            //.defer(d3.csv, "data/labels_dense_newyork.csv")
-            //.defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
             .await(function(error, boston, chicago, newyork, sanfrancisco, node, link) {
                 if (error) {
                     console.log(error);
