@@ -25,7 +25,7 @@ $(function(){
 
     //var data = [];
 
-    var dataLoaded = function (_data, _nodeData, _linkData) {
+    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData) {
 
         // pre-processing
         // assigning centers to geojson objects
@@ -33,7 +33,10 @@ $(function(){
         dataCenters = dataCenters.map( function(d) {
             return [d[1], d[0]];
         });
-        _data.forEach( function(d, i) {
+        _ptData.forEach( function(d, i) {
+            d.center = dataCenters[i];
+        });
+        _pgData.forEach( function(d, i) {
             d.center = dataCenters[i];
         });
         var districtNodes = _nodeData;
@@ -47,12 +50,12 @@ $(function(){
         var pointMap = d3.custom.mapVis().shapeType("point");
         var myForceVis = d3.custom.forceVis().numClusters(3);
 
-        //d3.selectAll(".map-polygon")
-        //    .data(_data)
-        //    .call(polygonMap);
+        d3.selectAll(".map-polygon")
+            .data(_pgData)
+            .call(polygonMap);
 
         d3.selectAll(".map-point")
-            .data(_data)
+            .data(_ptData)
             .call(pointMap);
 
         d3.select("#nodeVis")
@@ -63,17 +66,17 @@ $(function(){
     var startHere = function(){
 
         queue()
-            //.defer(d3.json, "data/boundary_boston.geojson")
-            //.defer(d3.json, "data/boundary_chicago.geojson")
-            //.defer(d3.json, "data/boundary_newyork.geojson")
-            //.defer(d3.json, "data/boundary_sanfrancisco.geojson")
             .defer(d3.csv, "data/labels_dense_boston.csv")
             .defer(d3.csv, "data/labels_dense_chicago.csv")
             .defer(d3.csv, "data/labels_dense_newyork.csv")
             .defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
+            .defer(d3.json, "data/boundary_boston.geojson")
+            .defer(d3.json, "data/boundary_chicago.geojson")
+            .defer(d3.json, "data/boundary_newyork.geojson")
+            .defer(d3.json, "data/boundary_sanfrancisco.geojson")
             .defer(d3.csv, "data/deep_cluster_boston.csv")
             .defer(d3.csv, "data/link_boston.csv")
-            .await(function(error, boston, chicago, newyork, sanfrancisco, node, link) {
+            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -82,7 +85,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([boston, chicago, newyork, sanfrancisco], node, link);
+                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link);
                 }
             });
     }
