@@ -16,7 +16,7 @@ MapVis = function(_parentElement, _data, _eventHandler){
     //# tokyo       35.684226, 139.755518
 
     this.parentElement = _parentElement;
-    this.data = _data.filter( function(d) { return d.M; } );
+    this.data = _data.filter( function(d) { return d.color; } );
     console.log("valid:", this.data.length);
     this.eventHandler = _eventHandler;
     // Create a map in the div #map
@@ -64,9 +64,9 @@ MapVis.prototype.updateVis = function(){
                             .data(this.data);
     picCircles.enter()
         .append("circle")
-        .attr("r", 4)
-        .style("fill", function(d) { return d.M;})//return that.c20b(d.label); })
-        .style('opacity', 0.7)
+        .attr("r", 6)
+        .style("fill", function(d) { return d.color;})//return that.c20b(d.label); })
+        .style('opacity', 0.8)
         .on("click", function(d) {
             console.log(d.label);
             var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
@@ -94,11 +94,11 @@ MapVis.prototype.updateVis = function(){
                     psudoLng = +d.lng;
                 var sep = 0.0004;
 
-                if (d.dir == 2) {psudoLat = +d.lat - sep; }
-                if (d.dir == 0) {psudoLat = +d.lat + sep; }
-
-                if (d.dir == 3) {psudoLng = +d.lng - sep/that.lng_fix; }
-                if (d.dir == 1) {psudoLng = +d.lng + sep/that.lng_fix; }
+                //if (d.dir == 2) {psudoLat = +d.lat - sep; }
+                //if (d.dir == 0) {psudoLat = +d.lat + sep; }
+                //
+                //if (d.dir == 3) {psudoLng = +d.lng - sep/that.lng_fix; }
+                //if (d.dir == 1) {psudoLng = +d.lng + sep/that.lng_fix; }
                 //psudoLat = d.lat;
 
                 return "translate(" + projectPoint(psudoLat, psudoLng) + ")";
