@@ -32,13 +32,21 @@ d3.custom.parallelVis = function module() {
             // Extract the list of dimensions and create a scale for each.
             x.domain(dimensions = d3.keys(_data[0]).filter(function(d) {
                 return d != "name" && (y[d] = d3.scale.linear()
-                        .domain(d3.extent(cars, function(p) { return +p[d]; }))
+                        .domain(d3.extent(_data, function(p) { return +p[d]; }))
                         .range([height, 0]));
             }));
 
             // Add grey background lines for context.
             background = svg.append("g")
                 .attr("class", "background")
+                .selectAll("path")
+                .data(_data)
+                .enter().append("path")
+                .attr("d", path);
+
+            // Add blue foreground lines for focus.
+            foreground = svg.append("g")
+                .attr("class", "foreground")
                 .selectAll("path")
                 .data(_data)
                 .enter().append("path")

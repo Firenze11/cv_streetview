@@ -38,7 +38,7 @@ circle {
     /*padding-top: 30px;*/
     /*padding-bottom: 30px;*/
 }
-#nodeVis {
+#nodeVis, #parallelVis {
     height: 300px;
     border-color: #ddd;
     border-width: 2px;
@@ -63,7 +63,37 @@ select {
     border-bottom: solid;
 }
 
+/* nodeVis */
 .link {
     stroke: #999;
     stroke-opacity: .6;
+}
+
+/* parallelVis */
+.background path {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
+}
+
+.foreground path {
+    fill: none;
+    stroke: steelblue;
+}
+
+.brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
 }
