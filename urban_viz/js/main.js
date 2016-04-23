@@ -47,7 +47,7 @@ $(function(){
         });
 
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
-        var pointMap = d3.custom.mapVis().shapeType("point");
+        var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
         var myForceVis = d3.custom.forceVis().numClusters(3);
         var myParallelVis = d3.custom.parallelVis();
 
@@ -55,10 +55,10 @@ $(function(){
         //    .data(_pgData)
         //    .call(polygonMap);
         //
-        //d3.selectAll(".map-point")
-        //    .data(_ptData)
-        //    .call(pointMap);
-        //
+        d3.selectAll(".map-point")
+            .data(_ptData)
+            .call(pointMap);
+
         //d3.select("#nodeVis")
         //    .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 2.2; }) })
         //    .call(myForceVis);

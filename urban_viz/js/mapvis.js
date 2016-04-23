@@ -28,14 +28,14 @@ d3.custom.mapVis = function module() {
                 .projection(projection);
 
 
-            if(shapeType === "polygon") {
+            if(shapeType === "polygon") {  //......................................polygon map
                 svg.selectAll("path")
                     .data(_data.features)
                     .enter().append("path")
                     .attr("class", "district")
                     .attr("d", path);
 
-            } else if(shapeType === "point") {
+            } else if(shapeType === "point") {  //.................................point map
                 svg.selectAll("circle")
                     .data(_data)
                     .enter().append("circle")
@@ -45,6 +45,35 @@ d3.custom.mapVis = function module() {
                         var p = projection([d.lng, d.lat]);
                         return "translate("+p[0]+","+p[1]+")";
                     });
+            } else if(shapeType === "hexbin") {  //................................hexbin map
+
+                var color = d3.time.scale()
+                    .domain([new Date(1962, 0, 1), new Date(2006, 0, 1)])
+                    .range(["black", "steelblue"])
+                    .interpolate(d3.interpolateLab);
+
+                var hexbin = d3.hexbin()
+                    .size([width, height])
+                    .radius(3);
+
+                var radius = d3.scale.sqrt()
+                    .domain([0, 12])
+                    .range([0, 8]);
+
+                _data.forEach(function(d) {
+                    var p = projection([d.lng, d.lat]);
+                    d[0] = p[0];
+                    d[1] = p[1];
+                });
+
+                svg.append("g")
+                    .attr("class", "hexagons")
+                    .selectAll("path")
+                    .data(hexbin(_data).sort(function(a, b) { return b.length - a.length; }))
+                    .enter().append("path")
+                    .attr("d", function(d) { return hexbin.hexagon(2.8); })//radius(d.length)); })
+                    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+                    .style("fill", function(d) { return color(d3.median(d, function(d) { return +d.date; })); });
             }
         });
     }
