@@ -3,7 +3,10 @@
  * Created by lezhi on 3/17/2016.
  */
 
+var imgroot = '/Dropbox/thesis/img/';
+
 $(function(){
+
 
     var centers = {
         barcelona   :[41.390298, 2.162001],
@@ -19,6 +22,44 @@ $(function(){
         singapore   :[1.302876, 103.829547],
         tokyo       :[35.684226, 139.755518]
     };
+
+    $('.jcarousel').jcarousel({
+        center: true
+    });
+
+    $('.jcarousel-control-prev')
+        .on('jcarouselcontrol:active', function() {
+            $(this).removeClass('inactive');
+        })
+        .on('jcarouselcontrol:inactive', function() {
+            $(this).addClass('inactive');
+        })
+        .jcarouselControl({
+            target: '-=1'
+        });
+
+    $('.jcarousel-control-next')
+        .on('jcarouselcontrol:active', function() {
+            $(this).removeClass('inactive');
+        })
+        .on('jcarouselcontrol:inactive', function() {
+            $(this).addClass('inactive');
+        })
+        .jcarouselControl({
+            target: '+=1'
+        });
+
+    $('.jcarousel-pagination')
+        .on('jcarouselpagination:active', 'a', function() {
+            $(this).addClass('active');
+        })
+        .on('jcarouselpagination:inactive', 'a', function() {
+            $(this).removeClass('active');
+        })
+        .jcarouselPagination();
+
+
+
 
     //var data = [];
 

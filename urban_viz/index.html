@@ -25,6 +25,7 @@
     <script type="text/javascript" src="libs/hexbin.js"></script>
     <script type="text/javascript" src="libs/queue.min.js"></script>
     <script type="text/javascript" src="libs/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="libs/jquery.jcarousel.js"></script>
     <script type="text/javascript" src="libs/topojson.js"></script>
     <script type="text/javascript" src="libs/bootstrap.js"></script>
 
@@ -68,9 +69,26 @@
                     Nullam dictum felis eu pede mollis pretium. Integer
                 </p>
                 <div class="col-md-6 metavis">
-                    <div id="statsVis"></div>
-                    <img id="pic">
+                    <div id="statsVis" class="col-md-6"></div>
+
+                    <!-- Carousel -->
+                    <div class="col-md-6 jcarousel-wrapper">
+                        <div class="jcarousel" >
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                    </div>
+
                 </div>
+
+
+
             </div>
 
             <ul class="row text-center mainVis" id="mapsdot">

@@ -105,3 +105,77 @@ select {
 circle:not(.highlight) {
     fill: #aaa;
 }
+
+/*.................................................................j carousel*/
+/*
+This is the visible area of you carousel.
+Set a width here to define how much items are visible.
+The width can be either fixed in px or flexible in %.
+Position must be relative!
+*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+    width: 160px;
+    height: 120px;
+}
+
+/*........................................................j carousel control*/
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 0%;
+    /*width: 30px;*/
+    /*height: 30px;*/
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 4px #666;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* do not underline*/
+.jcarousel-control-prev:focus,
+.jcarousel-control-next:focus {
+    text-decoration: none;
+    color: #fff;
+}
+.jcarousel-control-prev:hover,
+.jcarousel-control-next:hover {
+    text-decoration: none;
+    color: #aaa;
+}
+
+
+.jcarousel-control-prev {
+    left: -5px;
+}
+
+.jcarousel-control-next {
+    right: -5px;
+}

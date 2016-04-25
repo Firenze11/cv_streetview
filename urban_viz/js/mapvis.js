@@ -81,6 +81,9 @@ d3.custom.mapVis = function module() {
                 symbols.enter().append("circle")
                     .attr("class", function (d) {
                         return "point_" + d.id;
+                    })
+                    .on("click", function(d) {
+                        console.log(d.lat, d.lng);
                     });
                 symbols.attr("r", radius)
                     .attr("transform", function (d) {
