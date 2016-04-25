@@ -1,0 +1,781 @@
+source,target,value
+Agassiz,Charlestown,0
+Agassiz,East Boston,0
+Agassiz,Fenway,0
+Agassiz,South Boston,0
+Area 2/MIT,BROOKLINE_02445,0
+BROOKLINE_02445,Bay Village,0
+BROOKLINE_02445,Chinatown,0
+BROOKLINE_02445,Downtown,0
+BROOKLINE_02445,Leather District,0
+BROOKLINE_02446,South Boston Waterfront,0
+Back Bay,Brighton,0
+Back Bay,East Boston,0
+Bay Village,Charlestown,0
+Bay Village,Dorchester,0
+Bay Village,Leather District,0
+Bay Village,MEDFORD_02155,0
+Bay Village,Neighborhood Nine,0
+Bay Village,SOMERVILLE_02145,0
+Beacon Hill,Brighton,0
+Beacon Hill,Dorchester,0
+Beacon Hill,SOMERVILLE_02143,0
+Beacon Hill,South Boston Waterfront,0
+Beacon Hill,WATERTOWN_02472,0
+Brighton,Chinatown,0
+Brighton,East Boston,0
+Brighton,South End,0
+Cambridgeport,Leather District,0
+Chinatown,Jamaica Plain,0
+Chinatown,MEDFORD_02155,0
+Chinatown,Mid-Cambridge,0
+Chinatown,SOMERVILLE_02144,0
+Dorchester,Leather District,0
+Downtown,MEDFORD_02155,0
+Downtown,North Cambridge,0
+Downtown,WATERTOWN_02472,0
+EVERETT_02149,Leather District,0
+East Boston,WATERTOWN_02472,0
+East Boston,West End,0
+Fenway,Neighborhood Nine,0
+Leather District,MEDFORD_02155,0
+Leather District,Mid-Cambridge,0
+Leather District,Mission Hill,0
+Leather District,Neighborhood Nine,0
+Leather District,North Cambridge,0
+Leather District,SOMERVILLE_02143,0
+Leather District,SOMERVILLE_02144,0
+Leather District,SOMERVILLE_02145,0
+Leather District,The Port,0
+Leather District,WATERTOWN_02472,0
+Leather District,Wellington-Harrington,0
+Leather District,West Cambridge,0
+Longwood Medical Area,North Cambridge,0
+Longwood Medical Area,SOMERVILLE_02144,0
+MEDFORD_02155,North End,0
+MEDFORD_02155,South End,0
+MEDFORD_02155,The Port,0
+Mid-Cambridge,South End,0
+Neighborhood Nine,South Boston,0
+Neighborhood Nine,South Boston Waterfront,0
+North Cambridge,North End,0
+North End,SOMERVILLE_02145,0
+North End,WATERTOWN_02472,0
+South Boston Waterfront,West Cambridge,0
+South End,WATERTOWN_02472,0
+Roxbury,West Cambridge,0.0070205
+Back Bay,SOMERVILLE_02143,0.01113
+Charlestown,SOMERVILLE_02144,0.011413
+Brighton,Neighborhood Nine,0.016917
+East Cambridge,Neighborhood Nine,0.018037
+SOMERVILLE_02144,South End,0.0198405
+East Cambridge,West Cambridge,0.0210725
+Brighton,Fenway,0.0242745
+Beacon Hill,Neighborhood Nine,0.0367575
+Dorchester,The Port,0.039488
+Chinatown,North Cambridge,0.0426665
+East Boston,Mid-Cambridge,0.049841
+BROOKLINE_02445,South Boston Waterfront,0.05475
+Back Bay,Neighborhood Nine,0.055905
+Back Bay,Mid-Cambridge,0.05608
+Longwood Medical Area,MEDFORD_02155,0.05825
+Neighborhood Nine,South End,0.05831
+BROOKLINE_02446,Charlestown,0.0586
+Back Bay,SOMERVILLE_02144,0.060615
+BROOKLINE_02446,Chinatown,0.06086
+MEDFORD_02155,Roxbury,0.06238
+East Boston,Neighborhood Nine,0.066375
+Bay Village,WATERTOWN_02472,0.06709
+Charlestown,The Port,0.068285
+Downtown,Jamaica Plain,0.069655
+BROOKLINE_02445,Charlestown,0.07446
+Beacon Hill,East Boston,0.07643
+Area 2/MIT,Leather District,0.07734
+Fenway,West Cambridge,0.07922
+East Boston,MEDFORD_02155,0.079615
+Jamaica Plain,North End,0.08401
+Fenway,South Boston,0.087778
+Leather District,Riverside,0.08821
+Downtown,SOMERVILLE_02145,0.088935
+Brighton,South Boston Waterfront,0.09134
+Chinatown,WATERTOWN_02472,0.094355
+SOMERVILLE_02145,West End,0.09741
+EVERETT_02149,Mid-Cambridge,0.097725
+Leather District,Roxbury,0.09779
+Mission Hill,South Boston Waterfront,0.09971
+Leather District,South Boston,0.099985
+Brighton,Downtown,0.100185
+East Boston,SOMERVILLE_02144,0.102174
+Brighton,The Port,0.104225
+Fenway,SOMERVILLE_02145,0.10452
+North End,The Port,0.10477
+Mid-Cambridge,North End,0.105765
+Downtown,West Cambridge,0.10633
+BROOKLINE_02445,Neighborhood Nine,0.110165
+Agassiz,Leather District,0.11188
+Beacon Hill,Jamaica Plain,0.11385
+Charlestown,South Boston,0.115955
+BROOKLINE_02445,East Boston,0.117125
+Agassiz,WATERTOWN_02472,0.117635
+Brighton,Leather District,0.118915
+Beacon Hill,Mid-Cambridge,0.1212
+Back Bay,MEDFORD_02155,0.12128
+Downtown,South Boston,0.124005
+Area 2/MIT,MEDFORD_02155,0.124995
+Roxbury,The Port,0.12572
+Longwood Medical Area,South End,0.125735
+Charlestown,Mid-Cambridge,0.127515
+East Cambridge,WATERTOWN_02472,0.127615
+Chinatown,SOMERVILLE_02143,0.128755
+BROOKLINE_02446,Neighborhood Nine,0.12915
+East Boston,Longwood Medical Area,0.129955
+Area 2/MIT,SOMERVILLE_02144,0.13112
+Charlestown,Leather District,0.1312
+Neighborhood Nine,Wellington-Harrington,0.131625
+East Boston,Riverside,0.133195
+Fenway,Mid-Cambridge,0.134
+Longwood Medical Area,Neighborhood Nine,0.13657
+Brighton,Mid-Cambridge,0.13713
+Agassiz,Back Bay,0.13797
+Allston,Beacon Hill,0.1385
+Beacon Hill,SOMERVILLE_02144,0.1386
+Brighton,West End,0.139535
+Jamaica Plain,South End,0.140705
+Agassiz,Riverside,0.14184
+South Boston,West Cambridge,0.143025
+BROOKLINE_02446,The Port,0.145975
+Downtown,Wellington-Harrington,0.146645
+MEDFORD_02155,Mid-Cambridge,0.147085
+Bay Village,Cambridgeport,0.150605
+Back Bay,SOMERVILLE_02145,0.15103
+WATERTOWN_02472,West End,0.15376
+South Boston,WATERTOWN_02472,0.154965
+Beacon Hill,North Cambridge,0.155615
+Agassiz,North End,0.16325
+Mid-Cambridge,South Boston Waterfront,0.16349
+Agassiz,MEDFORD_02155,0.165005
+Beacon Hill,Mission Hill,0.1672985
+Charlestown,WATERTOWN_02472,0.16922
+Beacon Hill,EVERETT_02149,0.17184
+Allston,BROOKLINE_02445,0.172045
+Jamaica Plain,The Port,0.17266
+Back Bay,Dorchester,0.174545
+Dorchester,East Boston,0.175135
+BROOKLINE_02445,West End,0.175375
+Bay Village,West Cambridge,0.17543
+BROOKLINE_02445,Back Bay,0.17596
+Leather District,South Boston Waterfront,0.178775
+East Boston,Jamaica Plain,0.179215
+North Cambridge,West End,0.182785
+BROOKLINE_02446,East Cambridge,0.18279
+Agassiz,East Cambridge,0.18471
+Dorchester,East Cambridge,0.185025
+Downtown,SOMERVILLE_02144,0.186445
+North End,SOMERVILLE_02143,0.18756
+MEDFORD_02155,Neighborhood Nine,0.1893
+Allston,The Port,0.18932
+Dorchester,South End,0.18984
+Downtown,Mid-Cambridge,0.190683
+Brighton,Charlestown,0.190755
+Downtown,The Port,0.19224
+Agassiz,SOMERVILLE_02145,0.19257
+Mid-Cambridge,South Boston,0.194185
+Bay Village,EVERETT_02149,0.19873
+Downtown,East Cambridge,0.199166
+MEDFORD_02155,Riverside,0.200075
+South End,West Cambridge,0.202515
+Longwood Medical Area,WATERTOWN_02472,0.202585
+South End,The Port,0.203585
+Leather District,Longwood Medical Area,0.204305
+Back Bay,North Cambridge,0.20528
+South Boston,South End,0.20564
+Charlestown,Fenway,0.20709
+Jamaica Plain,South Boston Waterfront,0.20755
+Downtown,Neighborhood Nine,0.20761
+BROOKLINE_02446,MEDFORD_02155,0.210875
+Charlestown,South End,0.210875
+Beacon Hill,MEDFORD_02155,0.211005
+Mission Hill,Neighborhood Nine,0.217445
+Dorchester,North End,0.21843
+Leather District,South End,0.21967
+BROOKLINE_02446,Leather District,0.21987
+North Cambridge,South End,0.220488
+SOMERVILLE_02144,South Boston,0.220505
+EVERETT_02149,Longwood Medical Area,0.22349
+Agassiz,Cambridgeport,0.224565
+Mid-Cambridge,Roxbury,0.22675
+BROOKLINE_02446,South Boston,0.228265
+East Cambridge,SOMERVILLE_02144,0.22897
+Chinatown,Neighborhood Nine,0.230215
+Roxbury,West End,0.234075
+Fenway,SOMERVILLE_02144,0.2341435
+Dorchester,Longwood Medical Area,0.234485
+Neighborhood Nine,SOMERVILLE_02145,0.23605
+Chinatown,Mission Hill,0.240785
+Allston,South End,0.242235
+BROOKLINE_02445,Riverside,0.243785
+Dorchester,Downtown,0.24505
+North Cambridge,Roxbury,0.24528
+Beacon Hill,Longwood Medical Area,0.246685
+SOMERVILLE_02145,South End,0.247333
+MEDFORD_02155,West End,0.247665
+Brighton,Mission Hill,0.251175
+Neighborhood Nine,North End,0.252225
+Back Bay,WATERTOWN_02472,0.254275
+Bay Village,South Boston,0.2544
+Agassiz,Roxbury,0.25604
+Bay Village,Longwood Medical Area,0.25651
+Agassiz,Longwood Medical Area,0.259605
+Agassiz,Bay Village,0.26036
+Area 2/MIT,East Boston,0.261255
+Jamaica Plain,Leather District,0.262355
+BROOKLINE_02445,South End,0.26581
+South Boston Waterfront,The Port,0.2665
+Back Bay,South Boston,0.26775
+Longwood Medical Area,West Cambridge,0.27014
+BROOKLINE_02445,South Boston,0.27134
+Allston,East Boston,0.2735
+Mid-Cambridge,The Port,0.274165
+Mid-Cambridge,SOMERVILLE_02144,0.27459
+Jamaica Plain,Wellington-Harrington,0.276152
+Agassiz,Jamaica Plain,0.27764
+BROOKLINE_02446,North End,0.279296
+Chinatown,Dorchester,0.2798945
+Bay Village,Brighton,0.280745
+BROOKLINE_02445,North End,0.28132
+Allston,Back Bay,0.28415
+BROOKLINE_02445,EVERETT_02149,0.287275
+Charlestown,Jamaica Plain,0.288605
+EVERETT_02149,Fenway,0.289005
+Charlestown,Longwood Medical Area,0.2901
+East Cambridge,Roxbury,0.290659
+Longwood Medical Area,South Boston,0.290935
+Roxbury,Wellington-Harrington,0.291565
+Riverside,South Boston Waterfront,0.293425
+BROOKLINE_02446,EVERETT_02149,0.294325
+Agassiz,EVERETT_02149,0.295925
+The Port,WATERTOWN_02472,0.29636
+Beacon Hill,SOMERVILLE_02145,0.296605
+Chinatown,Wellington-Harrington,0.30018
+BROOKLINE_02445,The Port,0.30391
+Charlestown,Neighborhood Nine,0.30483
+Fenway,Jamaica Plain,0.3070755
+Charlestown,West End,0.308185
+Area 2/MIT,South Boston,0.312775
+East Boston,The Port,0.314065
+Agassiz,South Boston Waterfront,0.314795
+Neighborhood Nine,The Port,0.31528
+Downtown,EVERETT_02149,0.315715
+Neighborhood Nine,Roxbury,0.3178
+SOMERVILLE_02144,South Boston Waterfront,0.32337
+Chinatown,The Port,0.324405
+BROOKLINE_02445,Mid-Cambridge,0.324415
+MEDFORD_02155,South Boston Waterfront,0.33385
+Fenway,South Boston Waterfront,0.3348545
+Agassiz,Mission Hill,0.336065
+Beacon Hill,The Port,0.3376135
+Neighborhood Nine,WATERTOWN_02472,0.337735
+East Boston,South End,0.33786
+Agassiz,Beacon Hill,0.338055
+Area 2/MIT,The Port,0.341785
+Chinatown,Riverside,0.3432
+BROOKLINE_02446,WATERTOWN_02472,0.343905
+Downtown,Roxbury,0.3463
+Brighton,Longwood Medical Area,0.34802
+Longwood Medical Area,The Port,0.350125
+East Boston,Fenway,0.351455
+East Cambridge,Fenway,0.352395
+Cambridgeport,The Port,0.352955
+The Port,West Cambridge,0.353945
+Charlestown,West Cambridge,0.35417
+Charlestown,MEDFORD_02155,0.358025
+North Cambridge,South Boston Waterfront,0.35871
+South End,Wellington-Harrington,0.359855
+Back Bay,EVERETT_02149,0.361365
+Fenway,MEDFORD_02155,0.36216
+Chinatown,West Cambridge,0.36223
+South Boston Waterfront,WATERTOWN_02472,0.3627
+Bay Village,SOMERVILLE_02144,0.36549
+Jamaica Plain,Neighborhood Nine,0.3666
+Mid-Cambridge,WATERTOWN_02472,0.369375
+Fenway,North Cambridge,0.37383
+Neighborhood Nine,West End,0.38247
+Brighton,Riverside,0.383185
+Charlestown,Riverside,0.383985
+Agassiz,Dorchester,0.38827
+Area 2/MIT,Mid-Cambridge,0.3959
+South Boston,West End,0.398885
+Allston,Longwood Medical Area,0.399065
+Roxbury,SOMERVILLE_02145,0.40308
+Bay Village,South Boston Waterfront,0.40562
+Area 2/MIT,Fenway,0.4058
+SOMERVILLE_02144,WATERTOWN_02472,0.40601
+EVERETT_02149,North Cambridge,0.406445
+BROOKLINE_02446,Brighton,0.4066045
+Jamaica Plain,South Boston,0.406885
+East Cambridge,North Cambridge,0.411445
+Allston,Leather District,0.411655
+Neighborhood Nine,Riverside,0.412595
+Beacon Hill,Charlestown,0.41292
+EVERETT_02149,North End,0.421505
+Beacon Hill,South Boston,0.424795
+Jamaica Plain,West End,0.429505
+Fenway,West End,0.430122
+Back Bay,Jamaica Plain,0.431095
+North End,West Cambridge,0.43366
+Mission Hill,WATERTOWN_02472,0.43479
+BROOKLINE_02446,SOMERVILLE_02144,0.43586
+Back Bay,Charlestown,0.437165
+Mission Hill,SOMERVILLE_02144,0.43923
+Bay Village,The Port,0.440628
+Downtown,Mission Hill,0.441095
+Dorchester,Neighborhood Nine,0.44113
+Allston,Mid-Cambridge,0.441865
+Area 2/MIT,North Cambridge,0.442455
+Mid-Cambridge,West Cambridge,0.44397
+BROOKLINE_02446,West End,0.443985
+East Boston,West Cambridge,0.445505
+Mid-Cambridge,Mission Hill,0.449745
+North End,South Boston,0.450815
+Area 2/MIT,East Cambridge,0.4546905
+Brighton,East Cambridge,0.45488
+South Boston,The Port,0.455595
+SOMERVILLE_02144,West End,0.455895
+EVERETT_02149,Wellington-Harrington,0.45882
+Cambridgeport,South Boston,0.45890545
+Area 2/MIT,West Cambridge,0.46115
+Bay Village,Mid-Cambridge,0.462015
+EVERETT_02149,South End,0.4639875
+Cambridgeport,Wellington-Harrington,0.464375
+East Cambridge,SOMERVILLE_02145,0.46954
+Allston,Jamaica Plain,0.47069
+Bay Village,Jamaica Plain,0.47084
+Roxbury,SOMERVILLE_02143,0.472565
+BROOKLINE_02446,Roxbury,0.47501
+Allston,Bay Village,0.476525
+BROOKLINE_02446,Dorchester,0.47983
+Bay Village,North Cambridge,0.482605
+Mission Hill,West Cambridge,0.48533
+BROOKLINE_02446,Mid-Cambridge,0.489045
+Cambridgeport,West End,0.491175
+Mission Hill,The Port,0.491365
+BROOKLINE_02446,Bay Village,0.49235
+Allston,Downtown,0.49396
+East Cambridge,Jamaica Plain,0.496535
+East Boston,Leather District,0.49753
+Agassiz,West End,0.5
+Agassiz,Allston,0.50417
+Charlestown,Roxbury,0.50545
+Mid-Cambridge,Neighborhood Nine,0.50731
+Area 2/MIT,Mission Hill,0.50775
+Dorchester,South Boston Waterfront,0.508265
+BROOKLINE_02446,South End,0.509595
+EVERETT_02149,The Port,0.50985
+Mission Hill,South End,0.512815
+Agassiz,The Port,0.5133
+EVERETT_02149,Jamaica Plain,0.51418
+Brighton,South Boston,0.51442
+BROOKLINE_02446,Wellington-Harrington,0.5151
+Mid-Cambridge,SOMERVILLE_02145,0.51893
+BROOKLINE_02445,SOMERVILLE_02145,0.51935
+Dorchester,SOMERVILLE_02144,0.52158
+Jamaica Plain,Mid-Cambridge,0.521713
+Cambridgeport,Downtown,0.524585
+BROOKLINE_02445,SOMERVILLE_02144,0.529955
+Agassiz,South End,0.53152
+Longwood Medical Area,SOMERVILLE_02143,0.53171
+BROOKLINE_02445,Wellington-Harrington,0.542395
+Cambridgeport,East Boston,0.5457
+Cambridgeport,North End,0.54807
+Downtown,SOMERVILLE_02143,0.548845
+Fenway,SOMERVILLE_02143,0.5495
+BROOKLINE_02445,Brighton,0.550155
+MEDFORD_02155,SOMERVILLE_02144,0.550166
+SOMERVILLE_02143,West End,0.55244
+SOMERVILLE_02143,South Boston Waterfront,0.55311
+BROOKLINE_02446,East Boston,0.55336
+Fenway,The Port,0.5563
+Agassiz,Chinatown,0.5564
+Cambridgeport,Mid-Cambridge,0.5602
+Cambridgeport,MEDFORD_02155,0.5608585
+West Cambridge,West End,0.561075
+Leather District,West End,0.5611
+Longwood Medical Area,Wellington-Harrington,0.5618
+East Boston,Roxbury,0.56495
+Area 2/MIT,WATERTOWN_02472,0.56512
+Cambridgeport,Neighborhood Nine,0.5661
+Allston,Fenway,0.567
+Area 2/MIT,Longwood Medical Area,0.567253
+MEDFORD_02155,Mission Hill,0.567965
+Area 2/MIT,South Boston Waterfront,0.573495
+Area 2/MIT,Bay Village,0.5737315
+BROOKLINE_02446,SOMERVILLE_02145,0.57535
+Riverside,SOMERVILLE_02144,0.577945
+Fenway,Longwood Medical Area,0.578295
+Allston,South Boston Waterfront,0.580375
+Allston,North End,0.58213
+Brighton,West Cambridge,0.583925
+SOMERVILLE_02145,The Port,0.587365
+Agassiz,SOMERVILLE_02144,0.58765
+South Boston Waterfront,South End,0.59565
+Longwood Medical Area,North End,0.603085
+Back Bay,Mission Hill,0.604155
+Chinatown,SOMERVILLE_02145,0.605295
+Brighton,North End,0.608435
+BROOKLINE_02445,Dorchester,0.608955
+Allston,Brighton,0.612615
+BROOKLINE_02445,Roxbury,0.614895
+Roxbury,South Boston Waterfront,0.61891
+Beacon Hill,Fenway,0.61967
+Beacon Hill,Cambridgeport,0.621615
+BROOKLINE_02446,West Cambridge,0.623255
+Fenway,Leather District,0.62501
+East Boston,North Cambridge,0.630475
+SOMERVILLE_02143,South End,0.6353
+Cambridgeport,WATERTOWN_02472,0.641355
+Area 2/MIT,South End,0.641375
+Jamaica Plain,MEDFORD_02155,0.641825
+Fenway,Roxbury,0.641845
+Longwood Medical Area,Roxbury,0.642905
+Chinatown,South Boston,0.64375
+MEDFORD_02155,SOMERVILLE_02143,0.646625
+Roxbury,South Boston,0.64706
+EVERETT_02149,West End,0.647535
+Chinatown,South End,0.647655
+Brighton,Jamaica Plain,0.651765
+Downtown,West End,0.653105
+Back Bay,West Cambridge,0.65742
+East Boston,North End,0.6578
+SOMERVILLE_02145,WATERTOWN_02472,0.65782
+Fenway,WATERTOWN_02472,0.658335
+BROOKLINE_02445,East Cambridge,0.65905
+East Cambridge,MEDFORD_02155,0.6594
+MEDFORD_02155,Wellington-Harrington,0.66055
+Charlestown,Downtown,0.66885
+SOMERVILLE_02145,West Cambridge,0.670065
+BROOKLINE_02446,Downtown,0.67058
+Back Bay,East Cambridge,0.67124
+Longwood Medical Area,Mid-Cambridge,0.672692
+Area 2/MIT,SOMERVILLE_02143,0.68293
+Bay Village,Riverside,0.68324
+Area 2/MIT,SOMERVILLE_02145,0.6854225
+Charlestown,Mission Hill,0.685485
+SOMERVILLE_02143,South Boston,0.6885
+Beacon Hill,East Cambridge,0.69116
+Area 2/MIT,BROOKLINE_02446,0.692135
+Longwood Medical Area,SOMERVILLE_02145,0.6925
+Downtown,South End,0.693435
+South End,West End,0.69469
+WATERTOWN_02472,Wellington-Harrington,0.695
+Riverside,The Port,0.699565
+Chinatown,Roxbury,0.701115
+Back Bay,Cambridgeport,0.701455
+East Cambridge,Leather District,0.70425
+Beacon Hill,Wellington-Harrington,0.705275
+Bay Village,Mission Hill,0.70577
+Dorchester,Mid-Cambridge,0.707775
+Allston,BROOKLINE_02446,0.7103075
+BROOKLINE_02445,Mission Hill,0.71547
+Jamaica Plain,Riverside,0.717175
+Dorchester,Fenway,0.71925
+Back Bay,Roxbury,0.72235
+BROOKLINE_02446,North Cambridge,0.723455
+MEDFORD_02155,South Boston,0.72578
+Riverside,WATERTOWN_02472,0.72598
+Allston,Chinatown,0.730417
+Agassiz,Wellington-Harrington,0.73134
+Dorchester,West Cambridge,0.733475
+Longwood Medical Area,Riverside,0.7343
+Wellington-Harrington,West Cambridge,0.73465
+Allston,SOMERVILLE_02143,0.73541
+SOMERVILLE_02143,WATERTOWN_02472,0.73617
+Bay Village,SOMERVILLE_02143,0.73801
+Riverside,South Boston,0.739345
+North Cambridge,South Boston,0.7397
+Area 2/MIT,Jamaica Plain,0.740425
+Bay Village,East Boston,0.7409
+SOMERVILLE_02144,SOMERVILLE_02145,0.740995
+BROOKLINE_02445,WATERTOWN_02472,0.74629
+Cambridgeport,Charlestown,0.748045
+Charlestown,North End,0.748751
+Mid-Cambridge,Wellington-Harrington,0.7527
+Cambridgeport,Dorchester,0.7555
+Roxbury,WATERTOWN_02472,0.75565
+North Cambridge,Riverside,0.7557015
+Dorchester,WATERTOWN_02472,0.756705
+Area 2/MIT,Charlestown,0.756765
+Longwood Medical Area,South Boston Waterfront,0.75683
+Roxbury,SOMERVILLE_02144,0.75799
+Area 2/MIT,Wellington-Harrington,0.76279
+Allston,SOMERVILLE_02144,0.76357
+Cambridgeport,SOMERVILLE_02143,0.769235
+Charlestown,Wellington-Harrington,0.770315
+Area 2/MIT,Chinatown,0.773335
+North End,SOMERVILLE_02144,0.775385
+Allston,Neighborhood Nine,0.77654
+North End,Wellington-Harrington,0.7801
+Dorchester,South Boston,0.78052
+Downtown,East Boston,0.7809725
+Dorchester,West End,0.78533
+Mission Hill,South Boston,0.789655
+Fenway,North End,0.794245
+East Cambridge,South End,0.79617
+BROOKLINE_02445,Beacon Hill,0.7974555
+Wellington-Harrington,West End,0.7984
+Cambridgeport,East Cambridge,0.800695
+East Cambridge,Mid-Cambridge,0.81035
+Cambridgeport,SOMERVILLE_02144,0.81283
+Chinatown,Fenway,0.8201
+BROOKLINE_02446,SOMERVILLE_02143,0.822595
+Back Bay,The Port,0.825065
+Dorchester,Wellington-Harrington,0.82609
+Charlestown,SOMERVILLE_02145,0.83428
+Agassiz,Downtown,0.83577
+Downtown,Longwood Medical Area,0.840335
+SOMERVILLE_02144,West Cambridge,0.844535
+Back Bay,South Boston Waterfront,0.844645
+Bay Village,East Cambridge,0.84536
+Brighton,Roxbury,0.84619
+BROOKLINE_02446,Cambridgeport,0.85425
+Mission Hill,SOMERVILLE_02145,0.8562
+Mission Hill,West End,0.858995
+East Cambridge,The Port,0.871775
+Neighborhood Nine,SOMERVILLE_02143,0.873281
+BROOKLINE_02445,Fenway,0.87651
+Beacon Hill,Roxbury,0.87692
+BROOKLINE_02446,Back Bay,0.882265
+BROOKLINE_02445,Cambridgeport,0.88273
+EVERETT_02149,Riverside,0.884711
+Area 2/MIT,Neighborhood Nine,0.888475
+Area 2/MIT,Riverside,0.88902
+Brighton,Cambridgeport,0.889625
+South Boston Waterfront,Wellington-Harrington,0.8926
+Riverside,Roxbury,0.895415
+EVERETT_02149,SOMERVILLE_02143,0.89585
+Allston,Wellington-Harrington,0.896225
+Riverside,SOMERVILLE_02145,0.8982
+Bay Village,Roxbury,0.903605
+Mission Hill,Wellington-Harrington,0.907295
+BROOKLINE_02446,Mission Hill,0.918175
+The Port,West End,0.91916
+MEDFORD_02155,North Cambridge,0.919395
+Back Bay,Longwood Medical Area,0.922295
+Bay Village,Wellington-Harrington,0.92527
+BROOKLINE_02446,Beacon Hill,0.928195
+Mid-Cambridge,Riverside,0.9317
+BROOKLINE_02446,Fenway,0.934415
+Mission Hill,North End,0.93715
+BROOKLINE_02445,SOMERVILLE_02143,0.93901
+Cambridgeport,Chinatown,0.940045
+Back Bay,South End,0.940705
+MEDFORD_02155,West Cambridge,0.9411
+Area 2/MIT,Brighton,0.94595
+Dorchester,Riverside,0.94596
+Longwood Medical Area,West End,0.95004
+Agassiz,BROOKLINE_02446,0.952872
+BROOKLINE_02446,Jamaica Plain,0.9552
+EVERETT_02149,Roxbury,0.95765
+Charlestown,Dorchester,0.96019
+Agassiz,Area 2/MIT,0.962855
+Jamaica Plain,SOMERVILLE_02144,0.965115
+Area 2/MIT,Dorchester,0.966545
+EVERETT_02149,South Boston,0.9749
+North Cambridge,WATERTOWN_02472,0.98125
+Jamaica Plain,SOMERVILLE_02145,0.98256
+Downtown,South Boston Waterfront,0.98263
+SOMERVILLE_02144,Wellington-Harrington,0.98656
+Riverside,SOMERVILLE_02143,0.99162
+BROOKLINE_02446,Longwood Medical Area,0.99647
+Bay Village,West End,1.00344
+EVERETT_02149,MEDFORD_02155,1.0045
+Riverside,West Cambridge,1.00602
+Charlestown,Chinatown,1.008525
+Area 2/MIT,Back Bay,1.011635
+Allston,Charlestown,1.012658
+Area 2/MIT,Downtown,1.0157
+Allston,MEDFORD_02155,1.030945
+Mission Hill,Riverside,1.03429
+Agassiz,North Cambridge,1.03506
+North End,Roxbury,1.03631
+North End,South End,1.03757
+Allston,SOMERVILLE_02145,1.03941
+Dorchester,SOMERVILLE_02143,1.039995
+Area 2/MIT,EVERETT_02149,1.04758
+EVERETT_02149,East Cambridge,1.047887
+Cambridgeport,Fenway,1.06736
+WATERTOWN_02472,West Cambridge,1.07276
+Charlestown,East Cambridge,1.073535
+Brighton,Dorchester,1.07472
+Brighton,MEDFORD_02155,1.077755
+SOMERVILLE_02145,South Boston Waterfront,1.0816
+Cambridgeport,SOMERVILLE_02145,1.08185
+East Cambridge,North End,1.083025
+Allston,West End,1.08705
+East Boston,SOMERVILLE_02143,1.08822
+Agassiz,Neighborhood Nine,1.089575
+Fenway,Wellington-Harrington,1.0897
+Allston,South Boston,1.11223
+Cambridgeport,South Boston Waterfront,1.1148
+EVERETT_02149,South Boston Waterfront,1.117415
+East Cambridge,South Boston Waterfront,1.118285
+North Cambridge,Wellington-Harrington,1.12
+East Cambridge,Riverside,1.12219
+Back Bay,West End,1.12772
+East Cambridge,South Boston,1.13182
+Jamaica Plain,West Cambridge,1.132875
+East Cambridge,Mission Hill,1.1337
+Mid-Cambridge,West End,1.13666
+Brighton,Wellington-Harrington,1.14329
+Fenway,Riverside,1.14385
+BROOKLINE_02445,North Cambridge,1.1493
+Allston,Roxbury,1.15345
+Jamaica Plain,WATERTOWN_02472,1.16105
+Cambridgeport,South End,1.16226
+Downtown,Fenway,1.17915
+Allston,Mission Hill,1.18167
+Downtown,Riverside,1.1879
+Riverside,West End,1.18962
+Allston,Cambridgeport,1.195
+East Boston,Mission Hill,1.19859
+Charlestown,North Cambridge,1.199745
+Area 2/MIT,Cambridgeport,1.20223
+East Boston,South Boston,1.21222
+Brighton,SOMERVILLE_02144,1.221055
+Chinatown,Longwood Medical Area,1.23426
+Charlestown,South Boston Waterfront,1.235835
+East Boston,South Boston Waterfront,1.2395
+Agassiz,West Cambridge,1.24085
+South Boston Waterfront,West End,1.24517
+Cambridgeport,EVERETT_02149,1.246155
+Back Bay,Wellington-Harrington,1.2593
+Charlestown,East Boston,1.265895
+North End,Riverside,1.27485
+Jamaica Plain,SOMERVILLE_02143,1.27516
+Agassiz,Brighton,1.27535
+Allston,East Cambridge,1.279175
+Area 2/MIT,North End,1.28145
+Dorchester,SOMERVILLE_02145,1.292
+Beacon Hill,West Cambridge,1.293745
+Chinatown,East Boston,1.31859
+Area 2/MIT,Roxbury,1.32086
+Chinatown,West End,1.33257
+East Cambridge,West End,1.33315
+Agassiz,Mid-Cambridge,1.34219
+Cambridgeport,Mission Hill,1.3536
+Cambridgeport,Longwood Medical Area,1.358455
+Beacon Hill,West End,1.369955
+EVERETT_02149,Neighborhood Nine,1.3705
+Jamaica Plain,Mission Hill,1.37134
+Dorchester,Roxbury,1.373615
+Back Bay,Riverside,1.37711
+Back Bay,Fenway,1.38043
+SOMERVILLE_02143,West Cambridge,1.38994
+Chinatown,East Cambridge,1.39785
+Mission Hill,North Cambridge,1.39989
+Fenway,South End,1.40225
+BROOKLINE_02446,Riverside,1.40878
+Back Bay,Beacon Hill,1.4137
+Chinatown,EVERETT_02149,1.41837
+BROOKLINE_02445,Longwood Medical Area,1.4398
+Agassiz,SOMERVILLE_02143,1.4504
+EVERETT_02149,SOMERVILLE_02144,1.45141
+Back Bay,Bay Village,1.4555
+East Boston,Wellington-Harrington,1.4702
+Jamaica Plain,Longwood Medical Area,1.4756
+Beacon Hill,Chinatown,1.48204
+Cambridgeport,Jamaica Plain,1.4871
+SOMERVILLE_02145,South Boston,1.49395
+Bay Village,Fenway,1.49532
+Mission Hill,SOMERVILLE_02143,1.50395
+Brighton,North Cambridge,1.529585
+Area 2/MIT,West End,1.52965
+SOMERVILLE_02144,The Port,1.53185
+Jamaica Plain,Roxbury,1.544105
+Dorchester,MEDFORD_02155,1.5523
+Fenway,Mission Hill,1.555715
+Charlestown,SOMERVILLE_02143,1.56795
+South Boston,Wellington-Harrington,1.590285
+Roxbury,South End,1.592675
+East Boston,East Cambridge,1.593365
+East Boston,SOMERVILLE_02145,1.59754
+East Cambridge,Longwood Medical Area,1.60455
+BROOKLINE_02445,MEDFORD_02155,1.61032
+Cambridgeport,Riverside,1.6203
+Neighborhood Nine,SOMERVILLE_02144,1.62183
+Longwood Medical Area,Mission Hill,1.6253
+Cambridgeport,West Cambridge,1.627215
+Allston,North Cambridge,1.63525
+Mid-Cambridge,North Cambridge,1.635365
+Allston,Dorchester,1.63645
+Dorchester,North Cambridge,1.640925
+Brighton,SOMERVILLE_02143,1.6476
+Beacon Hill,South End,1.65495
+Mid-Cambridge,SOMERVILLE_02143,1.66995
+Dorchester,Mission Hill,1.68015
+BROOKLINE_02445,Jamaica Plain,1.69604
+Bay Village,Chinatown,1.70489
+Allston,Riverside,1.7176
+Agassiz,BROOKLINE_02445,1.73992
+Mission Hill,Roxbury,1.74125
+Beacon Hill,Leather District,1.7645
+EVERETT_02149,Mission Hill,1.7695
+Back Bay,Leather District,1.78153
+Brighton,WATERTOWN_02472,1.79675
+Beacon Hill,North End,1.79725
+Area 2/MIT,Beacon Hill,1.79975
+Allston,West Cambridge,1.8224
+Cambridgeport,Roxbury,1.824885
+Bay Village,Downtown,1.8331
+Neighborhood Nine,West Cambridge,1.8447
+MEDFORD_02155,WATERTOWN_02472,1.85605
+Dorchester,EVERETT_02149,1.86336
+North Cambridge,West Cambridge,1.87588
+SOMERVILLE_02145,Wellington-Harrington,1.9028
+North End,South Boston Waterfront,1.925335
+Neighborhood Nine,North Cambridge,1.92565
+East Cambridge,SOMERVILLE_02143,1.96345
+EVERETT_02149,West Cambridge,1.9806
+Downtown,North End,2.04627
+SOMERVILLE_02143,The Port,2.055975
+EVERETT_02149,WATERTOWN_02472,2.06315
+Bay Village,South End,2.06405
+Brighton,SOMERVILLE_02145,2.097015
+SOMERVILLE_02143,SOMERVILLE_02144,2.15076
+SOMERVILLE_02143,Wellington-Harrington,2.157835
+Allston,EVERETT_02149,2.17755
+Riverside,South End,2.194089
+North Cambridge,SOMERVILLE_02143,2.2383
+North Cambridge,The Port,2.2478
+Beacon Hill,Downtown,2.3314
+The Port,Wellington-Harrington,2.33375
+North End,West End,2.3441
+EVERETT_02149,SOMERVILLE_02145,2.36355
+Back Bay,Chinatown,2.38285
+SOMERVILLE_02143,SOMERVILLE_02145,2.3926
+Allston,Area 2/MIT,2.4114
+Jamaica Plain,North Cambridge,2.4701
+Beacon Hill,Riverside,2.48099
+MEDFORD_02155,SOMERVILLE_02145,2.484855
+BROOKLINE_02445,BROOKLINE_02446,2.5022
+BROOKLINE_02445,West Cambridge,2.5175
+Riverside,Wellington-Harrington,2.53745
+EVERETT_02149,East Boston,2.55729
+North Cambridge,SOMERVILLE_02145,2.627
+Cambridgeport,North Cambridge,2.7133
+Chinatown,North End,2.8212
+Brighton,EVERETT_02149,2.822335
+South Boston,South Boston Waterfront,2.83478
+Dorchester,Jamaica Plain,2.86735
+Allston,WATERTOWN_02472,2.873235
+East Cambridge,Wellington-Harrington,2.89915
+Chinatown,South Boston Waterfront,3.312945
+Bay Village,Beacon Hill,3.3176
+Bay Village,North End,3.4234
+Back Bay,North End,3.4483
+Back Bay,Downtown,3.55665
+Downtown,Leather District,3.6713
+Chinatown,Downtown,3.73425
+Leather District,North End,3.7627
+North Cambridge,SOMERVILLE_02144,3.9351
+Chinatown,Leather District,5.26853
+Charlestown,EVERETT_02149,5.3982

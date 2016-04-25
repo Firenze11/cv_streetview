@@ -78,7 +78,7 @@ select {
 
 .foreground path {
     fill: none;
-    stroke: steelblue;
+    stroke: #444;
 }
 
 .brush .extent {
@@ -96,4 +96,12 @@ select {
 
 .axis text {
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+.highlight {
+    fill: #444;
+}
+
+circle:not(.highlight) {
+    fill: #aaa;
 }

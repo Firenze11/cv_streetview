@@ -2,11 +2,8 @@
 /**
  * Created by lezhi on 3/17/2016.
  */
-d3.custom = {};
 
 $(function(){
-
-
 
     var centers = {
         barcelona   :[41.390298, 2.162001],
@@ -47,17 +44,19 @@ $(function(){
         });
 
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
-        var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
+        //var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
+        var pointMap = d3.custom.mapVis().shapeType("point");
         var myForceVis = d3.custom.forceVis().numClusters(3);
         var myParallelVis = d3.custom.parallelVis();
 
-        //d3.selectAll(".map-polygon")
-        //    .data(_pgData)
-        //    .call(polygonMap);
-        //
+
         d3.selectAll(".map-point")
             .data(_ptData)
             .call(pointMap);
+
+        d3.selectAll(".map-polygon")
+            .data(_pgData)
+            .call(polygonMap);
 
         //d3.select("#nodeVis")
         //    .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 2.2; }) })
@@ -66,23 +65,31 @@ $(function(){
         d3.select("#parallelVis")
             .datum(_hidimData)
             .call(myParallelVis);
+
+        myParallelVis.on("brushed", function() {
+            console.log(this,arguments);
+
+            //d3.selectAll(".map-point")
+            //    .data([_ptData[3],_ptData[2],_ptData[1], _ptData[0]]);
+            //pointMap.update();
+            pointMap.becomeRed(arguments);
+        })
     };
 
     var startHere = function(){
 
         queue()
-            .defer(d3.csv, "data/labels_dense_boston.csv")
-            .defer(d3.csv, "data/labels_dense_chicago.csv")
-            .defer(d3.csv, "data/labels_dense_newyork.csv")
-            .defer(d3.csv, "data/labels_dense_sanfrancisco.csv")
+            .defer(d3.csv, "data/boston.csv")
+            .defer(d3.csv, "data/chicago.csv")
+            .defer(d3.csv, "data/newyork.csv")
+            .defer(d3.csv, "data/sanfrancisco.csv")
             .defer(d3.json, "data/boundary_boston.geojson")
             .defer(d3.json, "data/boundary_chicago.geojson")
             .defer(d3.json, "data/boundary_newyork.geojson")
             .defer(d3.json, "data/boundary_sanfrancisco.geojson")
             .defer(d3.csv, "data/deep_cluster_boston.csv")
             .defer(d3.csv, "data/link_boston.csv")
-            .defer(d3.csv, "data/artificial.csv")
-            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, artificial) {
+            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link   ) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -91,7 +98,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, artificial);
+                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, b_pt);
                 }
             });
     }

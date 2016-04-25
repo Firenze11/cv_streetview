@@ -1,17 +1,20 @@
 /**
  * Created by lezhi on 4/17/2016.
  */
+if(!d3.custom) d3.custom = {};
+
 d3.custom.parallelVis = function module() {
     var margin = {top: 30, right: 10, bottom: 10, left: 10},
         width = 1120 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom,
         duration = 500;
     var svg;
+    var dispatch = d3.dispatch("brushed");
 
     var x = d3.scale.ordinal().rangePoints([0, width], 1),
         y = {};
 
-    var line = d3.svg.line(),
+    var line = d3.svg.line(),//.interpolate("basis"),
         axis = d3.svg.axis().orient("left"),
         background,
         foreground;
@@ -31,7 +34,8 @@ d3.custom.parallelVis = function module() {
             var dimensions;
             // Extract the list of dimensions and create a scale for each.
             x.domain(dimensions = d3.keys(_data[0]).filter(function(d) {
-                return d != "name" && (y[d] = d3.scale.linear()
+                return d != "lat" && d != "lng" && d != "color" && d != "id"
+                        && (y[d] = d3.scale.linear()
                         .domain(d3.extent(_data, function(p) { return +p[d]; }))
                         .range([height, 0]));
             }));
@@ -90,6 +94,9 @@ d3.custom.parallelVis = function module() {
                         return extents[i][0] <= d[p] && d[p] <= extents[i][1];
                     }) ? null : "none";
                 });
+                //console.log(this);
+                dispatch.brushed(actives, extents);
+                //dispatch.brushed.call(actives, extents);
             }
         });
     }
@@ -106,5 +113,6 @@ d3.custom.parallelVis = function module() {
         return my;
     };
 
+    d3.rebind(my, dispatch, 'on');
     return my;
 };
