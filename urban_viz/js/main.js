@@ -108,13 +108,23 @@ $(function(){
             .call(myParallelVis);
 
         myParallelVis.on("brushed", function() {
-            console.log(this,arguments);
+            //console.log(this,arguments);
 
             //d3.selectAll(".map-point")
             //    .data([_ptData[3],_ptData[2],_ptData[1], _ptData[0]]);
             //pointMap.update();
-            pointMap.becomeRed(arguments);
-        })
+            pointMap.highlightSelection(arguments);
+        });
+        pointMap.on("locClicked", function(lat,lng) {
+            //console.log(this,lat,lng);
+            var list = $('.jcarousel').jcarousel('list');
+            //console.log(list);
+            for(var i= 0; i<4; i++) {
+                var imsrc = imgroot+lat+","+lng+"_"+i+".png";
+                var str = "<li> <img class='backup_picture' src='"+imsrc+"'/> </li>";
+                list.append($(str));
+            }
+        });
     };
 
     var startHere = function(){

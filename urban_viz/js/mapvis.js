@@ -7,6 +7,7 @@ d3.custom.mapVis = function module() {
         duration = 500;
     var radius = 2;
     var selection;
+    var dispatch = d3.dispatch("locClicked");
 
 
     // actually exactly the same pattern as not using this internal
@@ -40,7 +41,7 @@ d3.custom.mapVis = function module() {
 
     my.update = update;
 
-    my.becomeRed = function(_) {
+    my.highlightSelection = function(_) {
         var actives = _[0], extents = _[1];
         selection.selectAll("circle").classed("highlight", function(d) {
             return actives.length > 0
@@ -83,7 +84,8 @@ d3.custom.mapVis = function module() {
                         return "point_" + d.id;
                     })
                     .on("click", function(d) {
-                        console.log(d.lat, d.lng);
+                        console.log(d.neighborhood);
+                        dispatch.locClicked(d.lat, d.lng);
                     });
                 symbols.attr("r", radius)
                     .attr("transform", function (d) {
@@ -139,6 +141,6 @@ d3.custom.mapVis = function module() {
     //
     //};
 
-    //dispatch.on(("brushed"), my.onBrush.bind(module));
+    d3.rebind(my, dispatch, 'on');
     return my;
 };
