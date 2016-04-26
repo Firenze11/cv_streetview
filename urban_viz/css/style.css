@@ -40,6 +40,9 @@ circle {
 }
 #nodeVis, #parallelVis {
     height: 300px;
+}
+
+#nodeVis, #parallelVis {
     border-color: #ddd;
     border-width: 2px;
     border-style: dashed;
@@ -117,6 +120,9 @@ Position must be relative!
     position: relative;
     overflow: hidden;
     width: 100%;
+    -webkit-box-shadow: 0 0 4px #ddd;
+    -moz-box-shadow: 0 0 4px #ddd;
+    box-shadow: 0 0 4px #ddd;
 }
 
 /*
@@ -141,15 +147,22 @@ have a fixed width and height (but it's not required).
 .jcarousel li {
     /* Required only for block elements like <li>'s */
     float: left;
-    width: 160px;
-    height: 120px;
+    width: 170px;
+    height: 130px;
+    padding: 5px;
+}
+
+.jcarousel img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /*........................................................j carousel control*/
 .jcarousel-control-prev,
 .jcarousel-control-next {
+    cursor: pointer;
     position: absolute;
-    top: 0%;
+    top: 25%;
     /*width: 30px;*/
     /*height: 30px;*/
     text-align: center;

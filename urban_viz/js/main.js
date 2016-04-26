@@ -23,8 +23,11 @@ $(function(){
         tokyo       :[35.684226, 139.755518]
     };
 
-    $('.jcarousel').jcarousel({
-        center: true
+    var carousel = $('.jcarousel').jcarousel({
+        transitions: true,
+        wrap: "circular",
+        center: true//,
+        //animation: {duration: 800}
     });
 
     $('.jcarousel-control-prev')
@@ -37,29 +40,19 @@ $(function(){
         .jcarouselControl({
             target: '-=1'
         });
-
     $('.jcarousel-control-next')
         .on('jcarouselcontrol:active', function() {
             $(this).removeClass('inactive');
         })
         .on('jcarouselcontrol:inactive', function() {
             $(this).addClass('inactive');
-        })
-        .jcarouselControl({
+        }).jcarouselControl({
             target: '+=1'
         });
 
-    $('.jcarousel-pagination')
-        .on('jcarouselpagination:active', 'a', function() {
-            $(this).addClass('active');
-        })
-        .on('jcarouselpagination:inactive', 'a', function() {
-            $(this).removeClass('active');
-        })
-        .jcarouselPagination();
-
-
-
+    setInterval(function(){
+        carousel.jcarousel('scroll', '+=1');
+    }, 3000);
 
     //var data = [];
 
@@ -116,13 +109,10 @@ $(function(){
             pointMap.highlightSelection(arguments);
         });
         pointMap.on("locClicked", function(city,lat,lng) {
-            //console.log(this,lat,lng);
-            var list = $('.jcarousel').jcarousel('list');
-            //console.log(list);
             for(var i= 0; i<4; i++) {
                 var imsrc = imgroot+city+"/"+lat+","+lng+"_"+i+".png";
-                var str = "<li> <img class='backup_picture' src='"+imsrc+"'/> </li>";
-                list.append($(str));
+                carousel.find('li:eq('+i+')')
+                    .html("<img src='"+imsrc+"'/>");
             }
         });
     };
