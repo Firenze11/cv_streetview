@@ -85,7 +85,7 @@ d3.custom.mapVis = function module() {
                     })
                     .on("click", function(d) {
                         console.log(d.neighborhood);
-                        dispatch.locClicked(d.lat, d.lng);
+                        dispatch.locClicked(d.city, d.lat, d.lng);
                     });
                 symbols.attr("r", radius)
                     .attr("transform", function (d) {

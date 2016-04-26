@@ -115,12 +115,12 @@ $(function(){
             //pointMap.update();
             pointMap.highlightSelection(arguments);
         });
-        pointMap.on("locClicked", function(lat,lng) {
+        pointMap.on("locClicked", function(city,lat,lng) {
             //console.log(this,lat,lng);
             var list = $('.jcarousel').jcarousel('list');
             //console.log(list);
             for(var i= 0; i<4; i++) {
-                var imsrc = imgroot+lat+","+lng+"_"+i+".png";
+                var imsrc = imgroot+city+"/"+lat+","+lng+"_"+i+".png";
                 var str = "<li> <img class='backup_picture' src='"+imsrc+"'/> </li>";
                 list.append($(str));
             }
