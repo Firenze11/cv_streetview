@@ -108,12 +108,18 @@ $(function(){
             //pointMap.update();
             pointMap.highlightSelection(arguments);
         });
-        pointMap.on("locClicked", function(city,lat,lng) {
+        pointMap.on("locClicked", function(city,lat,lng, id) {
             for(var i= 0; i<4; i++) {
                 var imsrc = imgroot+city+"/"+lat+","+lng+"_"+i+".png";
                 carousel.find('li:eq('+i+')')
                     .html("<img src='"+imsrc+"'/>");
             }
+            d3.select("#mapsdot").select(".selected").classed("selected", false);
+            d3.select("#mapsdot").select("."+city+"_"+id).classed("selected", true);
+
+            d3.select("#parallelVis").select(".selected").classed("selected", false);
+            d3.select("#parallelVis").select("."+city+"_"+id).classed("selected", true);
+            //console.log(d3.select(".map-point").select(city+"_"+id));
         });
     };
 

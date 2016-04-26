@@ -26,8 +26,35 @@ section {
 .mainVis {
     margin-top: 10px;
 }
-circle {
-    cursor: default;
+
+
+.d3-tip {
+    line-height: 1;
+    /*font-weight: bold;*/
+    padding: 9px;
+    background: rgba(255, 255, 255, 0.6);
+    /*color: #fff;*/
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.6);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
 }
 
 #mapspolygon, #mapsdot {
@@ -47,6 +74,31 @@ circle {
     border-width: 2px;
     border-style: dashed;
 }
+.highlight {
+    fill: #444;
+}
+
+#mapsdot circle {
+    cursor: pointer;
+}
+
+#mapsdot circle:not(.highlight) {
+    fill: #aaa;
+}
+#mapsdot circle:hover{
+     fill: #ff0000;
+}
+#mapsdot circle.selected  {
+    /*stroke: rgba(255, 0, 0, 0.6);*/
+    /*stroke-width: 4;*/
+    fill: #ff0000;
+}
+
+#parallelVis .selected {
+    stroke: #ff0000;
+}
+
+
 #pic {
     max-width:100%;
     max-height:100%;
@@ -101,13 +153,6 @@ select {
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
 }
 
-.highlight {
-    fill: #444;
-}
-
-circle:not(.highlight) {
-    fill: #aaa;
-}
 
 /*.................................................................j carousel*/
 /*
@@ -155,6 +200,7 @@ have a fixed width and height (but it's not required).
 .jcarousel img {
     max-width: 100%;
     max-height: 100%;
+    opacity: 0.8;
 }
 
 /*........................................................j carousel control*/

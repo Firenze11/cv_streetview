@@ -7,7 +7,15 @@ d3.custom.mapVis = function module() {
         duration = 500;
     var radius = 2;
     var selection;
+
     var dispatch = d3.dispatch("locClicked");
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.neighborhood + "</span>";
+        });
 
 
     // actually exactly the same pattern as not using this internal
@@ -60,6 +68,8 @@ d3.custom.mapVis = function module() {
             //console.log(svg);
             svg.transition().duration(duration).attr({width: width, height: height});
 
+            svg.call(tip);
+
             var projection = d3.geo.mercator()
                 .scale(132000)
                 .rotate([-_data.center[0], -_data.center[1]])  // negative!!
@@ -81,11 +91,13 @@ d3.custom.mapVis = function module() {
                     .data(_data);
                 symbols.enter().append("circle")
                     .attr("class", function (d) {
-                        return "point_" + d.id;
+                        return d.city + "_" + d.id;
                     })
+                    .on('mouseover', tip.show)
+                    .on('mouseout', tip.hide)
                     .on("click", function(d) {
-                        console.log(d.neighborhood);
-                        dispatch.locClicked(d.city, d.lat, d.lng);
+                        console.log(this);
+                        dispatch.locClicked(d.city, d.lat, d.lng, d.id);
                     });
                 symbols.attr("r", radius)
                     .attr("transform", function (d) {
