@@ -6,6 +6,7 @@ d3.custom.mapVis = function module() {
         shapeType = "polygon", // OR "point"
         duration = 500;
     var radius = 2;
+
     var selection;
 
     var dispatch = d3.dispatch("locClicked");
@@ -17,7 +18,6 @@ d3.custom.mapVis = function module() {
             return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.neighborhood + "</span>";
         });
 
-
     // actually exactly the same pattern as not using this internal
     // function object, and returning "this".
     // whether to return "this" or the internal function object ("my")
@@ -28,37 +28,6 @@ d3.custom.mapVis = function module() {
         selection = _selection;
         update();
     }
-
-    my.width = function(value) {
-        if (!arguments.length) return width;
-        width = value;
-        return my;
-    };
-
-    my.height = function(value) {
-        if (!arguments.length) return height;
-        height = value;
-        return my;
-    };
-
-    my.shapeType = function(value) {
-        if (!arguments.length) return shapeType;
-        shapeType = value;
-        return my;
-    };
-
-    my.update = update;
-
-    my.highlightSelection = function(_) {
-        var actives = _[0], extents = _[1];
-        selection.selectAll("circle").classed("highlight", function(d) {
-            return actives.length > 0
-                &&
-                actives.every(function(p, i) {
-                    return extents[i][0] <= d[p] && d[p] <= extents[i][1];
-                });// ? null : "none";
-        });
-    };
 
     function update() {
         selection.each(function(_data) {
@@ -83,7 +52,9 @@ d3.custom.mapVis = function module() {
                 svg.selectAll("path")
                     .data(_data.features)
                     .enter().append("path")
-                    .attr("class", "district")
+                    .attr("class", function(d) {
+                        return "district " + d.properties.NAME;
+                    })
                     .attr("d", path);
 
             } else if (shapeType === "point") {  //.................................point map
@@ -96,8 +67,7 @@ d3.custom.mapVis = function module() {
                     .on('mouseover', tip.show)
                     .on('mouseout', tip.hide)
                     .on("click", function(d) {
-                        console.log(this);
-                        dispatch.locClicked(d.city, d.lat, d.lng, d.id);
+                        dispatch.locClicked(d);
                     });
                 symbols.attr("r", radius)
                     .attr("transform", function (d) {
@@ -145,13 +115,45 @@ d3.custom.mapVis = function module() {
         })
     }
 
-    //my.onBrush = function() {
-    //    console.log(my.selection);
-    //    //console.log(this, arguments ,"map knows brushed");
-    //    // in the line above, "this" prints out the "my" object,
-    //    // "arguments" prints out the arguments sent when the event was triggered.
-    //
-    //};
+    my.width = function(value) {
+        if (!arguments.length) return width;
+        width = value;
+        return my;
+    };
+
+    my.height = function(value) {
+        if (!arguments.length) return height;
+        height = value;
+        return my;
+    };
+
+    my.shapeType = function(value) {
+        if (!arguments.length) return shapeType;
+        shapeType = value;
+        return my;
+    };
+
+    my.update = update;
+
+    my.highlightSelection = function(_) {
+        if(shapeType === 'point') {
+            var actives = _[0], extents = _[1];
+            selection.selectAll("circle").classed("highlight", function(d) {
+                return actives.length > 0
+                    &&
+                    actives.every(function(p, i) {
+                        return extents[i][0] <= d[p] && d[p] <= extents[i][1];
+                    });// ? null : "none";
+            });
+        } else if (shapeType === "polygon") {
+            var args = Array.prototype.slice.call(_); // convert "arguments" object to array
+            console.log(_, arguments, args);
+            selection.selectAll(".district").classed("highlight", function(d) {
+                return args.indexOf(d.properties.NAME) !== -1;
+            });
+        }
+
+    };
 
     d3.rebind(my, dispatch, 'on');
     return my;

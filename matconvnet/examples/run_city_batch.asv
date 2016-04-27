@@ -80,7 +80,7 @@ save('newyork_test_stats.mat','names','ownScores','labels','bestScores','predLab
 % % csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
 csvwrite('sanfrancisco_confusion.csv',confusion_rate);
 
-fid = fopen('sanfrancisco_test_stats.csv','wt');
+fid = fopen('boston_test_stats.csv','wt');
  if fid>0
      for i=1:length(names)
 %          fprintf(fid,'%s\n',names{k,:});

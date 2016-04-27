@@ -32,9 +32,13 @@ section {
     line-height: 1;
     /*font-weight: bold;*/
     padding: 9px;
-    background: rgba(255, 255, 255, 0.6);
-    /*color: #fff;*/
+    background: rgba(255, 255, 255, 0.65);
+    color: #000;
     border-radius: 2px;
+}
+.d3-tip.tip-inverse {
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
 }
 
 /* Creates a small triangle extender for the tooltip */
@@ -44,10 +48,13 @@ section {
     font-size: 10px;
     width: 100%;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.65);
     content: "\25BC";
     position: absolute;
     text-align: center;
+}
+.d3-tip.tip-inverse:after {
+    color: rgba(0, 0, 0, 0.65);
 }
 
 /* Style northward tooltips differently */
@@ -108,7 +115,7 @@ section {
     fill: #fff;
     fill-opacity: 0.6;
 }
-.district:hover{
+.district:hover, .district.highlight{
     fill: #ff0000;
     fill-opacity: 0.2;
 }

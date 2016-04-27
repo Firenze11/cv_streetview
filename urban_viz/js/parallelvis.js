@@ -25,17 +25,17 @@ d3.custom.parallelVis = function module() {
         _selection.each(function(_data) {
             // generate chart here; `d` is the data and `this` is the element
             svg = d3.select(this).append('svg')
-            //svg.transition().duration(duration)
-                    .attr({width: width + margin.left + margin.right,
-                          height: height + margin.top + margin.bottom})
+                //svg.transition().duration(duration)
+                .attr({width: width + margin.left + margin.right,
+                    height: height + margin.top + margin.bottom})
                 .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
             var dimensions;
             // Extract the list of dimensions and create a scale for each.
             x.domain(dimensions = d3.keys(_data[0]).filter(function(d) {
                 return d != "lat" && d != "lng" && d != "color" && d != "id" && d != "neighborhood" && d != "city"
-                        && (y[d] = d3.scale.linear()
+                    && (y[d] = d3.scale.linear()
                         .domain(d3.extent(_data, function(p) { return +p[d]; }))
                         .range([height, 0]));
             }));

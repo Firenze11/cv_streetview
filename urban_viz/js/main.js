@@ -52,11 +52,11 @@ $(function(){
 
     setInterval(function(){
         carousel.jcarousel('scroll', '+=1');
-    }, 3000);
+    }, 20000);
 
     //var data = [];
 
-    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _hidimData) {
+    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData) {
 
         // pre-processing
         // assigning centers to geojson objects
@@ -70,18 +70,27 @@ $(function(){
         _pgData.forEach( function(d, i) {
             d.center = dataCenters[i];
         });
+        _imData.forEach( function(d, i) {
+            d.center = dataCenters[i];
+        });
+
         var districtNodes = _nodeData;
         var districtNodesMap = d3.map(districtNodes, function(d) { return d.name; });
         _linkData.forEach( function(d) {
             d.source = districtNodesMap.get(d.source);
             d.target = districtNodesMap.get(d.target);
         });
+        var hidimData = _ptData
+            .reduce(function(a, b){ return a.concat(b); }, [])
+            .filter(function() { return Math.random() < 0.04; });
+        //console.log(hidimData);
 
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
         //var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
         var pointMap = d3.custom.mapVis().shapeType("point");
         var myForceVis = d3.custom.forceVis().numClusters(3);
         var myParallelVis = d3.custom.parallelVis();
+        var myDemersVis = d3.custom.demersVis();
 
 
         d3.selectAll(".map-point")
@@ -92,35 +101,40 @@ $(function(){
             .data(_pgData)
             .call(polygonMap);
 
-        //d3.select("#nodeVis")
-        //    .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 2.2; }) })
-        //    .call(myForceVis);
+        d3.select("#nodeVis")
+            .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 1.5; }) })
+            .call(myForceVis);
 
         d3.select("#parallelVis")
-            .datum(_hidimData)
+            .datum(hidimData)
             .call(myParallelVis);
 
-        myParallelVis.on("brushed", function() {
-            //console.log(this,arguments);
+        d3.select("#appearanceVis")
+            .datum(_imData[1])
+            .call(myDemersVis);
 
-            //d3.selectAll(".map-point")
-            //    .data([_ptData[3],_ptData[2],_ptData[1], _ptData[0]]);
-            //pointMap.update();
+        myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);
         });
-        pointMap.on("locClicked", function(city,lat,lng, id) {
+        pointMap.on("locClicked", function(d) {
+            // 1. select image for display
             for(var i= 0; i<4; i++) {
-                var imsrc = imgroot+city+"/"+lat+","+lng+"_"+i+".png";
+                var imsrc = imgroot+ d.city+"/"+ d.lat+","+ d.lng+"_"+i+".png";
                 carousel.find('li:eq('+i+')')
                     .html("<img src='"+imsrc+"'/>");
             }
+            // 2. select point on its own to highlight
             d3.select("#mapsdot").select(".selected").classed("selected", false);
-            d3.select("#mapsdot").select("."+city+"_"+id).classed("selected", true);
+            d3.select("#mapsdot").select("."+ d.city+"_"+ d.id).classed("selected", true);
 
+            // 3. select line in parallelvis to highlight
             d3.select("#parallelVis").select(".selected").classed("selected", false);
-            d3.select("#parallelVis").select("."+city+"_"+id).classed("selected", true);
+            d3.select("#parallelVis").select("."+ d.city+"_"+ d.id).classed("selected", true);
             //console.log(d3.select(".map-point").select(city+"_"+id));
         });
+        myForceVis.on("nodeHovered", function() {
+            polygonMap.highlightSelection(arguments);
+        })
     };
 
     var startHere = function(){
@@ -136,7 +150,11 @@ $(function(){
             .defer(d3.json, "data/boundary_sanfrancisco.geojson")
             .defer(d3.csv, "data/deep_cluster_boston.csv")
             .defer(d3.csv, "data/link_boston.csv")
-            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link   ) {
+            .defer(d3.csv, "data/best_img_boston.csv")
+            .defer(d3.csv, "data/best_img_chicago.csv")
+            .defer(d3.csv, "data/best_img_newyork.csv")
+            .defer(d3.csv, "data/best_img_sanfrancisco.csv")
+            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, b_im, c_im, n_im, s_im) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -145,7 +163,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, b_pt);
+                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, [b_im, c_im, n_im, s_im]);
                 }
             });
     }

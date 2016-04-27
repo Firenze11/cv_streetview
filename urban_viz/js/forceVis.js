@@ -9,6 +9,16 @@ d3.custom.forceVis = function module() {
         numClusters = 5,
         duration = 500;
     var svg;
+
+    var dispatch = d3.dispatch("nodeHovered");
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip tip-inverse')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.name + "</span>";
+        });
+
     var color = d3.scale.category20(),
         foci = [];
     var xScale = d3.scale.ordinal();
@@ -26,13 +36,13 @@ d3.custom.forceVis = function module() {
         .size([width, height]);
 
     function my(_selection) {
-        // generate chart here, using `width` and `height`
         _selection.each(function(_data) {
-            // generate chart here; `d` is the data and `this` is the element
+            //console.log(_data);
             svg = d3.select(this).append('svg');
             svg.transition().duration(duration).attr({width: width, height: height});
 
-            console.log(numClusters);
+            svg.call(tip);
+
 
             xScale.domain(d3.range(numClusters))
                 .rangePoints([0, width], 0.7);
@@ -41,13 +51,7 @@ d3.custom.forceVis = function module() {
                 return {x: d, y: height/2};
             });
 
-            //_data.links.forEach(function(d) {
-            //    console.log(d.target, d.source);
-            //});
-            //_data.nodes.forEach(function(d) {
-            //    console.log(d.target, d.source);
-            //});
-            console.log(foci);
+            //console.log(foci);
 
             force
                 .nodes(_data.nodes)
@@ -65,11 +69,10 @@ d3.custom.forceVis = function module() {
                 .enter().append("circle")
                 .attr("class", "node")
                 .attr("r", 5)
-                .style("fill", function(d) { return color(d.group); })
+                .style("fill", function(d) { return color(d.cluster_outof_4); })
+                .on('mouseover', mouseOverNode)
+                .on('mouseout', function() { tip.hide(); })
                 .call(force.drag);
-
-            node.append("title")
-                .text(function(d) { return d.name; });
 
             force.on("tick", function() {
                 var k = .1 * force.alpha();
@@ -98,6 +101,11 @@ d3.custom.forceVis = function module() {
         });
     }
 
+    function mouseOverNode(d) {
+        dispatch.nodeHovered(d.name);
+        tip.show(d);
+    }
+
     my.width = function(value) {
         if (!arguments.length) return width;
         width = value;
@@ -116,5 +124,6 @@ d3.custom.forceVis = function module() {
         return my;
     };
 
+    d3.rebind(my, dispatch, 'on');
     return my;
 };
