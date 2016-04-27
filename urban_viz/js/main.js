@@ -69,10 +69,11 @@ $(function(){
         });
         _pgData.forEach( function(d, i) {
             d.center = dataCenters[i];
+            d.metaData = _imData[i];
         });
-        _imData.forEach( function(d, i) {
-            d.center = dataCenters[i];
-        });
+        //_imData.forEach( function(d, i) {
+        //    d.center = dataCenters[i];
+        //});
 
         var districtNodes = _nodeData;
         var districtNodesMap = d3.map(districtNodes, function(d) { return d.name; });
@@ -110,7 +111,7 @@ $(function(){
             .call(myParallelVis);
 
         d3.select("#appearanceVis")
-            .datum(_imData[1])
+            .datum(_pgData[2])
             .call(myDemersVis);
 
         myParallelVis.on("brushed", function() {

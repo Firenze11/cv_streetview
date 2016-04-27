@@ -8,16 +8,16 @@ d3.custom.demersVis = function module() {
 
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width = 960 - margin.left - margin.right,
-        height = 1000 - margin.top - margin.bottom,
+        height = 500 - margin.top - margin.bottom,
         duration = 500;
-        padding = 3;
+    padding = 3;
 
     var projection, path,
-    //radius = function() { return 25;},
+        radius = function() { return 25;},
 
-        radius = d3.scale.sqrt()
-            .domain([0, 3000])
-            .range([0, 25]),
+    //radius = d3.scale.sqrt()
+    //    .domain([0, d3.max(valueById)])
+    //    .range([0, 30]),
 
         force = d3.layout.force()
             .charge(0)
@@ -43,13 +43,6 @@ d3.custom.demersVis = function module() {
 
     function update() {
         selection.each(function(_data) {
-            //_data.features.forEach( function(d) {
-            //    console.log(d.properties.NAME);
-            //})
-
-            var nbhMap = d3.map(_data.metaData, function(d) {
-                return d.name;
-            });
 
             var svg = d3.select(this).select('svg');
             if (!svg[0][0]) svg = d3.select(this).append('svg');
@@ -59,32 +52,21 @@ d3.custom.demersVis = function module() {
             svg.call(tip);
 
             projection = d3.geo.mercator()
-                .scale(320000)
+                .scale(280000)
                 .rotate([-_data.center[0], -_data.center[1]])  // negative!!
                 .translate([width / 2, height / 2]); // LONG - LAT of center point
 
-            path = d3.geo.path()
-                .projection(projection);
-
-            svg.selectAll("path")
-                .data(_data.features)
-                .enter().append("path")
-                .attr("class", function(d) {
-                    return "district " + d.properties.NAME;
-                })
-                .attr("d", path);
-
-            var nodes = _data.features
+            var nodes = _data
                 .map(function(d) {
-                    var nbhName = d.properties.NAME.replace(/[\/ -]/g, ""),
-                        point = path.centroid(d);
-                        //value = 1; //_data.metaData[d.properties.NAME];;
-                    console.log(nbhName);
+                    var latlng = d[3].slice(0,-4).replace(/[\/,_]/g, ",").split(",").slice(1,3),
+                        point = projection([+latlng[1],+latlng[0]]);
+                    //console.log(latlng, point);
+                    value = 1; //_data.metaData[d.properties.NAME];
                     return {
                         x: point[0], y: point[1],
                         x0: point[0], y0: point[1],
-                        r: radius(path.area(d)), /////////////////////
-                        fileName: nbhMap.get(nbhName)[3]
+                        r: radius(value), /////////////////////
+                        fileName: d[3]
                     };
                 });
 
@@ -99,7 +81,6 @@ d3.custom.demersVis = function module() {
                 .attr("xlink:href", function(d) {
                     return imgroot+ d.fileName;
                 })
-                .attr("opacity",0.8)
                 .attr("x", '-12px')
                 .attr("y", '-12px')
                 .attr("width", function(d) { return d.r * 2; })
