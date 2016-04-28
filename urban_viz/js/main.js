@@ -103,7 +103,7 @@ $(function(){
             .call(polygonMap);
 
         d3.select("#nodeVis")
-            .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 1.5; }) })
+            .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 0.01; }) })
             .call(myForceVis);
 
         d3.select("#parallelVis")
@@ -111,7 +111,7 @@ $(function(){
             .call(myParallelVis);
 
         d3.select("#appearanceVis")
-            .datum(_pgData[2])
+            .datum(_pgData[3])
             .call(myDemersVis);
 
         myParallelVis.on("brushed", function() {

@@ -28,10 +28,10 @@ d3.custom.forceVis = function module() {
         //.gravity(0)
         .linkStrength(function(d){
             //console.log(d.value);
-            return Math.min(1, d.value/10);
+            return  Math.min(1, d.value/10);
         })
         .linkDistance(function(d){
-            return 200/ (d.value*d.value);
+            return 12/ (d.value*d.value);
         })
         .size([width, height]);
 

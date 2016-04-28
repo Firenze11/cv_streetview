@@ -128,7 +128,7 @@ select {
 /* nodeVis */
 .link {
     stroke: #999;
-    stroke-opacity: .6;
+    stroke-opacity: .15;
 }
 
 /* parallelVis */
