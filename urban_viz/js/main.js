@@ -111,7 +111,7 @@ $(function(){
             .call(myParallelVis);
 
         d3.select("#appearanceVis")
-            .datum(_pgData[3])
+            .datum(_pgData[0])
             .call(myDemersVis);
 
         myParallelVis.on("brushed", function() {
