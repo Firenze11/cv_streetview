@@ -1,6 +1,6 @@
 imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
-netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\sanfrancisco-net-epoch-50.mat';
-imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\sanfrancisco-imdb.mat';
+netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-net-epoch-75.mat';
+imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-imdb.mat';
 
 num_cat = 32; % number of categories, change this
 % evaluate
@@ -25,6 +25,11 @@ predLabels = zeros(1,length(names));
 bestScores = zeros(1,length(names));
 ownScores = zeros(1,length(names));
 
+% variable for storing test features
+features = zeros(length(images),4096); % change to the number of weights in layer:
+                                       % for city-alexnet-simplenn model,
+                                       % this number is 4096 for FC7 layer
+                                       
 for i = 1:length(names)
 im = imread(sprintf(imdir,strcat(names{i}(1:end-4),'.png'))); % change this % names{i}
 im_ = single(im) ; % note: 0-255 range
@@ -36,6 +41,9 @@ end
 
 % run the CNN
 res = vl_simplenn(net, im_) ;
+
+% extract features
+features(i,:) = res(end-2).x(:)'; % for alexNet, we want this FC7 layer
 
 % show the classification result
 scores = squeeze(gather(res(end).x)) ;
@@ -75,12 +83,11 @@ coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
 coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
 end
 
-save('newyork_test_stats.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate');
-% % csvwrite('boston_test_stats_num.csv',[names',labels',ownScores',predLabels',bestScores']);
-% % csvwrite('singapore_test_stats_map.csv',[coords,labels',ownScores',predLabels',bestScores']);
-csvwrite('sanfrancisco_confusion.csv',confusion_rate);
+csvwrite('deep_features_all.csv',test_features); 
+save('test_stats_all.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate');
+csvwrite('confusion_all.csv',confusion_rate);
 
-fid = fopen('sanfrancisco_test_stats.csv','wt');
+fid = fopen('test_stats_all.csv','wt');
  if fid>0
      for i=1:length(names)
 %          fprintf(fid,'%s\n',names{k,:});
