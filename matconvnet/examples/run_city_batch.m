@@ -1,89 +1,89 @@
-imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
-netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-net-epoch-75.mat';
-imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-imdb.mat';
-
-num_cat = 32; % number of categories, change this
-% evaluate
-% initialize MatConvNet
-run(fullfile(fileparts(mfilename('fullpath')), ...
-  '..', 'matlab', 'vl_setupnn.m')) ;
-
-% load the pre-trained CNN
-trainedstuff = load(netdir); % change this
-net = trainedstuff.net;
-net.layers{1,end}.type = 'softmax';
-net.layers{1,end}.name = 'prob';
-
-% loop through test images and estimate results
-imdb = load(imdbdir); % change this
-names = imdb.images.name(imdb.images.set~=1); %both test and validation set
-labels = imdb.images.label(imdb.images.set~=1);
-
-% variables for storing test statistics
-confusion = zeros(num_cat); % confusion matrix
-predLabels = zeros(1,length(names)); 
-bestScores = zeros(1,length(names));
-ownScores = zeros(1,length(names));
-
-% variable for storing test features
-features = zeros(length(images),4096); % change to the number of weights in layer:
-                                       % for city-alexnet-simplenn model,
-                                       % this number is 4096 for FC7 layer
+% imdir = 'C:/Users/lezhi/Dropbox/thesis/img_dense/%s'; % change this
+% netdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-net-epoch-75.mat';
+% imdbdir = 'C:\Users\lezhi\Dropbox\thesis\trainedstuff\all-imdb.mat';
+% 
+% num_cat = 119; % number of categories, change this
+% % evaluate
+% % initialize MatConvNet
+% run(fullfile(fileparts(mfilename('fullpath')), ...
+%   '..', 'matlab', 'vl_setupnn.m')) ;
+% 
+% % load the pre-trained CNN
+% trainedstuff = load(netdir); % change this
+% net = trainedstuff.net;
+% net.layers{1,end}.type = 'softmax';
+% net.layers{1,end}.name = 'prob';
+% 
+% % loop through test images and estimate results
+% imdb = load(imdbdir); % change this
+% names = imdb.images.name(imdb.images.set~=1); %both test and validation set
+% labels = imdb.images.label(imdb.images.set~=1);
+% 
+% % variables for storing test statistics
+% confusion = zeros(num_cat); % confusion matrix
+% predLabels = zeros(1,length(names)); 
+% bestScores = zeros(1,length(names));
+% ownScores = zeros(1,length(names));
+% 
+% % variable for storing test features
+% features = zeros(length(names),4096); % change to the number of weights in layer:
+%                                        % for city-alexnet-simplenn model,
+%                                        % this number is 4096 for FC7 layer
                                        
-for i = 1:length(names)
-im = imread(sprintf(imdir,strcat(names{i}(1:end-4),'.png'))); % change this % names{i}
-im_ = single(im) ; % note: 0-255 range
-im_ = im_(1:256,:,:);
-im_ = imresize(im_, net.meta.normalization.imageSize(1:2));
-for j = 1:3
-  im_(:,:,j)=im_(:,:,j)-net.meta.normalization.averageImage(j);
-end
+% for i = 1:length(names)
+% im = imread(sprintf(imdir,strcat(names{i}(1:end-4),'.png'))); % change this % names{i}
+% im_ = single(im) ; % note: 0-255 range
+% im_ = im_(1:256,:,:);
+% im_ = imresize(im_, net.meta.normalization.imageSize(1:2));
+% for j = 1:3
+%   im_(:,:,j)=im_(:,:,j)-net.meta.normalization.averageImage(j);
+% end
+% 
+% % run the CNN
+% res = vl_simplenn(net, im_) ;
+% 
+% % extract features
+% features(i,:) = res(end-2).x(:)'; % for alexNet, we want this FC7 layer
+% 
+% % show the classification result
+% scores = squeeze(gather(res(end).x)) ;
+% [bestScore, best] = max(scores) ;
+% [sortedscores,index] = sort(scores,'descend');
+% ownscore = scores(labels(i)); 
+% 
+% % remember the prodicted category and their corresponding scores
+% predLabels(i) = best; 
+% bestScores(i) = bestScore;
+% ownScores(i) = ownscore;
+% 
+% % if categorized wrongly, 
+% % add the score difference between the top score and the score for the gound truth category
+% % to the corresponding cell in confusion matix
+% if best ~= labels(i) 
+%   score_diff = bestScore - ownscore;
+%   confusion(best,labels(i)) = confusion(best,labels(i)) + score_diff; % row for target label, column for ground truth label
+% end
+% 
+% i % print process
+% end
+% 
+% % save stats
+% % divide confusion matrix by the total number in each category, to get
+% % false classification rates
+% tot = zeros(1,num_cat);
+% for i = 1:num_cat
+%   tot (i) = length(names(labels==i)); 
+% end
+% confusion_rate = confusion*100 ./ double(repmat(tot,num_cat,1));
+% false_rate = sum(confusion_rate);
+% 
+% coords = zeros(length(names),2);
+% for i = 1:length(names)
+% coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
+% coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
+% end
 
-% run the CNN
-res = vl_simplenn(net, im_) ;
-
-% extract features
-features(i,:) = res(end-2).x(:)'; % for alexNet, we want this FC7 layer
-
-% show the classification result
-scores = squeeze(gather(res(end).x)) ;
-[bestScore, best] = max(scores) ;
-[sortedscores,index] = sort(scores,'descend');
-ownscore = scores(labels(i)); 
-
-% remember the prodicted category and their corresponding scores
-predLabels(i) = best; 
-bestScores(i) = bestScore;
-ownScores(i) = ownscore;
-
-% if categorized wrongly, 
-% add the score difference between the top score and the score for the gound truth category
-% to the corresponding cell in confusion matix
-if best ~= labels(i) 
-  score_diff = bestScore - ownscore;
-  confusion(best,labels(i)) = confusion(best,labels(i)) + score_diff; % row for target label, column for ground truth label
-end
-
-i % print process
-end
-
-% save stats
-% divide confusion matrix by the total number in each category, to get
-% false classification rates
-tot = zeros(1,num_cat);
-for i = 1:num_cat
-  tot (i) = length(names(labels==i)); 
-end
-confusion_rate = confusion*100 ./ double(repmat(tot,num_cat,1));
-false_rate = sum(confusion_rate);
-
-coords = zeros(length(names),2);
-for i = 1:length(names)
-coord = strsplit(names{i},{'/',',','_'},'CollapseDelimiters',true);
-coords(i,:) = [str2double(coord{2}),str2double(coord{3})];
-end
-
-csvwrite('deep_features_all.csv',test_features); 
+csvwrite('deep_features_all.csv',features); 
 save('test_stats_all.mat','names','ownScores','labels','bestScores','predLabels','confusion','confusion_rate','false_rate');
 csvwrite('confusion_all.csv',confusion_rate);
 
