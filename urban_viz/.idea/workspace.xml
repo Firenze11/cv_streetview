@@ -20,9 +20,9 @@
     <favorites_list name="urban_viz" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4200362">
+    <splitter split-orientation="horizontal" split-proportion="0.5662973">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.29193205">
+        <splitter split-orientation="horizontal" split-proportion="0.5">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
               <file leaf-file-name="mapvis.js" pinned="false" current-in-tab="false">
@@ -290,7 +290,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../innovation_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../algorithms" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -376,7 +376,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.106256746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
