@@ -130,6 +130,7 @@ select {
 .link {
     stroke: #999;
     stroke-opacity: .15;
+    fill: none;
 }
 
 /* parallelVis */
@@ -159,6 +160,21 @@ select {
 
 .axis text {
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+/* treeVis*/
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
 }
 
 

@@ -56,7 +56,7 @@ $(function(){
 
     //var data = [];
 
-    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData) {
+    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData, _childrenData) {
 
         // pre-processing
         // assigning centers to geojson objects
@@ -92,6 +92,7 @@ $(function(){
         var myForceVis = d3.custom.forceVis().numClusters(3);
         var myParallelVis = d3.custom.parallelVis();
         var myDemersVis = d3.custom.demersVis();
+        var myTreeVis = d3.custom.treeVis();
 
 
         d3.selectAll(".map-point")
@@ -113,6 +114,10 @@ $(function(){
         d3.select("#appearanceVis")
             .datum(_pgData[0])
             .call(myDemersVis);
+
+        d3.select("#hierarchyVis")
+            .datum(_childrenData)
+            .call(myTreeVis);
 
         myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);
@@ -155,7 +160,8 @@ $(function(){
             .defer(d3.csv, "data/best_img_chicago.csv")
             .defer(d3.csv, "data/best_img_newyork.csv")
             .defer(d3.csv, "data/best_img_sanfrancisco.csv")
-            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, b_im, c_im, n_im, s_im) {
+            .defer(d3.csv, "data/children.csv")
+            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, b_im, c_im, n_im, s_im, children) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -164,7 +170,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, [b_im, c_im, n_im, s_im]);
+                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, [b_im, c_im, n_im, s_im], children);
                 }
             });
     }

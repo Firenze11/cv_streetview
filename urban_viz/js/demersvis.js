@@ -79,7 +79,7 @@ d3.custom.demersVis = function module() {
                     var nbhName = d.properties.NAME.replace(/[\/ -]/g, ""),
                         point = path.centroid(d);
                         //value = 1; //_data.metaData[d.properties.NAME];;
-                    console.log(nbhName);
+                    //console.log(nbhName);
                     return {
                         x: point[0], y: point[1],
                         x0: point[0], y0: point[1],
