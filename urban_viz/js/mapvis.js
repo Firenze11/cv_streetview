@@ -133,6 +133,14 @@ d3.custom.mapVis = function module() {
         return my;
     };
 
+    my.tip = function(value) {
+        //if (!arguments.length) return shapeTypee
+        tip.html(function(d) {
+            return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d[value] + "</span>";
+        });
+        return my;
+    };
+
     my.update = update;
 
     my.highlightSelection = function(_) {
@@ -152,7 +160,25 @@ d3.custom.mapVis = function module() {
                 return args.indexOf(d.properties.NAME) !== -1;
             });
         }
+    };
 
+    my.highlightSelection = function(_) {
+        if(shapeType === 'point') {
+            var actives = _[0], extents = _[1];
+            selection.selectAll("circle").classed("highlight", function(d) {
+                return actives.length > 0
+                    &&
+                    actives.every(function(p, i) {
+                        return extents[i][0] <= d[p] && d[p] <= extents[i][1];
+                    });// ? null : "none";
+            });
+        } else if (shapeType === "polygon") {
+            var args = Array.prototype.slice.call(_); // convert "arguments" object to array
+            console.log(_, arguments, args);
+            selection.selectAll(".district").classed("highlight", function(d) {
+                return args.indexOf(d.properties.NAME) !== -1;
+            });
+        }
     };
 
     d3.rebind(my, dispatch, 'on');

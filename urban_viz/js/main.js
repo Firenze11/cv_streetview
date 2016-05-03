@@ -56,7 +56,7 @@ $(function(){
 
     //var data = [];
 
-    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData, _childrenData) {
+    var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData, _childrenData, _ptAllData, _ancestorsData) {
 
         // pre-processing
         // assigning centers to geojson objects
@@ -74,6 +74,21 @@ $(function(){
         //_imData.forEach( function(d, i) {
         //    d.center = dataCenters[i];
         //});
+        _childrenData.forEach( function(d) {
+            d[0] = +d[0]; d[1] = +d[1];
+        });
+        _ptAllData.forEach( function(d, i) {
+            d.ancestors = _ancestorsData[i];
+        });
+
+        var _ptAll = ['boston', 'chicago', 'newyork', 'sanfrancisco'].map( function(d) {
+            return _ptAllData.filter( function(e) {
+                return e.label.split('_')[0] == d;
+            })
+        });
+        _ptAll.forEach( function(d, i) {
+            d.center = dataCenters[i];
+        });
 
         var districtNodes = _nodeData;
         var districtNodesMap = d3.map(districtNodes, function(d) { return d.name; });
@@ -93,6 +108,7 @@ $(function(){
         var myParallelVis = d3.custom.parallelVis();
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
+        var clusterMap = d3.custom.mapVis().shapeType("point").tip('label');
 
 
         d3.selectAll(".map-point")
@@ -118,6 +134,10 @@ $(function(){
         d3.select("#hierarchyVis")
             .datum(_childrenData)
             .call(myTreeVis);
+
+        d3.selectAll(".map-cluster")
+            .data(_ptAll)
+            .call(clusterMap);
 
         myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);
@@ -161,7 +181,9 @@ $(function(){
             .defer(d3.csv, "data/best_img_newyork.csv")
             .defer(d3.csv, "data/best_img_sanfrancisco.csv")
             .defer(d3.csv, "data/children.csv")
-            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, b_im, c_im, n_im, s_im, children) {
+            .defer(d3.csv, "data/test_stats_all.csv")
+            .defer(d3.json, "data/parents.json")
+            .await(function(error, b_pt, c_pt, n_pt, s_pt, b_pg, c_pg, n_pg, s_pg, node, link, b_im, c_im, n_im, s_im, children, all_pt, ancestors) {
                 if (error) {
                     console.log(error);
                 } else {
@@ -170,7 +192,7 @@ $(function(){
                     //        d[i] = +d[i];
                     //    }
                     //});
-                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, [b_im, c_im, n_im, s_im], children);
+                    return dataLoaded([b_pt, c_pt, n_pt, s_pt], [b_pg, c_pg, n_pg, s_pg],node, link, [b_im, c_im, n_im, s_im], children, all_pt, ancestors);
                 }
             });
     }

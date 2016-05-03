@@ -64,7 +64,7 @@ section {
     left: 0;
 }
 
-#mapspolygon, #mapsdot {
+#mapspolygon, #mapsdot, #mapscluster {
     /*position: absolute;*/
     /*height: 300px;*/
     /*width: 100%;*/
@@ -72,12 +72,12 @@ section {
     /*padding-top: 30px;*/
     /*padding-bottom: 30px;*/
 }
-#nodeVis, #parallelVis {
+#nodeVis, #parallelVis, #hierarchyVis {
     height: 300px;
     background-color: #f9f9f9;
 }
 
-#nodeVis, #parallelVis {
+#nodeVis, #parallelVis, #hierarchyVis {
     border-color: #ddd;
     border-width: 2px;
     border-style: dashed;
@@ -90,10 +90,10 @@ section {
     cursor: pointer;
 }
 
-#mapsdot circle:not(.highlight) {
+#mapsdot circle:not(.highlight), #mapscluster circle:not(.highlight) {
     fill: #aaa;
 }
-#mapsdot circle:hover{
+#mapsdot circle:hover, #mapscluster circle:hover{
      fill: #ff0000;
 }
 #mapsdot circle.selected  {
