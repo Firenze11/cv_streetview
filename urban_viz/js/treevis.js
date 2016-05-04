@@ -71,7 +71,7 @@ d3.custom.treeVis = function module() {
             links = tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function(d) { d.y = d.level * 10; });
+        nodes.forEach(function(d) { d.y = d.level * 80; });
 
         // Update the nodes…
         var node = svg.selectAll("g.node")
@@ -91,7 +91,7 @@ d3.custom.treeVis = function module() {
             .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
             .attr("dy", ".35em")
             .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return "level: "+d.level + ", depth: "+ d.depth; })
+            .text(function(d) { return "level: "+d.level + ", depth: "+ d.depth + ", id: "+ d.id; })
             .style("fill-opacity", 1e-6);
 
         // Transition nodes to their new position.

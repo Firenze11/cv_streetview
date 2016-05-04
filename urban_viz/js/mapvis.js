@@ -4,7 +4,7 @@ d3.custom.mapVis = function module() {
     var width = 265, // default width
         height = 265, // default height
         shapeType = "polygon", // OR "point"
-        duration = 500;
+        duration = 750;
     var radius = 2;
     var color = d3.scale.cubehelix();
 
@@ -29,6 +29,10 @@ d3.custom.mapVis = function module() {
         selection = _selection;
         selection.each(function(_data) {
             data = data.concat(_data);
+        });
+        data.forEach( function(d, i) {
+            d.cluster = 0;
+            d.depth = 0;
         });
         update();
     }
@@ -99,20 +103,27 @@ d3.custom.mapVis = function module() {
                         return b.length - a.length;
                     }));
                 hexagons.enter().append("path")
-                    .attr("class", "hexagon");
-                hexagons.attr("d", function (d) {
+                    .attr("class", "hexagon")
+                    .on("click", function(d) {
+                        console.log(d.length, d, most(d, function(e) {
+                            return e.cluster;
+                        }));
+                    });
+                hexagons.transition().duration(duration)
+                    .attr("d", function (d) {
                         return hexbin.hexagon(2.8);
                     })//radius(d.length)); })
                     .attr("transform", function (d) {
                         return "translate(" + d.x + "," + d.y + ")";
                     })
                     .style("fill", function (d) {
-                        if(!d[0].category) {
+                        if(!d[0].cluster) {
                             return "#aaa";
                         } else {
-                            return color(most(d, function(e) {
-                                return d.category;
-                            }));
+                            var most_cluster = most(d, function(e) {
+                                return e.cluster;
+                            });
+                            return most_cluster === -1 ? "#aaa" : color(most_cluster);
                         }
                     });
                 hexagons.exit().remove();
@@ -128,23 +139,27 @@ d3.custom.mapVis = function module() {
         //    cate = cate ? 1 : cate++;
         //});
         // http://stackoverflow.com/questions/1053843/get-the-element-with-the-highest-occurrence-in-an-array
-        if(arr.length == 0)
+        if(arr.length == 0) {
             return null;
-        var modeMap = {};
-        var maxEl = arr[0], maxCount = 1;
-        var cateArr = arr.map(callback);
-        for(var i = 0; i < cateArr.length; i++) {
-            var el = cateArr[i];
-            if(modeMap[el] == null)
-                modeMap[el] = 1;
-            else
-                modeMap[el]++;
-            if(modeMap[el] > maxCount) {
-                maxEl = el;
-                maxCount = modeMap[el];
+        } else if(arr.length === 1 || arr.length === 2) {
+            return callback(arr[0]);
+        } else {
+            var modeMap = {};
+            var cateArr = arr.map(callback);
+            var maxEl = cateArr[0], maxCount = 1;
+            for(var i = 0; i < cateArr.length; i++) {
+                var el = cateArr[i];
+                if(modeMap[el] == null)
+                    modeMap[el] = 1;
+                else
+                    modeMap[el]++;
+                if(modeMap[el] > maxCount) {
+                    maxEl = el;
+                    maxCount = modeMap[el];
+                }
             }
+            return maxEl;
         }
-        return maxEl;
     }
 
     my.width = function(value) {
@@ -194,27 +209,64 @@ d3.custom.mapVis = function module() {
         }
     };
 
-    my.highlightCluster = function(_) {
+    my.highlightCluster = function(param_in) {
         if(shapeType === 'hexbin') {
-            //selection.selectAll("hexagon").style("fill", function(d) {
-            //    if(d.ancestors.indexOf(_) != -1) {
-            //        console.log($(this));
-            //        return "#f00";
-            //    } else {
-            //        return "#0ff";
-            //    }
-            //});
             var n_nodes = 34017;
-            var isOpen = _.mode == "open" ? 1 : 0;
-            data.forEach( function(d, i) {
-                d.category = n_nodes - 1 - d.ancestors[isOpen + _.depth];
-                if(i % 100 === 0) console.log(d.category);
-            });
+            var isOpen = param_in.mode == "open" ? 1 : 0;
+
+            if (isOpen === 1) {
+
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d.cluster !== n_nodes - 1 - param_in.id) {
+                            d._cluster = d.cluster;
+                            d.cluster = -1;
+                        }
+                    });
+                    update();
+                }, 0);
+
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d.cluster === n_nodes - 1 - param_in.id) {
+                            d.cluster = n_nodes - 1 - d.ancestors[param_in.depth + 1];
+                            d.depth = param_in.depth + 1;
+                        }
+                    });
+                    update();
+                }, 1000);
+
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d._cluster) {
+                            if(d._cluster !== -1) {
+                                d.cluster = d._cluster;
+                                d._cluster = -1;
+                            }
+                        }
+                    });
+                    update();
+                }, 5000);
+
+            } else {
+                data.forEach( function(d) {
+
+                    if(d.ancestors[param_in.depth] === param_in.id) {
+                        //console.log(d.depth, d.ancestors[param_in.depth], param_in.id);
+                        d.cluster = n_nodes - 1 - param_in.id;
+                        d.depth = param_in.depth;
+                    }
+                    //
+                    //if(i % 100 === 0) {
+                    //    console.log(d.cluster);
+                    //}
+                });
+            }
+
 
         } else if (shapeType === "polygon") {
 
         }
-        update();
     };
 
     d3.rebind(my, dispatch, 'on');

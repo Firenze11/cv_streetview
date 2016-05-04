@@ -23,11 +23,11 @@ d3.custom.mapVis = function(model, parentElement) {
 
 
 
-            if (category === 'geojson') {
+            if (cluster === 'geojson') {
                 L.geoJson(_data.arr, {
                     style: function (feature) {
                         //console.log(dotColor(feature));
-                        return {color: (category === 'color') ? feature.value : palette(feature.value),
+                        return {color: (cluster === 'color') ? feature.value : palette(feature.value),
                                 fillOpacity: 0.4};
                     },
                     onEachFeature: function (feature, layer) { // probably need to change to more generic representation
@@ -44,7 +44,7 @@ d3.custom.mapVis = function(model, parentElement) {
 
                     L.circleMarker(coor, {
                         stroke: false,
-                        fillColor: (category === 'color') ? feature.value : palette(feature.value),
+                        fillColor: (cluster === 'color') ? feature.value : palette(feature.value),
                         fillOpacity: 0.5,
                         radius: 5,
                         className: 'imgCircle ' + d.label
