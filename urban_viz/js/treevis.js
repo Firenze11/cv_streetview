@@ -9,6 +9,10 @@ d3.custom.treeVis = function module() {
         height = 300 - margin.top - margin.bottom;
     var svg;
 
+    var map = {};
+    var n_nodes = 34017;
+    var n_leaves = 17009;
+
     var dispatch = d3.dispatch("nodeClicked");
 
     //var tip = d3.tip()
@@ -44,18 +48,20 @@ d3.custom.treeVis = function module() {
             root.x0 = height / 2;
             root.y0 = 0;
 
-            function collapse(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d._children.forEach(collapse);
-                    d.children = null;
-                }
-            }
+
 
             root.children.forEach(collapse);
             update(root);
 
         });
+    }
+
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
     }
 
     function update(source) {
@@ -85,7 +91,7 @@ d3.custom.treeVis = function module() {
             .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
             .attr("dy", ".35em")
             .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return d.id; })
+            .text(function(d) { return "level: "+d.level + ", depth: "+ d.depth; })
             .style("fill-opacity", 1e-6);
 
         // Transition nodes to their new position.
@@ -147,21 +153,21 @@ d3.custom.treeVis = function module() {
 
     // Toggle children on click.
     function click(d) {
-        dispatch.nodeClicked(d.id);
+        //console.log(d.depth, n_nodes-d.id-1);
+
 
         if (d.children) {
             d._children = d.children;
             d.children = null;
+            dispatch.nodeClicked({depth: d.depth, id: d.id, mode: "close" });
         } else {
             d.children = d._children;
             d._children = null;
+            dispatch.nodeClicked({depth: d.depth, id: d.id, mode: "open" });
         }
         update(d);
     }
 
-    var map = {};
-    var n_nodes = 34017;
-    var n_leaves = 17009;
     function build_tree(children) {
 
         for (var i=0; i<children.length; i++) {
@@ -185,30 +191,24 @@ d3.custom.treeVis = function module() {
         return map[n_nodes-1];
     }
 
-    function find_leaves(node) {
-        var siblings = node.children.map( function(d) {
-            return d.id;
-        }), children0, children1;
-
-        if (map[siblings[0]].id < n_leaves) {
-            children0 = [map[siblings[0]].id];
-        } else {
-            children0 = find_leaves(map[siblings[0]].id);
-        }
-        if (siblings[1] < n_leaves) {
-            children1 = [map[siblings[0]].id];
-        } else {
-            children1 = find_leaves(map[siblings[1]].id);
-        }
-
-        return children0.concat(children1);
-    }
-
-
-
-
-
-
+    //function find_leaves(node) {
+    //    var siblings = node.children.map( function(d) {
+    //        return d.id;
+    //    }), children0, children1;
+    //
+    //    if (map[siblings[0]].id < n_leaves) {
+    //        children0 = [map[siblings[0]].id];
+    //    } else {
+    //        children0 = find_leaves(map[siblings[0]].id);
+    //    }
+    //    if (siblings[1] < n_leaves) {
+    //        children1 = [map[siblings[0]].id];
+    //    } else {
+    //        children1 = find_leaves(map[siblings[1]].id);
+    //    }
+    //
+    //    return children0.concat(children1);
+    //}
 
     my.width = function(value) {
         if (!arguments.length) return width;

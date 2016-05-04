@@ -108,7 +108,7 @@ $(function(){
         var myParallelVis = d3.custom.parallelVis();
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
-        var clusterMap = d3.custom.mapVis().shapeType("point").tip('label');
+        var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
 
 
         d3.selectAll(".map-point")
@@ -160,7 +160,11 @@ $(function(){
         });
         myForceVis.on("nodeHovered", function() {
             polygonMap.highlightSelection(arguments);
-        })
+        });
+        myTreeVis.on("nodeClicked", function(d) {
+            //console.log(d);
+            clusterMap.highlightCluster(d);
+        });
     };
 
     var startHere = function(){

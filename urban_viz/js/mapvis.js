@@ -6,8 +6,9 @@ d3.custom.mapVis = function module() {
         shapeType = "polygon", // OR "point"
         duration = 500;
     var radius = 2;
+    var color = d3.scale.cubehelix();
 
-    var selection;
+    var selection, data = [];
 
     var dispatch = d3.dispatch("locClicked");
 
@@ -26,6 +27,9 @@ d3.custom.mapVis = function module() {
 
     function my(_selection) {
         selection = _selection;
+        selection.each(function(_data) {
+            data = data.concat(_data);
+        });
         update();
     }
 
@@ -78,10 +82,7 @@ d3.custom.mapVis = function module() {
 
             } else if (shapeType === "hexbin") {  //................................hexbin map
 
-                var color = d3.time.scale()
-                    .domain([new Date(1962, 0, 1), new Date(2006, 0, 1)])
-                    .range(["black", "steelblue"])
-                    .interpolate(d3.interpolateLab);
+                color.domain([0, 20]);
 
                 var hexbin = d3.hexbin()
                     .size([width, height])
@@ -93,26 +94,57 @@ d3.custom.mapVis = function module() {
                     d[1] = p[1];
                 });
 
-                svg.append("g")
-                    .attr("class", "hexagons")
-                    .selectAll("path")
+                var hexagons = svg.selectAll("path")
                     .data(hexbin(_data).sort(function (a, b) {
                         return b.length - a.length;
-                    }))
-                    .enter().append("path")
-                    .attr("d", function (d) {
+                    }));
+                hexagons.enter().append("path")
+                    .attr("class", "hexagon");
+                hexagons.attr("d", function (d) {
                         return hexbin.hexagon(2.8);
                     })//radius(d.length)); })
                     .attr("transform", function (d) {
                         return "translate(" + d.x + "," + d.y + ")";
                     })
                     .style("fill", function (d) {
-                        return color(d3.median(d, function (d) {
-                            return +d.date;
-                        }));
+                        if(!d[0].category) {
+                            return "#aaa";
+                        } else {
+                            return color(most(d, function(e) {
+                                return d.category;
+                            }));
+                        }
                     });
+                hexagons.exit().remove();
             }
         })
+    }
+
+    function most(arr, callback) {
+        //var count = {};
+        //var cateArr = arr.map(callback);
+        //cateArr.forEach( function(d) {
+        //    var cate = count[d];
+        //    cate = cate ? 1 : cate++;
+        //});
+        // http://stackoverflow.com/questions/1053843/get-the-element-with-the-highest-occurrence-in-an-array
+        if(arr.length == 0)
+            return null;
+        var modeMap = {};
+        var maxEl = arr[0], maxCount = 1;
+        var cateArr = arr.map(callback);
+        for(var i = 0; i < cateArr.length; i++) {
+            var el = cateArr[i];
+            if(modeMap[el] == null)
+                modeMap[el] = 1;
+            else
+                modeMap[el]++;
+            if(modeMap[el] > maxCount) {
+                maxEl = el;
+                maxCount = modeMap[el];
+            }
+        }
+        return maxEl;
     }
 
     my.width = function(value) {
@@ -162,23 +194,27 @@ d3.custom.mapVis = function module() {
         }
     };
 
-    my.highlightSelection = function(_) {
-        if(shapeType === 'point') {
-            var actives = _[0], extents = _[1];
-            selection.selectAll("circle").classed("highlight", function(d) {
-                return actives.length > 0
-                    &&
-                    actives.every(function(p, i) {
-                        return extents[i][0] <= d[p] && d[p] <= extents[i][1];
-                    });// ? null : "none";
+    my.highlightCluster = function(_) {
+        if(shapeType === 'hexbin') {
+            //selection.selectAll("hexagon").style("fill", function(d) {
+            //    if(d.ancestors.indexOf(_) != -1) {
+            //        console.log($(this));
+            //        return "#f00";
+            //    } else {
+            //        return "#0ff";
+            //    }
+            //});
+            var n_nodes = 34017;
+            var isOpen = _.mode == "open" ? 1 : 0;
+            data.forEach( function(d, i) {
+                d.category = n_nodes - 1 - d.ancestors[isOpen + _.depth];
+                if(i % 100 === 0) console.log(d.category);
             });
+
         } else if (shapeType === "polygon") {
-            var args = Array.prototype.slice.call(_); // convert "arguments" object to array
-            console.log(_, arguments, args);
-            selection.selectAll(".district").classed("highlight", function(d) {
-                return args.indexOf(d.properties.NAME) !== -1;
-            });
+
         }
+        update();
     };
 
     d3.rebind(my, dispatch, 'on');
