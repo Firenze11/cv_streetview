@@ -6,7 +6,13 @@ d3.custom.mapVis = function module() {
         shapeType = "polygon", // OR "point"
         duration = 750;
     var radius = 2;
-    var color = d3.scale.cubehelix();
+    var color = d3.scale.cubehelix().domain([0,.5, 1])
+        .range([
+            d3.hsl(-100, 0.75, 0.40),
+            d3.hsl(  80, 1.50, 0.85),
+            d3.hsl( 260, 0.75, 0.40)
+        ]),
+        colorMap; // cluster# -> color
 
     var selection, data = [];
 
@@ -86,8 +92,6 @@ d3.custom.mapVis = function module() {
 
             } else if (shapeType === "hexbin") {  //................................hexbin map
 
-                color.domain([0, 20]);
-
                 var hexbin = d3.hexbin()
                     .size([width, height])
                     .radius(3);
@@ -123,7 +127,7 @@ d3.custom.mapVis = function module() {
                             var most_cluster = most(d, function(e) {
                                 return e.cluster;
                             });
-                            return most_cluster === -1 ? "#aaa" : color(most_cluster);
+                            return most_cluster === -1 ? "#aaa" : color( colorMap[most_cluster]);
                         }
                     });
                 hexagons.exit().remove();
@@ -213,6 +217,16 @@ d3.custom.mapVis = function module() {
         if(shapeType === 'hexbin') {
             var n_nodes = 34017;
             var isOpen = param_in.mode == "open" ? 1 : 0;
+            colorMap = param_in.cmap;
+
+            data.forEach(function (d) {
+                if (d._cluster) {
+                    if(d._cluster !== -1) {
+                        d.cluster = d._cluster;
+                        d._cluster = -1;
+                    }
+                }
+            });
 
             if (isOpen === 1) {
 
@@ -249,18 +263,37 @@ d3.custom.mapVis = function module() {
                 }, 5000);
 
             } else {
-                data.forEach( function(d) {
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d.ancestors[param_in.depth] !== param_in.id) {
+                            d._cluster = d.cluster;
+                            d.cluster = -1;
+                        }
+                    });
+                    update();
+                }, 0);
 
-                    if(d.ancestors[param_in.depth] === param_in.id) {
-                        //console.log(d.depth, d.ancestors[param_in.depth], param_in.id);
-                        d.cluster = n_nodes - 1 - param_in.id;
-                        d.depth = param_in.depth;
-                    }
-                    //
-                    //if(i % 100 === 0) {
-                    //    console.log(d.cluster);
-                    //}
-                });
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d.ancestors[param_in.depth] === param_in.id) {
+                            d.cluster = n_nodes - 1 - param_in.id;
+                            d.depth = param_in.depth;
+                        }
+                    });
+                    update();
+                }, 1000);
+
+                setTimeout( function() {
+                    data.forEach(function (d) {
+                        if (d._cluster) {
+                            if(d._cluster !== -1) {
+                                d.cluster = d._cluster;
+                                d._cluster = -1;
+                            }
+                        }
+                    });
+                    update();
+                }, 5000);
             }
 
 

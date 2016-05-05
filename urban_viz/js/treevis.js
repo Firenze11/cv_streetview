@@ -4,14 +4,19 @@
 if(!d3.custom) d3.custom = {};
 
 d3.custom.treeVis = function module() {
-    var margin = {top: 20, right: 20, bottom: 20, left: 60},
+    var margin = {top: 0, right: 20, bottom: 0, left: 60},
         width = 1120 - margin.right - margin.left,
         height = 300 - margin.top - margin.bottom;
     var svg;
 
-    var map = {};
-    var n_nodes = 34017;
-    var n_leaves = 17009;
+    var map = {}, colorMap = {};
+    var n_nodes = 34017, n_leaves = 17009;
+    var color = d3.scale.cubehelix().domain([0,.5, 1])
+        .range([
+            d3.hsl(-100, 0.75, 0.40),
+            d3.hsl(  80, 1.50, 0.85),
+            d3.hsl( 260, 0.75, 0.40)
+        ]);
 
     var dispatch = d3.dispatch("nodeClicked");
 
@@ -26,8 +31,11 @@ d3.custom.treeVis = function module() {
         duration = 500,
         root;
 
-    var tree = d3.layout.tree()
-        .size([height, width]);
+    var tree = d3.layout.cluster()
+        .size([height, width])
+        .sort( function(a,b) {
+            return b.level - a.level;
+        });
 
     var diagonal = d3.svg.diagonal()
         .projection(function(d) { return [d.y, d.x]; });
@@ -49,8 +57,8 @@ d3.custom.treeVis = function module() {
             root.y0 = 0;
 
 
-
-            root.children.forEach(collapse);
+            collapse(root);
+            //root.children.forEach(collapse);
             update(root);
 
         });
@@ -71,7 +79,7 @@ d3.custom.treeVis = function module() {
             links = tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function(d) { d.y = d.level * 80; });
+        nodes.forEach(function(d) { d.y = Math.min(d.level * 140, width-8); });
 
         // Update the nodes…
         var node = svg.selectAll("g.node")
@@ -81,11 +89,12 @@ d3.custom.treeVis = function module() {
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
             .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+            .on("mouseover", function(d) { console.log(d.x); })
             .on("click", click);
 
         nodeEnter.append("circle")
             .attr("r", 1e-6)
-            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .style("fill", function(d) { return d._children ? color(d.x/height) : "#fff"; });
 
         nodeEnter.append("text")
             .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
@@ -100,8 +109,13 @@ d3.custom.treeVis = function module() {
             .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
         nodeUpdate.select("circle")
-            .attr("r", 4.5)
-            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .attr("r", 7.5)
+            .style("fill", function(d) { return d._children ? color(d.x/height) : "#fff"; });
+
+        // update color map
+        nodeUpdate.each( function(d) {
+            colorMap[n_nodes-1-d.id] = d.x / height;
+        });
 
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
@@ -153,19 +167,18 @@ d3.custom.treeVis = function module() {
 
     // Toggle children on click.
     function click(d) {
-        //console.log(d.depth, n_nodes-d.id-1);
-
-
+        var mode;
         if (d.children) {
             d._children = d.children;
             d.children = null;
-            dispatch.nodeClicked({depth: d.depth, id: d.id, mode: "close" });
+            mode = "close";
         } else {
             d.children = d._children;
             d._children = null;
-            dispatch.nodeClicked({depth: d.depth, id: d.id, mode: "open" });
+            mode = "open";
         }
         update(d);
+        dispatch.nodeClicked({depth: d.depth, id: d.id, mode: mode, cmap: colorMap });
     }
 
     function build_tree(children) {

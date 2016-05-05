@@ -163,17 +163,17 @@ select {
 }
 
 /* treeVis*/
-.node {
+#hierarchyVis .node {
     cursor: pointer;
 }
 
-.node circle {
-    fill: #fff;
-    stroke: steelblue;
+#hierarchyVis .node circle {
+    stroke: #ddd;
+    /*border-style: dashed;*/
     stroke-width: 1.5px;
 }
 
-.node text {
+#hierarchyVis .node text {
     font: 10px sans-serif;
 }
 

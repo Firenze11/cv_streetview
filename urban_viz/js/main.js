@@ -109,6 +109,7 @@ $(function(){
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
         var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
+        var myClusterVis = d3.custom.clusterVis();
 
 
         d3.selectAll(".map-point")
@@ -138,6 +139,10 @@ $(function(){
         d3.selectAll(".map-cluster")
             .data(_ptAll)
             .call(clusterMap);
+
+        d3.select("#hierarchyVis2")
+            .datum(_childrenData)
+            .call(myClusterVis);
 
         myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);

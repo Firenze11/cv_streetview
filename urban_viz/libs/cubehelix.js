@@ -1,47 +1,4 @@
 /**
  * Created by lezhi on 5/3/2016.
  */
-(function() {
-    var radians = Math.PI / 180;
-
-    d3.scale.cubehelix = function() {
-        return d3.scale.linear()
-            .range([d3.hsl(300, .5, 0), d3.hsl(-240, .5, 1)])
-            .interpolate(d3.interpolateCubehelix);
-    };
-
-    d3.interpolateCubehelix = d3_interpolateCubehelix(1);
-    d3.interpolateCubehelix.gamma = d3_interpolateCubehelix;
-
-    function d3_interpolateCubehelix(γ) {
-        return function(a, b) {
-            a = d3.hsl(a);
-            b = d3.hsl(b);
-
-            var ah = (a.h + 120) * radians,
-                bh = (b.h + 120) * radians - ah,
-                as = a.s,
-                bs = b.s - as,
-                al = a.l,
-                bl = b.l - al;
-
-            if (isNaN(bs)) bs = 0, as = isNaN(as) ? b.s : as;
-            if (isNaN(bh)) bh = 0, ah = isNaN(ah) ? b.h : ah;
-
-            return function(t) {
-                var h = ah + bh * t,
-                    l = Math.pow(al + bl * t, γ),
-                    a = (as + bs * t) * l * (1 - l);
-                return "#"
-                    + hex(l + a * (-0.14861 * Math.cos(h) + 1.78277 * Math.sin(h)))
-                    + hex(l + a * (-0.29227 * Math.cos(h) - 0.90649 * Math.sin(h)))
-                    + hex(l + a * (+1.97294 * Math.cos(h)));
-            };
-        };
-    }
-
-    function hex(v) {
-        var s = (v = v <= 0 ? 0 : v >= 1 ? 255 : v * 255 | 0).toString(16);
-        return v < 0x10 ? "0" + s : s;
-    }
-})();
+!function(){function t(t){return function(e,i){e=d3.hsl(e),i=d3.hsl(i);var r=(e.h+120)*a,h=(i.h+120)*a-r,s=e.s,l=i.s-s,o=e.l,u=i.l-o;return isNaN(l)&&(l=0,s=isNaN(s)?i.s:s),isNaN(h)&&(h=0,r=isNaN(r)?i.h:r),function(a){var e=r+h*a,i=Math.pow(o+u*a,t),c=(s+l*a)*i*(1-i);return"#"+n(i+c*(-.14861*Math.cos(e)+1.78277*Math.sin(e)))+n(i+c*(-.29227*Math.cos(e)-.90649*Math.sin(e)))+n(i+c*1.97294*Math.cos(e))}}}function n(t){var n=(t=0>=t?0:t>=1?255:0|255*t).toString(16);return 16>t?"0"+n:n}var a=Math.PI/180;d3.scale.cubehelix=function(){return d3.scale.linear().range([d3.hsl(300,.5,0),d3.hsl(-240,.5,1)]).interpolate(d3.interpolateCubehelix)},d3.interpolateCubehelix=t(1),d3.interpolateCubehelix.gamma=t}()
