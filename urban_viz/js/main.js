@@ -100,11 +100,13 @@ $(function(){
             .filter(function() { return Math.random() < 0.04; });
         //console.log(hidimData);
 
-        var polygonMap = d3.custom.mapVis().shapeType("polygon");
+
         //var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
         var pointMap = d3.custom.mapVis().shapeType("point");
-        var myForceVis = d3.custom.forceVis().numClusters(3);
         var myParallelVis = d3.custom.parallelVis();
+        var myMapVis = new MapVis(d3.select("#mapVis"), _ptData[0]);
+        var myForceVis = d3.custom.forceVis().numClusters(3);
+        var polygonMap = d3.custom.mapVis().shapeType("polygon");
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
         var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
