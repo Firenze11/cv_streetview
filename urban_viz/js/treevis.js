@@ -11,12 +11,25 @@ d3.custom.treeVis = function module() {
 
     var map = {}, colorMap = {};
     var n_nodes = 34017, n_leaves = 17009;
-    var color = d3.scale.cubehelix().domain([0,.5, 1])
+    var color = d3.scale.cubehelix().domain([-0.1,.4, 1])
         .range([
             d3.hsl(-100, 0.75, 0.40),
             d3.hsl(  80, 1.50, 0.85),
             d3.hsl( 260, 0.75, 0.40)
         ]);
+    var texts={ 1:"all",
+                2: "non-urban",
+                3: "open, suburban",
+                4: "suburban - less intimate",
+                5: "urban",
+                6: "suburban - intimate",
+                7: "industrial-like",
+                8: "city canter-like",
+                9: "suburban residential with limited greenery",
+                10: "open, road, suburban residential",
+                11: "medium-rise",
+                12: "greenery, mixed",
+                103: "greenery, pure" };
 
     var dispatch = d3.dispatch("nodeClicked");
 
@@ -35,6 +48,9 @@ d3.custom.treeVis = function module() {
         .size([height, width])
         .sort( function(a,b) {
             return b.level - a.level;
+        })
+        .separation( function(a,b) {
+            return a.parent == b.parent ? 1 : 1.5;
         });
 
     var diagonal = d3.svg.diagonal()
@@ -79,7 +95,7 @@ d3.custom.treeVis = function module() {
             links = tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function(d) { d.y = Math.min(d.level * 140, width-8); });
+        nodes.forEach(function(d) { d.y = Math.min((d.level-1) * 170 + 20, width-8); });
 
         // Update the nodes…
         var node = svg.selectAll("g.node")
@@ -100,7 +116,7 @@ d3.custom.treeVis = function module() {
             .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
             .attr("dy", ".35em")
             .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return "level: "+d.level + ", depth: "+ d.depth + ", id: "+ d.id; })
+            .text(function(d) { return texts[d.level]; })
             .style("fill-opacity", 1e-6);
 
         // Transition nodes to their new position.

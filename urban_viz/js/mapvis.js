@@ -6,7 +6,7 @@ d3.custom.mapVis = function module() {
         shapeType = "polygon", // OR "point"
         duration = 750;
     var radius = 2;
-    var color = d3.scale.cubehelix().domain([0,.5, 1])
+    var color = d3.scale.cubehelix().domain([-0.1,.4, 1])
         .range([
             d3.hsl(-100, 0.75, 0.40),
             d3.hsl(  80, 1.50, 0.85),
