@@ -218,8 +218,9 @@ have a fixed width and height (but it's not required).
     float: left;
     width: 170px;
     height: 130px;
-    padding: 5px;
+    padding: 5px 1px;
 }
+
 
 .jcarousel img {
     max-width: 100%;

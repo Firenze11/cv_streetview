@@ -3,6 +3,7 @@
  */
 if(!d3.custom) d3.custom = {};
 
+// http://bl.ocks.org/mbostock/2429963
 d3.custom.clusterVis = function module() {
     var margin = {top: 0, right: 20, bottom: 0, left: 60},
         width = 1120 - margin.right - margin.left,

@@ -24,7 +24,7 @@ d3.custom.treeVis = function module() {
                 5: "urban",
                 6: "suburban - intimate",
                 7: "industrial-like",
-                8: "city canter-like",
+                8: "city center-like",
                 9: "suburban residential with limited greenery",
                 10: "open, road, suburban residential",
                 11: "medium-rise",
@@ -185,8 +185,9 @@ d3.custom.treeVis = function module() {
     function click(d) {
         var mode;
         if (d.children) {
-            d._children = d.children;
-            d.children = null;
+            //d._children = d.children;
+            //d.children = null;
+            collapse(d);
             mode = "close";
         } else {
             d.children = d._children;

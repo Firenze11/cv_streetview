@@ -50,17 +50,18 @@
                     <h6> Choose an attribute cluster... </h6>
                     <h3>
                         <select id="sel_cate" class="selectpicker">
-                            <option value="color" selected="selected">Main Color</option>
+                            <option value="color">Main Color</option>
                             <option value="entropy">Visual Entropy</option>
-                            <option value="sky_tree">Sky Area</option>
-                            <option value="all" >All</option>
+                            <option value="sky">Sky Area</option>
+                            <option value="tree">Tree Area</option>
+                            <option value="all" selected="selected">All</option>
                         </select>
                     </h3>
                 </div>
             </div>
 
             <div class="row">
-                <p class="col-md-6">
+                <p class="col-md-4">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                     Aenean commodo ligula eget dolor. Aenean massa.
                     Cum sociis natoque penatibus et magnis dis parturient montes,
@@ -68,14 +69,14 @@
                     pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
                     Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
                     In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+
                 </p>
-                <div class="col-md-6 metavis">
+                <div class="col-md-8 metavis">
                     <div id="statsVis" class="col-md-6"></div>
 
                     <!-- Carousel -->
-                    <div class="col-md-6 jcarousel-wrapper" style="width: 200px; float:right">
-                        <div class="jcarousel" >
+                    <div class="col-md-12 jcarousel-wrapper" style="width: 700px; float:right">
+                        <div class="jcarousel" id="carousel1">
                             <ul class="text-center">
                                 <li > Click the points on the maps to show images</li>
                                 <li > Click the points on the maps to show images</li>
@@ -245,6 +246,24 @@
                     <!--<hr>-->
                 </li>
             </ul>
+
+            <!-- Carousel -->
+            <div class="col-md-12 jcarousel-wrapper" style="float:right">
+                <div class="jcarousel" id="carousel2">
+                    <ul class="text-center">
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                        <li > Click the points on the maps to show images</li>
+                    </ul>
+                </div>
+                <p class="jcarousel-control-prev">&lsaquo;</p>
+                <p class="jcarousel-control-next">&rsaquo;</p>
+            </div>
 
             <div class="row mainVis">
                 <div class="col-md-12" id="hierarchyVis2">  </div>

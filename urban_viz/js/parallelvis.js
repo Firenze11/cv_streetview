@@ -34,7 +34,8 @@ d3.custom.parallelVis = function module() {
             var dimensions;
             // Extract the list of dimensions and create a scale for each.
             x.domain(dimensions = d3.keys(_data[0]).filter(function(d) {
-                return d != "lat" && d != "lng" && d != "color" && d != "id" && d != "neighborhood" && d != "city"
+                return d != "lat" && d != "lng" && d != "color" && d != "id"
+                    && d != "neighborhood" && d != "city" && d != "cluster" && d != "depth"
                     && (y[d] = d3.scale.linear()
                         .domain(d3.extent(_data, function(p) { return +p[d]; }))
                         .range([height, 0]));

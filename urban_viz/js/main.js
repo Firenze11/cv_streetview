@@ -23,10 +23,9 @@ $(function(){
         tokyo       :[35.684226, 139.755518]
     };
 
-    var carousel = $('.jcarousel').jcarousel({
+    var carousel_1 = $('#carousel1.jcarousel').jcarousel({
         transitions: true,
-        wrap: "circular",
-        center: true//,
+        wrap: "circular"
         //animation: {duration: 800}
     });
 
@@ -38,7 +37,7 @@ $(function(){
             $(this).addClass('inactive');
         })
         .jcarouselControl({
-            target: '-=1'
+            target: '-=4'
         });
     $('.jcarousel-control-next')
         .on('jcarouselcontrol:active', function() {
@@ -47,11 +46,11 @@ $(function(){
         .on('jcarouselcontrol:inactive', function() {
             $(this).addClass('inactive');
         }).jcarouselControl({
-            target: '+=1'
+            target: '+=4'
         });
 
     setInterval(function(){
-        carousel.jcarousel('scroll', '+=1');
+        carousel_1.jcarousel('scroll', '+=1');
     }, 20000);
 
     //var data = [];
@@ -151,7 +150,7 @@ $(function(){
             // 1. select image for display
             for(var i= 0; i<4; i++) {
                 var imsrc = imgroot+ d.city+"/"+ d.lat+","+ d.lng+"_"+i+".png";
-                carousel.find('li:eq('+i+')')
+                carousel_1.find('li:eq('+i+')')
                     .html("<img src='"+imsrc+"'/>");
             }
             // 2. select point on its own to highlight
