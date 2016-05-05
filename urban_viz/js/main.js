@@ -171,7 +171,14 @@ $(function(){
         });
 
         $("#sel_cate").on("change", function() {
-            myLeafletVis.category($(this).val()).update();
+            var colormap = {entropy: [d3.hsl(40, .6, 0.9), d3.hsl(-150, .6, 0.1)],
+                            sky: [d3.hsl(276, .6, 0.1), d3.hsl(96, .6, 0.9)],
+                            tree: [d3.hsl(60, .6, 0.8), d3.hsl(200, .6, 0.1)],
+                            color: [null,null]};
+            myLeafletVis
+                .colorRange(colormap[$(this).val()])
+                .category($(this).val())
+                .update();
             //console.log();
         });
         $("#sel_city").on("change", function() {

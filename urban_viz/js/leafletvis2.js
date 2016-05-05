@@ -4,15 +4,10 @@ d3.custom.leafletVis = function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
 
     var shapeType = "point", // OR "point"
-        duration = 750;
+        c_range = [d3.hsl(-120, .6, 0.2), d3.hsl(60, .6, 0.8)];
     var category = "color";
-    var color = d3.scale.cubehelix()
-        .range([
-            d3.hsl(-100, 0.75, 0.40),
-            d3.hsl(  80, 1.50, 0.85),
-            d3.hsl( 260, 0.75, 0.40)
-        ]),
-        colorMap; // cluster# -> color
+    var color = d3.scale.cubehelix();
+        //colorMap; // cluster# -> color
 
     var selection, data = [], map, svg, g, markers = [];
 
@@ -53,9 +48,10 @@ d3.custom.leafletVis = function() {
             var center = [_data.center[1], _data.center[0]];
             map.setView(center, 13);
 
-            var ext = d3.extent(_data.filter( function(d) { return d[category]; }),
+            var ext = d3.extent(_data.filter( function(d) {
+                return category === "entropy"? +d[category] > 4.5 : d[category]; }),
                                 function(d) { return +d[category]; });
-            color.domain([ext[0], 0.5*(ext[0]+ext[1]), ext[1]]);
+            color.domain(ext).range(c_range); //([ext[0], 0.5*(ext[0]+ext[1]), ext[1]]);
 
             //var picCircles = svg.selectAll("circle")
             //    .data(_data);
@@ -145,6 +141,12 @@ d3.custom.leafletVis = function() {
         category = _x;
         return this;
     };
+    my.colorRange = function(_x) {
+        if (!arguments.length) return c_range;
+        c_range = _x;
+        return this;
+    };
+
 
     my.update = update;
 
