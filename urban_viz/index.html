@@ -46,18 +46,7 @@
 
             <div class="row ">
                 <h1 class="col-md-12"> Secrets Captured by Street View </h1>
-                <div class="col-md-12 control">
-                    <h6> Choose an attribute cluster... </h6>
-                    <h3>
-                        <select id="sel_cate" class="selectpicker">
-                            <option value="color">Main Color</option>
-                            <option value="entropy">Visual Entropy</option>
-                            <option value="sky">Sky Area</option>
-                            <option value="tree">Tree Area</option>
-                            <option value="all" selected="selected">All</option>
-                        </select>
-                    </h3>
-                </div>
+
             </div>
 
             <div class="row">
@@ -130,7 +119,23 @@
 
             <div class="row ">
                 <h1 class="col-md-12"> How it's done </h1>
-
+                <div class="col-md-12 control">
+                    <h6> Choose a visual attribute, and a city... </h6>
+                    <h3>
+                        <select id="sel_cate" class="selectpicker">
+                            <option value="color" selected="selected">Main Color</option>
+                            <option value="sky">Sky Area</option>
+                            <option value="tree">Tree Area</option>
+                            <option value="entropy">Visual Entropy</option>
+                        </select>
+                        <select id="sel_city" class="selectpicker">
+                            <option value="boston" selected="selected">Boston</option>
+                            <option value="chicago">Chicago</option>
+                            <option value="newyork">New York</option>
+                            <option value="sanfrancisco">San Francisco</option>
+                        </select>
+                    </h3>
+                </div>
             </div>
 
             <div class="row">
@@ -308,7 +313,7 @@
     </div>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/mapvis.js"></script>
-    <script type="text/javascript" src="js/leafletvis.js"></script>
+    <script type="text/javascript" src="js/leafletvis2.js"></script>
     <script type="text/javascript" src="js/forcevis.js"></script>
     <script type="text/javascript" src="js/parallelvis.js"></script>
     <script type="text/javascript" src="js/demersvis.js"></script>

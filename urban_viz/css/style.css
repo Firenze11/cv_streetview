@@ -109,6 +109,10 @@ section {
     background-color: #333;
 }
 
+#mapVis circle {
+    cursor: pointer;
+}
+
 #parallelVis .selected {
     stroke: #ff0000;
 }

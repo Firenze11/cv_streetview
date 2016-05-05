@@ -50,10 +50,9 @@ $(function(){
         });
 
     setInterval(function(){
-        carousel_1.jcarousel('scroll', '+=1');
+        carousel_1.jcarousel('scroll', '+=4');
     }, 20000);
 
-    //var data = [];
 
     var dataLoaded = function (_ptData, _pgData, _nodeData, _linkData, _imData, _childrenData, _ptAllData, _ancestorsData) {
 
@@ -104,7 +103,8 @@ $(function(){
         //var pointMap = d3.custom.mapVis().shapeType("hexbin");//("point");
         var pointMap = d3.custom.mapVis().shapeType("point");
         var myParallelVis = d3.custom.parallelVis();
-        var myMapVis = new MapVis(d3.select("#mapVis"), _ptData[0]);
+        var myLeafletVis = d3.custom.leafletVis().category("color");
+        //var myLeafletVis = new MapVis(d3.select("#mapVis"), _ptData[0]);
         var myForceVis = d3.custom.forceVis().numClusters(3);
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
         var myDemersVis = d3.custom.demersVis();
@@ -117,17 +117,22 @@ $(function(){
             .data(_ptData)
             .call(pointMap);
 
-        d3.selectAll(".map-polygon")
-            .data(_pgData)
-            .call(polygonMap);
+        d3.select("#parallelVis")
+            .datum(hidimData)
+            .call(myParallelVis);
+
+        d3.select("#mapVis")
+            .datum(_ptData[0])
+            .call(myLeafletVis);
 
         d3.select("#nodeVis")
             .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 0.01; }) })
             .call(myForceVis);
 
-        d3.select("#parallelVis")
-            .datum(hidimData)
-            .call(myParallelVis);
+        d3.selectAll(".map-polygon")
+            .data(_pgData)
+            .call(polygonMap);
+
 
         d3.select("#appearanceVis")
             .datum(_pgData[0])
@@ -164,11 +169,22 @@ $(function(){
             d3.select("#parallelVis").select("."+ d.city+"_"+ d.id).classed("selected", true);
             //console.log(d3.select(".map-point").select(city+"_"+id));
         });
+
+        $("#sel_cate").on("change", function() {
+            myLeafletVis.category($(this).val()).update();
+            //console.log();
+        });
+        $("#sel_city").on("change", function() {
+            var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
+            d3.select("#mapVis")
+                .datum(_ptData[citynummap[$(this).val()]]);
+            myLeafletVis.update();
+        });
+
         myForceVis.on("nodeHovered", function() {
             polygonMap.highlightSelection(arguments);
         });
         myTreeVis.on("nodeClicked", function(d) {
-            //console.log(d);
             clusterMap.highlightCluster(d);
         });
     };
