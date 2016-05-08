@@ -8,6 +8,8 @@ var imgroot = '/Dropbox/thesis/img/';
 $(function(){
 
 
+    var cities = ['boston', 'chicago', 'newyork', 'sanfrancisco'];
+    var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
     var centers = {
         barcelona   :[41.390298, 2.162001],
         boston      :[42.352131, -71.090669],
@@ -67,6 +69,7 @@ $(function(){
         });
         _pgData.forEach( function(d, i) {
             d.center = dataCenters[i];
+            d.city = cities[i];
             d.metaData = _imData[i];
         });
         //_imData.forEach( function(d, i) {
@@ -79,7 +82,7 @@ $(function(){
             d.ancestors = _ancestorsData[i];
         });
 
-        var _ptAll = ['boston', 'chicago', 'newyork', 'sanfrancisco'].map( function(d) {
+        var _ptAll = cities.map( function(d) {
             return _ptAllData.filter( function(e) {
                 return e.label.split('_')[0] == d;
             })
@@ -90,6 +93,7 @@ $(function(){
 
         var districtNodes = _nodeData;
         var districtNodesMap = d3.map(districtNodes, function(d) { return d.name; });
+        //console.log(districtNodesMap);
         _linkData.forEach( function(d) {
             d.source = districtNodesMap.get(d.source);
             d.target = districtNodesMap.get(d.target);
@@ -110,7 +114,7 @@ $(function(){
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
         var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
-        var myClusterVis = d3.custom.clusterVis();
+        var myClusterVis = d3.custom.packVis();
 
 
         d3.selectAll(".map-point")
@@ -125,18 +129,24 @@ $(function(){
             .datum(_ptData[0])
             .call(myLeafletVis);
 
-        d3.select("#nodeVis")
-            .datum({nodes: districtNodes, links:_linkData.filter(function(d){ return d.value > 0.01; }) })
-            .call(myForceVis);
+        $("button#force").on("click", function() {
+            d3.select("#nodeVis")
+                .datum({
+                    nodes: districtNodes,
+                    links: _linkData.filter(function (d) { return d.value > 0.01; })
+                })
+                .call(myForceVis);
+        });
 
         d3.selectAll(".map-polygon")
             .data(_pgData)
             .call(polygonMap);
 
-
-        d3.select("#appearanceVis")
-            .datum(_pgData[0])
-            .call(myDemersVis);
+        $("#sel_appearance").on("change", function() {
+            d3.select("#appearanceVis")
+                .datum(_pgData[citynummap[$(this).val()]])
+                .call(myDemersVis);
+        });
 
         d3.select("#hierarchyVis")
             .datum(_childrenData)
@@ -146,9 +156,12 @@ $(function(){
             .data(_ptAll)
             .call(clusterMap);
 
-        d3.select("#hierarchyVis2")
-            .datum(_childrenData)
-            .call(myClusterVis);
+        $("button#pack").on("click", function(){
+            d3.select("#hierarchyVis2")
+                .datum(_childrenData)
+                .call(myClusterVis);
+        });
+
 
         myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);
@@ -182,7 +195,7 @@ $(function(){
             //console.log();
         });
         $("#sel_city").on("change", function() {
-            var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
+
             d3.select("#mapVis")
                 .datum(_ptData[citynummap[$(this).val()]]);
             myLeafletVis.update();
@@ -207,8 +220,8 @@ $(function(){
             .defer(d3.json, "data/boundary_chicago.geojson")
             .defer(d3.json, "data/boundary_newyork.geojson")
             .defer(d3.json, "data/boundary_sanfrancisco.geojson")
-            .defer(d3.csv, "data/deep_cluster_boston.csv")
-            .defer(d3.csv, "data/link_boston.csv")
+            .defer(d3.csv, "data/neighborhood_all.csv")
+            .defer(d3.csv, "data/link_all.csv")
             .defer(d3.csv, "data/best_img_boston.csv")
             .defer(d3.csv, "data/best_img_chicago.csv")
             .defer(d3.csv, "data/best_img_newyork.csv")

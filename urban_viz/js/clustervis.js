@@ -60,6 +60,10 @@ d3.custom.clusterVis = function module() {
     function update() {
         var nodes = cluster.nodes(root);
 
+        nodes.forEach(function(d){
+            d.y = 60*Math.log2(d.level+1)-50;
+        });
+
         var link = svg.selectAll(".link")
             .data(cluster.links(nodes))
             .enter().append("path")

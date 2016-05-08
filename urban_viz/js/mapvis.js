@@ -67,7 +67,8 @@ d3.custom.mapVis = function module() {
                     .data(_data.features)
                     .enter().append("path")
                     .attr("class", function(d) {
-                        return "district " + d.properties.NAME;
+                        //console.log("district "+ _data.city + "_" + d.properties.NAME);
+                        return "district "+ _data.city + "_" + d.properties.NAME;
                     })
                     .attr("d", path);
 
@@ -206,9 +207,10 @@ d3.custom.mapVis = function module() {
             });
         } else if (shapeType === "polygon") {
             var args = Array.prototype.slice.call(_); // convert "arguments" object to array
-            console.log(_, arguments, args);
-            selection.selectAll(".district").classed("highlight", function(d) {
-                return args.indexOf(d.properties.NAME) !== -1;
+
+            console.log(_, arguments, args[0]);
+            selection.select("." + args[0]).classed("highlight", function(d) {
+                return  args[1];
             });
         }
     };

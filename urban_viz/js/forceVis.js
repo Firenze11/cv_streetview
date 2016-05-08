@@ -31,13 +31,13 @@ d3.custom.forceVis = function module() {
             return  Math.min(1, d.value/10);
         })
         .linkDistance(function(d){
-            return 12/ (d.value*d.value);
+            return 3/ (d.value*d.value);
         })
         .size([width, height]);
 
     function my(_selection) {
         _selection.each(function(_data) {
-            //console.log(_data);
+            //console.log(_data.links);
             svg = d3.select(this).append('svg');
             svg.transition().duration(duration).attr({width: width, height: height});
 
@@ -47,9 +47,9 @@ d3.custom.forceVis = function module() {
             xScale.domain(d3.range(numClusters))
                 .rangePoints([0, width], 0.7);
 
-            foci = xScale.range().map( function(d) {
-                return {x: d, y: height/2};
-            });
+            //foci = xScale.range().map( function(d) {
+            //    return {x: d, y: height/2};
+            //});
 
             //console.log(foci);
 
@@ -69,7 +69,7 @@ d3.custom.forceVis = function module() {
                 .enter().append("circle")
                 .attr("class", "node")
                 .attr("r", 5)
-                .style("fill", function(d) { return color(d.cluster_outof_4); })
+                .style("fill", function(d) { return color(d.name.split("_")[0]); })
                 .on('mouseover', mouseOverNode)
                 .on('mouseout', function() { tip.hide(); })
                 .call(force.drag);
@@ -102,8 +102,12 @@ d3.custom.forceVis = function module() {
     }
 
     function mouseOverNode(d) {
-        dispatch.nodeHovered(d.name);
+        dispatch.nodeHovered(d.name, true);
         tip.show(d);
+    }
+    function mouseOutNode(d) {
+        dispatch.nodeHovered(d.name, false);
+        tip.hide(d);
     }
 
     my.width = function(value) {

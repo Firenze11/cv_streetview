@@ -46,7 +46,6 @@
 
             <div class="row ">
                 <h1 class="col-md-12"> Secrets Captured by Street View </h1>
-
             </div>
 
             <div class="row">
@@ -177,6 +176,11 @@
                     In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
                     Nullam dictum felis eu pede mollis pretium. Integer
                 </p>
+                <div class="col-md-12 control">
+                    <h3>
+                        <button id="force" type="button" class="btn btn-secondary">Start</button>
+                    </h3>
+                </div>
             </div>
 
             <div class="row mainVis">
@@ -216,6 +220,17 @@
 
             <div class="row ">
                 <h1 class="col-md-12"> The Appearances of Districts </h1>
+                <div class="col-md-12 control">
+                    <h6> Choose a city to view images... </h6>
+                    <h3>
+                        <select id="sel_appearance" class="selectpicker">
+                            <option value="boston" selected="selected">Boston</option>
+                            <option value="chicago">Chicago</option>
+                            <option value="newyork">New York</option>
+                            <option value="sanfrancisco">San Francisco</option>
+                        </select>
+                    </h3>
+                </div>
 
                 <p class="col-md-6">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -287,20 +302,25 @@
             <div class="col-md-12 jcarousel-wrapper" style="float:right">
                 <div class="jcarousel" id="carousel2">
                     <ul class="text-center">
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
-                        <li > Click the points on the maps to show images</li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
+                        <li > </li>
                     </ul>
                 </div>
                 <p class="jcarousel-control-prev">&lsaquo;</p>
                 <p class="jcarousel-control-next">&rsaquo;</p>
             </div>
 
+            <div class="col-md-12 control">
+                <h3>
+                    <button id="pack" type="button" class="btn btn-secondary">Start</button>
+                </h3>
+            </div>
             <div class="row mainVis">
                 <div class="col-md-12" id="hierarchyVis2">  </div>
             </div>
@@ -318,5 +338,6 @@
     <script type="text/javascript" src="js/parallelvis.js"></script>
     <script type="text/javascript" src="js/demersvis.js"></script>
     <script type="text/javascript" src="js/treevis.js"></script>
-    <script type="text/javascript" src="js/clustervis.js"></script>
+    <!--<script type="text/javascript" src="js/clustervis.js"></script>-->
+    <script type="text/javascript" src="js/packvis.js"></script>
 </body>    
