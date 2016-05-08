@@ -105,7 +105,7 @@ d3.custom.treeVis = function module() {
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
             .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-            .on("mouseover", function(d) { console.log(d.x); })
+            //.on("mouseover", function(d) { console.log(d.x); })
             .on("click", click);
 
         nodeEnter.append("circle")

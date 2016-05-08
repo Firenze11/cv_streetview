@@ -3,7 +3,8 @@
  * Created by lezhi on 3/17/2016.
  */
 
-var imgroot = '/Dropbox/thesis/img/';
+var imgroot = '/Dropbox/thesis/img/',
+    imgroot_dense = '/Dropbox/thesis/img_dense/';
 
 $(function(){
 
@@ -29,6 +30,10 @@ $(function(){
         transitions: true,
         wrap: "circular"
         //animation: {duration: 800}
+    });
+    var carousel_2 = $('#carousel2.jcarousel').jcarousel({
+        transitions: true,
+        wrap: "circular"
     });
 
     $('.jcarousel-control-prev')
@@ -114,7 +119,7 @@ $(function(){
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
         var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
-        var myClusterVis = d3.custom.packVis();
+        var myPackVis = d3.custom.packVis();
 
 
         d3.selectAll(".map-point")
@@ -159,7 +164,7 @@ $(function(){
         $("button#pack").on("click", function(){
             d3.select("#hierarchyVis2")
                 .datum(_childrenData)
-                .call(myClusterVis);
+                .call(myPackVis);
         });
 
 
@@ -206,6 +211,25 @@ $(function(){
         });
         myTreeVis.on("nodeClicked", function(d) {
             clusterMap.highlightCluster(d);
+        });
+
+        myPackVis.on("clusterClicked", function(arr) {
+            console.log(_ptAllData);
+            // 1. select image for display
+            for(var i= 0; i<arr.length; i++) {
+                var d = _ptAllData[arr[i]];
+                var imsrc = imgroot_dense+ d.label.split("_")[0]+"/"+ d.lat+","+ d.lng+"_"+ d.dir+".png";
+                carousel_2.find('li:eq('+i+')')
+                    .html("<img src='"+imsrc+"'/>");
+            }
+            //// 2. select point on its own to highlight
+            //d3.select("#mapsdot").select(".selected").classed("selected", false);
+            //d3.select("#mapsdot").select("."+ d.city+"_"+ d.id).classed("selected", true);
+            //
+            //// 3. select line in parallelvis to highlight
+            //d3.select("#parallelVis").select(".selected").classed("selected", false);
+            //d3.select("#parallelVis").select("."+ d.city+"_"+ d.id).classed("selected", true);
+            ////console.log(d3.select(".map-point").select(city+"_"+id));
         });
     };
 

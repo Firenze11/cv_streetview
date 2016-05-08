@@ -14,7 +14,7 @@ d3.custom.packVis = function module() {
     var n_nodes = 34017, n_leaves = 17009, count= 0, timer;
     var color = d3.scale.cubehelix().domain([0, height]);
 
-    var dispatch = d3.dispatch("nodeClicked");
+    var dispatch = d3.dispatch("clusterClicked");
 
     //var tip = d3.tip()
     //    .attr('class', 'd3-tip tip-inverse')
@@ -23,8 +23,7 @@ d3.custom.packVis = function module() {
     //        return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.id + "</span>";
     //    });
 
-    var diameter = 960,
-        format = d3.format(",d");
+    var diameter = 960;
 
     var pack = d3.layout.pack()
         .size([diameter - 4, diameter - 4])//;
@@ -42,126 +41,75 @@ d3.custom.packVis = function module() {
             //svg.call(tip);
 
             //all_leaves();
-            timer = setInterval(function(){
-                var top = build_tree(_data, count);
-                if (count === 15) {
-                    console.log(root);
-                }
-                update(root);
-                count++;
-                //console.log(count);
-            }, 1);
+            root = build_tree(_data);
+
+            update(root);
         });
     }
 
     function update(_top) {
         var nodes = pack.nodes(_top);
-        //console.log(nodes);
 
         var node = svg.selectAll(".node")
-            .data(nodes, function(d) { return d.id; });
+            .data(nodes.filter(function(d) {
+                return d.parent ? d.parent.value > 900 : d.value > 500; }), function(d) { return d.id; });
         var nodeEnter = node.enter().append("g")
-            .attr("class", function(d) { return d.children ? "node" : "leaf node"; });
+            .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+            .on("click", function(d) {
+                var leaves = find_leaves(d);
+                var imgId = leaves
+                    .filter( function() { return Math.random() < 100 / d.value; })
+                    .map( function(e) { return e.id; });
+                console.log(imgId);
+                dispatch.clusterClicked(imgId);
+            });
 
         nodeEnter.append("title")
             .text(function(d) { return d.id; });
-            //.text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
 
         nodeEnter.append("circle");
-
-        nodeEnter.append("text")
-            .attr("dy", ".3em")
-            .style("text-anchor", "middle")
-            .text(function(d) { return "id: "+d.id+" depth: "+ d.depth; }); //.substring(0, d.r / 3); });
 
         node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
         node.select("circle").attr("r", function(d) { return d.r; });///////
         node.exit().remove();
     }
 
-    function all_leaves() {
-        var leaves = [];
-        for (var i=0; i<n_leaves; i++) {
-            if (!map[i]) {
-                var node = map[i] = {id: i, level: n_nodes-n_leaves+1};
-                leaves.push(node);
-            }
-        }
-        return leaves;
-    }
+    function build_tree(children) {
 
-    function build_tree(children, c) {
-        if(c >= 16) { //n_nodes-n_leaves) {
-            clearInterval(timer);
-
-            console.log("root",root);
-            //console.log("map[13634].children",map[13634].children);
-        } else {
-            var siblings_id = [+children[c][0], +children[c][1]];
+        for (var i=0; i<children.length; i++) {
+            var siblings_id = [+children[i][0], +children[i][1]];
             var siblings = siblings_id.map( function(d) {
                 var node = map[d];
                 if (!node) {
                     node = map[d] = {id: d, level: n_nodes-n_leaves+1};
-                    //root.children.push(node);
-                    //console.log("node unrecorded", node);
-                } else {
-                    var ind = root.children.indexOf(node);
-                    if (ind === -1) {
-                        console.log("Error! -1!!!");
-                        console.log(root.children);
-                    } else {
-                        console.log("old node!!!", node);
-                        console.log(ind, root.children[ind]);
-                        root.children.splice(ind,1);
-                        console.log(root.children.map(function(d) { return d.id; }));
-                    }
                 }
                 return node;
             });
-            var newNode = map[c+n_leaves] = {id: c+n_leaves, children: siblings,
-                                            level: n_nodes-n_leaves-c};
-            siblings.forEach( function(d) {
-                //var ind = root.children.indexOf(d);
-                //if (ind === -1) {
-                //    console.log("Error! -1!!!");
-                //    console.log(root.children);
-                //} else {
-                //    root.children.splice(ind);
-                //    console.log("old node!!!", d);
-                //}
-
-                //d.parent = newNode;
-            });
-            root.children.push(newNode);
-            console.log("newnode", newNode);
-
-            //ancestors.forEach( function(d, i) {
-            //    map[i].ancedtors = d;
+            var newNode = map[i+n_leaves] = {id: i+n_leaves, children: siblings, level: n_nodes-n_leaves-i};
+            //siblings.forEach( function(d) {
+            //    d.parent = newNode;
             //});
-
-            //console.log(map[n_nodes-2].level);
-            //return map[n_nodes-1];
         }
+        return map[n_nodes-1];
     }
 
-    //function find_leaves(node) {
-    //    var siblings = node.children.map( function(d) {
-    //        return d.id;
-    //    }), children0, children1;
-    //
-    //    if (map[siblings[0]].id < n_leaves) {
-    //        children0 = [map[siblings[0]].id];
-    //    } else {
-    //        children0 = find_leaves(map[siblings[0]].id);
-    //    }
-    //    if (siblings[1] < n_leaves) {
-    //        children1 = [map[siblings[0]].id];
-    //    } else {
-    //        children1 = find_leaves(map[siblings[1]].id);
-    //    }
-    //
-    //    return children0.concat(children1);
-    //}
+    function find_leaves(node) {
+        var siblings = node.children.map( function(d) {
+            return d.id;
+        }), children0, children1;
+
+        if (map[siblings[0]].id < n_leaves) {
+            children0 = [map[siblings[0]]];
+        } else {
+            children0 = find_leaves(map[siblings[0]]);
+        }
+        if (siblings[1] < n_leaves) {
+            children1 = [map[siblings[0]]];
+        } else {
+            children1 = find_leaves(map[siblings[1]]);
+        }
+        return children0.concat(children1);
+    }
 
     my.width = function(value) {
         if (!arguments.length) return width;
