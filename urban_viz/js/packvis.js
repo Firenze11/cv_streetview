@@ -41,8 +41,12 @@ d3.custom.packVis = function module() {
 
             //svg.call(tip);
 
+            //all_leaves();
             timer = setInterval(function(){
                 var top = build_tree(_data, count);
+                if (count === 15) {
+                    console.log(root);
+                }
                 update(root);
                 count++;
                 //console.log(count);
@@ -55,15 +59,15 @@ d3.custom.packVis = function module() {
         //console.log(nodes);
 
         var node = svg.selectAll(".node")
-            .data(nodes)
+            .data(nodes, function(d) { return d.id; });
         var nodeEnter = node.enter().append("g")
             .attr("class", function(d) { return d.children ? "node" : "leaf node"; });
 
         nodeEnter.append("title")
-            .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
+            .text(function(d) { return d.id; });
+            //.text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
 
-        nodeEnter.append("circle")
-            .attr("r", function(d) { return d.r; });
+        nodeEnter.append("circle");
 
         nodeEnter.append("text")
             .attr("dy", ".3em")
@@ -71,6 +75,7 @@ d3.custom.packVis = function module() {
             .text(function(d) { return "id: "+d.id+" depth: "+ d.depth; }); //.substring(0, d.r / 3); });
 
         node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        node.select("circle").attr("r", function(d) { return d.r; });///////
         node.exit().remove();
     }
 
@@ -86,24 +91,49 @@ d3.custom.packVis = function module() {
     }
 
     function build_tree(children, c) {
-        if(c >= 100) { //n_nodes-n_leaves) {
+        if(c >= 16) { //n_nodes-n_leaves) {
             clearInterval(timer);
-        } else {
-            console.log("children[c]", children[c]);
-            //var siblings_id = [+children[c][0], +children[c][1]];
-            //var siblings = siblings_id.map( function(d) {
-            //    var node = map[d];
-            //    if (!node) {
-            //        node = map[d] = {id: d, level: n_nodes-n_leaves+1};
-            //    }
-            //    return node;
-            //});
-            //var newNode = map[c+n_leaves] = {id: c+n_leaves, children: siblings, level: n_nodes-n_leaves-c};
-            //siblings.forEach( function(d) {
-            //    d.parent = newNode;
-            //});
-            //root.children.push(newNode);
 
+            console.log("root",root);
+            //console.log("map[13634].children",map[13634].children);
+        } else {
+            var siblings_id = [+children[c][0], +children[c][1]];
+            var siblings = siblings_id.map( function(d) {
+                var node = map[d];
+                if (!node) {
+                    node = map[d] = {id: d, level: n_nodes-n_leaves+1};
+                    //root.children.push(node);
+                    //console.log("node unrecorded", node);
+                } else {
+                    var ind = root.children.indexOf(node);
+                    if (ind === -1) {
+                        console.log("Error! -1!!!");
+                        console.log(root.children);
+                    } else {
+                        console.log("old node!!!", node);
+                        console.log(ind, root.children[ind]);
+                        root.children.splice(ind,1);
+                        console.log(root.children.map(function(d) { return d.id; }));
+                    }
+                }
+                return node;
+            });
+            var newNode = map[c+n_leaves] = {id: c+n_leaves, children: siblings,
+                                            level: n_nodes-n_leaves-c};
+            siblings.forEach( function(d) {
+                //var ind = root.children.indexOf(d);
+                //if (ind === -1) {
+                //    console.log("Error! -1!!!");
+                //    console.log(root.children);
+                //} else {
+                //    root.children.splice(ind);
+                //    console.log("old node!!!", d);
+                //}
+
+                //d.parent = newNode;
+            });
+            root.children.push(newNode);
+            console.log("newnode", newNode);
 
             //ancestors.forEach( function(d, i) {
             //    map[i].ancedtors = d;
