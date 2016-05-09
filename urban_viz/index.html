@@ -45,18 +45,19 @@
         <section id="secret">
 
             <div class="row ">
-                <h1 class="col-md-12"> Secrets Captured by Street View </h1>
+                <h1 class="col-md-12"> Lots of Images at One Glance </h1>
             </div>
 
             <div class="row">
                 <p class="col-md-4">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    Wouldn't it be great if a map could tell me what a place looks like?
+                    How tall the buildings are; how much plantation the area tends to have;
+                    and even what colors people there would like to have on their walls.
+                    Actually, the information is already collected somewhere
+                    (thanks to Google street view!) and all we need is an algorithmic digest. <br>
+
+                    Brush the axes to see the whether the spatial distribution of visual signals
+                    aligns with your conception of these cities.
 
                 </p>
                 <div class="col-md-8 metavis">
@@ -75,11 +76,7 @@
                         <p class="jcarousel-control-prev">&lsaquo;</p>
                         <p class="jcarousel-control-next">&rsaquo;</p>
                     </div>
-
                 </div>
-
-
-
             </div>
 
             <ul class="row text-center mainVis" id="mapsdot">
@@ -117,7 +114,7 @@
         <section id="gradient">
 
             <div class="row ">
-                <h1 class="col-md-12"> How it's done </h1>
+                <h1 class="col-md-12"> Zooming in </h1>
                 <div class="col-md-12 control">
                     <h6> Choose a visual attribute, and a city... </h6>
                     <h3>
@@ -138,16 +135,6 @@
             </div>
 
             <div class="row">
-                <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-
-                </p>
                 <div class="col-lg-12">
                     <div id="mapVis" > </div>
                 </div>
@@ -224,7 +211,8 @@
                     <h6> Choose a city to view images... </h6>
                     <h3>
                         <select id="sel_appearance" class="selectpicker">
-                            <option value="boston" selected="selected">Boston</option>
+                            <option value="" selected="selected">Select One</option>
+                            <option value="boston">Boston</option>
                             <option value="chicago">Chicago</option>
                             <option value="newyork">New York</option>
                             <option value="sanfrancisco">San Francisco</option>
@@ -298,6 +286,10 @@
                 </li>
             </ul>
 
+            <div class="row mainVis">
+                <div class="col-md-12" id="hierarchyVis2">  </div>
+            </div>
+
             <!-- Carousel -->
             <div class="col-md-12 jcarousel-wrapper" style="float:right">
                 <div class="jcarousel" id="carousel2">
@@ -316,14 +308,11 @@
                 <p class="jcarousel-control-next">&rsaquo;</p>
             </div>
 
-            <div class="col-md-12 control">
-                <h3>
-                    <button id="pack" type="button" class="btn btn-secondary">Start</button>
-                </h3>
-            </div>
-            <div class="row mainVis">
-                <div class="col-md-12" id="hierarchyVis2">  </div>
-            </div>
+            <!--<div class="col-md-12 control">-->
+                <!--<h3>-->
+                    <!--<button id="pack" type="button" class="btn btn-secondary">Start</button>-->
+                <!--</h3>-->
+            <!--</div>-->
 
         </section>
         <!--END of hierarchy section-->

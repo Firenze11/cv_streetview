@@ -21,7 +21,7 @@ ul {
     -webkit-padding-start: 0; /* otherwise there will be padding on the left*/
 }
 section {
-    padding: 100px 0 200px ;
+    padding: 200px 0 360px ;
 }
 .mainVis {
     margin-top: 10px;
@@ -104,7 +104,7 @@ section {
 
 #mapVis {
     /*position: absolute;*/
-    height: 720px;
+    height: 660px;
     /*width: 100%;*/
     background-color: #333;
 }
@@ -118,10 +118,6 @@ section {
 }
 
 
-#pic {
-    max-width:100%;
-    max-height:100%;
-}
 .district{
     stroke: #ddd;
     fill: #fff;
@@ -190,10 +186,15 @@ select {
 
 /* packVis*/
 #hierarchyVis2 circle {
-    fill: rgb(31, 119, 180);
-    fill-opacity: .25;
-    stroke: rgb(31, 119, 180);
+    fill: #999;
+    fill-opacity: .1;
+    stroke: #aaa;
     stroke-width: 1px;
+    stroke-dasharray: 4,4;
+}
+#hierarchyVis2 circle:hover {
+    fill-opacity: .3;
+    stroke: #333;
 }
 
 #hierarchyVis2 .leaf circle {
@@ -250,6 +251,11 @@ have a fixed width and height (but it's not required).
     max-width: 100%;
     max-height: 100%;
     opacity: 0.8;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 /*........................................................j carousel control*/

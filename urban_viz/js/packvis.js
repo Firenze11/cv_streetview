@@ -5,9 +5,9 @@ if(!d3.custom) d3.custom = {};
 
 // http://bl.ocks.org/mbostock/2429963
 d3.custom.packVis = function module() {
-    var margin = {top: 0, right: 20, bottom: 0, left: 60},
-        width = 1120 - margin.right - margin.left,
-        height = 1000 - margin.top - margin.bottom;
+    var margin = {top: 0, right: 20, bottom: 0, left: 20},
+        width = 1170 - margin.right - margin.left,
+        height = 300 - margin.top - margin.bottom;
     var svg;
 
     var map = {}, root = {children: []}, colorMap = {};
@@ -23,7 +23,7 @@ d3.custom.packVis = function module() {
     //        return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.id + "</span>";
     //    });
 
-    var diameter = 960;
+    var diameter = width;
 
     var pack = d3.layout.pack()
         .size([diameter - 4, diameter - 4])//;
@@ -33,10 +33,10 @@ d3.custom.packVis = function module() {
         _selection.each(function(_data) {
             //console.log(_data);
             svg = d3.select(this).append('svg')
-                .attr("width", diameter)
-                .attr("height", diameter)
+                .attr("width", width)
+                .attr("height", height)
                 .append("g")
-                .attr("transform", "translate(2,2)");
+                .attr("transform", "translate("+2+","+(height*4/5-diameter/2)+")");
 
             //svg.call(tip);
 
@@ -60,7 +60,7 @@ d3.custom.packVis = function module() {
                 var imgId = leaves
                     .filter( function() { return Math.random() < 100 / d.value; })
                     .map( function(e) { return e.id; });
-                console.log(imgId);
+                //console.log(imgId);
                 dispatch.clusterClicked(imgId);
             });
 

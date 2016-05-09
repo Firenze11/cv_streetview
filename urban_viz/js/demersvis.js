@@ -4,11 +4,10 @@
 if(!d3.custom) d3.custom = {};
 
 d3.custom.demersVis = function module() {
-    var imgroot = '/Dropbox/thesis/img_dense/';
 
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width = 960 - margin.left - margin.right,
-        height = 1000 - margin.top - margin.bottom,
+        height = 720 - margin.top - margin.bottom,
         duration = 500;
         padding = 3;
 
@@ -38,7 +37,7 @@ d3.custom.demersVis = function module() {
 
     function my(_selection) {
         selection = _selection;
-        update();
+        //update();
     }
 
     function update() {
@@ -52,7 +51,8 @@ d3.custom.demersVis = function module() {
             });
 
             var svg = d3.select(this).select('svg');
-            if (!svg[0][0]) svg = d3.select(this).append('svg');
+            svg.remove();
+            svg = d3.select(this).append('svg');
 
             svg.transition().duration(duration).attr({width: width, height: height});
 
@@ -66,9 +66,9 @@ d3.custom.demersVis = function module() {
             path = d3.geo.path()
                 .projection(projection);
 
-            svg.selectAll("path")
-                .data(_data.features)
-                .enter().append("path")
+            var area = svg.selectAll("path")
+                .data(_data.features);
+            area.enter().append("path")
                 .attr("class", function(d) {
                     return "district " + d.properties.NAME;
                 })
@@ -94,16 +94,19 @@ d3.custom.demersVis = function module() {
                 .start();
 
             var node = svg.selectAll("img")
-                .data(nodes)
-                .enter().append("svg:image")
+                .data(nodes);
+            node.enter().append("svg:image")
                 .attr("xlink:href", function(d) {
-                    return imgroot+ d.fileName;
+                    return imgroot_dense+ d.fileName;
                 })
                 .attr("opacity",0.8)
                 .attr("x", '-12px')
                 .attr("y", '-12px')
                 .attr("width", function(d) { return d.r * 2; })
                 .attr("height", function(d) { return d.r * 2; });
+
+            node.exit().remove();
+            area.exit().remove();
 
             function tick(e) {
                 node.each(gravity(e.alpha * .1))

@@ -5,26 +5,27 @@
 
 var imgroot = '/Dropbox/thesis/img/',
     imgroot_dense = '/Dropbox/thesis/img_dense/';
+var cities = ['boston', 'chicago', 'newyork', 'sanfrancisco'];
+var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
+var centers = {
+    barcelona   :[41.390298, 2.162001],
+    boston      :[42.352131, -71.090669],
+    brasilia    :[-15.797616, -47.891761],
+    chicago     :[41.875604, -87.645203],
+    hongkong    :[22.302156, 114.170416],
+    london      :[51.507360, -0.127630],
+    munich      :[48.139741, 11.565510],
+    paris       :[48.857527, 2.341560],
+    newyork     :[40.747783, -73.968068],
+    sanfrancisco:[37.767394, -122.447354],
+    singapore   :[1.302876, 103.829547],
+    tokyo       :[35.684226, 139.755518]
+};
 
 $(function(){
 
 
-    var cities = ['boston', 'chicago', 'newyork', 'sanfrancisco'];
-    var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
-    var centers = {
-        barcelona   :[41.390298, 2.162001],
-        boston      :[42.352131, -71.090669],
-        brasilia    :[-15.797616, -47.891761],
-        chicago     :[41.875604, -87.645203],
-        hongkong    :[22.302156, 114.170416],
-        london      :[51.507360, -0.127630],
-        munich      :[48.139741, 11.565510],
-        paris       :[48.857527, 2.341560],
-        newyork     :[40.747783, -73.968068],
-        sanfrancisco:[37.767394, -122.447354],
-        singapore   :[1.302876, 103.829547],
-        tokyo       :[35.684226, 139.755518]
-    };
+
 
     var carousel_1 = $('#carousel1.jcarousel').jcarousel({
         transitions: true,
@@ -114,7 +115,7 @@ $(function(){
         var myParallelVis = d3.custom.parallelVis();
         var myLeafletVis = d3.custom.leafletVis().category("color");
         //var myLeafletVis = new MapVis(d3.select("#mapVis"), _ptData[0]);
-        var myForceVis = d3.custom.forceVis().numClusters(3);
+        var myForceVis = d3.custom.forceVis();
         var polygonMap = d3.custom.mapVis().shapeType("polygon");
         var myDemersVis = d3.custom.demersVis();
         var myTreeVis = d3.custom.treeVis();
@@ -134,23 +135,31 @@ $(function(){
             .datum(_ptData[0])
             .call(myLeafletVis);
 
+        d3.select("#nodeVis")
+            .datum({
+                nodes: districtNodes,
+                links: _linkData.filter(function (d) { return d.value > 0.01; })
+            })
+            .call(myForceVis);
+
         $("button#force").on("click", function() {
-            d3.select("#nodeVis")
-                .datum({
-                    nodes: districtNodes,
-                    links: _linkData.filter(function (d) { return d.value > 0.01; })
-                })
-                .call(myForceVis);
+            myForceVis.toFoci();
         });
 
         d3.selectAll(".map-polygon")
             .data(_pgData)
             .call(polygonMap);
 
+
+        d3.select("#appearanceVis")
+            .call(myDemersVis);
+
         $("#sel_appearance").on("change", function() {
-            d3.select("#appearanceVis")
-                .datum(_pgData[citynummap[$(this).val()]])
-                .call(myDemersVis);
+            if($(this).val() !== "") {
+                d3.select("#appearanceVis")
+                    .datum(_pgData[citynummap[$(this).val()]]);
+                myDemersVis.update();
+            }
         });
 
         d3.select("#hierarchyVis")
@@ -161,12 +170,11 @@ $(function(){
             .data(_ptAll)
             .call(clusterMap);
 
-        $("button#pack").on("click", function(){
-            d3.select("#hierarchyVis2")
-                .datum(_childrenData)
-                .call(myPackVis);
-        });
-
+        //$("button#pack").on("click", function() {
+        //});
+        d3.select("#hierarchyVis2")
+            .datum(_childrenData)
+            .call(myPackVis);
 
         myParallelVis.on("brushed", function() {
             pointMap.highlightSelection(arguments);
