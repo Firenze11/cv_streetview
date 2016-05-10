@@ -219,10 +219,11 @@ $(function(){
         });
         myTreeVis.on("nodeClicked", function(d) {
             clusterMap.highlightCluster(d);
+            myPackVis.colorClusters(d);
         });
 
         myPackVis.on("clusterClicked", function(arr) {
-            console.log(_ptAllData);
+            // console.log(_ptAllData);
             // 1. select image for display
             for(var i= 0; i<arr.length; i++) {
                 var d = _ptAllData[arr[i]];

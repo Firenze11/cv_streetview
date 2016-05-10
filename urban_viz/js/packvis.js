@@ -10,9 +10,15 @@ d3.custom.packVis = function module() {
         height = 300 - margin.top - margin.bottom;
     var svg;
 
-    var map = {}, root = {children: []}, colorMap = {};
+    var data = [], map = {}, root = {children: []};
     var n_nodes = 34017, n_leaves = 17009, count= 0, timer;
-    var color = d3.scale.cubehelix().domain([0, height]);
+    var color = d3.scale.cubehelix().domain([-0.1,.4, 1])
+        .range([
+            d3.hsl(-100, 0.75, 0.40),
+            d3.hsl(  80, 1.50, 0.85),
+            d3.hsl( 260, 0.75, 0.40)
+        ]),
+        colorMap;
 
     var dispatch = d3.dispatch("clusterClicked");
 
@@ -32,6 +38,7 @@ d3.custom.packVis = function module() {
     function my(_selection) {
         _selection.each(function(_data) {
             //console.log(_data);
+
             svg = d3.select(this).append('svg')
                 .attr("width", width)
                 .attr("height", height)
@@ -44,11 +51,13 @@ d3.custom.packVis = function module() {
             root = build_tree(_data);
 
             update(root);
-        });
+        })
     }
 
     function update(_top) {
-        var nodes = pack.nodes(_top);
+        var nodes = data = pack.nodes(_top);
+
+        //data.forEach( function(d) { d.cluster = n_nodes - 1 - d.id; });
 
         var node = svg.selectAll(".node")
             .data(nodes.filter(function(d) {
@@ -60,7 +69,7 @@ d3.custom.packVis = function module() {
                 var imgId = leaves
                     .filter( function() { return Math.random() < 100 / d.value; })
                     .map( function(e) { return e.id; });
-                //console.log(imgId);
+                console.log(d.cluster, d._cluster, imgId);
                 dispatch.clusterClicked(imgId);
             });
 
@@ -121,6 +130,117 @@ d3.custom.packVis = function module() {
         if (!arguments.length) return height;
         height = value;
         return my;
+    };
+
+    my.colorClusters = function(param_in) {
+        colorMap = param_in.cmap;
+
+        //if (param_in.mode == "open") {
+        //    var filterFunc = function(d) { return d.parent ? d.parent.id === param_in.id : false; };
+        //    svg.selectAll(".node").select("circle")
+        //        .style('fill', function(d) {
+        //            return filterFunc(d) ? color( colorMap[ n_nodes - 1 - d.id ]) : "#aaa";
+        //        })
+        //        .style('fill-opacity', function(d) {
+        //            return filterFunc(d) ? 0.5 : 0.1;
+        //        });
+        //}
+        function updateColor() {
+            svg.selectAll(".node").select("circle")
+                .style('fill', function(d) {
+                    return d.cluster === -1 ? "#fff" : color( colorMap[d.cluster]); })
+                .style('fill-opacity', function(d) {
+                    return d.cluster === -1 ? 0.1 : 0.5; });
+        }
+
+        //data.forEach(function (d) {
+        //    if (d._cluster) {
+        //        if(d._cluster !== -1) {
+        //            d.cluster = d._cluster;
+        //            d._cluster = -1;
+        //        }
+        //    }
+        //});
+
+        // _cluster is set to -1 when you don't want to show them in 5000ms
+        // cluster is set to -1 when you don't want to show them right now.
+        data.forEach(function (d) {
+            //if(d._cluster) {}
+            if(d.cluster !== -1) {
+                d._cluster = d.cluster;
+                d.cluster = -1;
+            }
+        });
+
+        if (param_in.mode == "open") {
+
+            setTimeout( function() {
+                data.forEach(function (d) {
+                    if (d.id === param_in.id) {
+                        d.cluster = n_nodes - 1 - d.id;
+                        d._cluster = -1;
+                    }
+                });
+                updateColor();
+            }, 0);
+
+            setTimeout( function() {
+                data.forEach(function (d) {
+                    if (d.id === param_in.id) {
+                        d.cluster = -1;
+                        d.children.forEach( function(e) { e.cluster = n_nodes - 1 - e.id; });
+                    }
+                });
+                updateColor();
+            }, 1000);
+
+            setTimeout( function() {
+                data.forEach(function (d) {
+                    if (d._cluster) { // in case of those nodes far down the tree
+                        if (d._cluster !== -1) {
+                            d.cluster = d._cluster;
+                            d._cluster = -1;
+                        }
+                    }
+                });
+                updateColor();
+            }, 5000);
+
+        } else {
+            setTimeout(function () {
+                data.forEach(function (d) {
+                    if (d.id === param_in.id) {
+                        d.children.forEach( function(e) {
+                            e.cluster = n_nodes - 1 - e.id;
+                            e._cluster = -1;
+                        });
+                    }
+                });
+                updateColor();
+            }, 0);
+
+            setTimeout(function () {
+                data.forEach(function (d) {
+                    if (d.id === param_in.id) {
+                        d.cluster =  n_nodes - 1 - d.id;
+                        d.children.forEach( function(e) { e.cluster = -1; });
+                    }
+                });
+                updateColor();
+            }, 1000);
+
+            setTimeout(function () {
+                data.forEach(function (d) {
+                    if (d._cluster) {
+                        if (d._cluster !== -1) {
+                            d.cluster = d._cluster;
+                            d._cluster = -1;
+                        }
+                    }
+                });
+                updateColor();
+            }, 5000);
+        }
     };
 
     d3.rebind(my, dispatch, 'on');

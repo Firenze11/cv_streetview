@@ -196,6 +196,7 @@ d3.custom.treeVis = function module() {
         }
         update(d);
         dispatch.nodeClicked({depth: d.depth, id: d.id, mode: mode, cmap: colorMap });
+        console.log("colorMap",colorMap);
     }
 
     function build_tree(children) {
