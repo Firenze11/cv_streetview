@@ -295,7 +295,7 @@ d3.custom.mapVis = function module() {
                         }
                     });
                     update();
-                }, 5000);
+                }, 4000);
             }
 
 

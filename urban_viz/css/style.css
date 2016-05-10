@@ -64,20 +64,21 @@ section {
     left: 0;
 }
 
-#mapspolygon, #mapsdot, #mapscluster {
-    /*position: absolute;*/
-    /*height: 300px;*/
-    /*width: 100%;*/
+#mapspolygon, #mapsdot {
     background-color: #ddd;
-    /*padding-top: 30px;*/
-    /*padding-bottom: 30px;*/
 }
-#nodeVis, #parallelVis, #hierarchyVis {
-    height: 300px;
+#nodeVis, #parallelVis, #hierarchyVis, #hierarchyVis2 {
     background-color: #f9f9f9;
 }
+#nodeVis, #parallelVis {
+    height: 300px;
+}
+#hierarchyVis, #hierarchyVis2 {
+    height: 200px;
+}
 
-#nodeVis, #parallelVis, #hierarchyVis {
+
+#nodeVis, #parallelVis {
     border-color: #ddd;
     border-width: 2px;
     border-style: dashed;
@@ -86,7 +87,7 @@ section {
     fill: #444;
 }
 
-#mapsdot circle {
+#mapsdot circle, #mapscluster circle {
     cursor: pointer;
 }
 
@@ -190,11 +191,10 @@ select {
     fill-opacity: .1;
     stroke: #aaa;
     stroke-width: 1px;
-    stroke-dasharray: 4,4;
+    stroke-dasharray: 6,6;
 }
 #hierarchyVis2 circle:hover {
-    fill-opacity: .3;
-    stroke: #333;
+    stroke: #222;
 }
 
 #hierarchyVis2 .leaf circle {

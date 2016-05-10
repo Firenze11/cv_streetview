@@ -6,7 +6,7 @@ if(!d3.custom) d3.custom = {};
 d3.custom.treeVis = function module() {
     var margin = {top: 0, right: 20, bottom: 0, left: 60},
         width = 1120 - margin.right - margin.left,
-        height = 300 - margin.top - margin.bottom;
+        height = 200 - margin.top - margin.bottom;
     var svg;
 
     var map = {}, colorMap = {};

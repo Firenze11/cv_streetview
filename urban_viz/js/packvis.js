@@ -7,7 +7,7 @@ if(!d3.custom) d3.custom = {};
 d3.custom.packVis = function module() {
     var margin = {top: 0, right: 20, bottom: 0, left: 20},
         width = 1170 - margin.right - margin.left,
-        height = 300 - margin.top - margin.bottom;
+        height = 200 - margin.top - margin.bottom;
     var svg;
 
     var data = [], map = {}, root = {children: []};
@@ -135,32 +135,25 @@ d3.custom.packVis = function module() {
     my.colorClusters = function(param_in) {
         colorMap = param_in.cmap;
 
-        //if (param_in.mode == "open") {
-        //    var filterFunc = function(d) { return d.parent ? d.parent.id === param_in.id : false; };
-        //    svg.selectAll(".node").select("circle")
-        //        .style('fill', function(d) {
-        //            return filterFunc(d) ? color( colorMap[ n_nodes - 1 - d.id ]) : "#aaa";
-        //        })
-        //        .style('fill-opacity', function(d) {
-        //            return filterFunc(d) ? 0.5 : 0.1;
-        //        });
-        //}
         function updateColor() {
-            svg.selectAll(".node").select("circle")
-                .style('fill', function(d) {
-                    return d.cluster === -1 ? "#fff" : color( colorMap[d.cluster]); })
-                .style('fill-opacity', function(d) {
-                    return d.cluster === -1 ? 0.1 : 0.5; });
+            svg.selectAll(".node").select("circle").transition().duration(500)
+                .style('fill', function (d) {
+                    return d.cluster === -1 ? "#fff" : color(colorMap[d.cluster]);
+                })
+                .style('fill-opacity', function (d) {
+                    return d.cluster === -1 ? 0.2 : 0.5;
+                });
         }
-
-        //data.forEach(function (d) {
-        //    if (d._cluster) {
-        //        if(d._cluster !== -1) {
-        //            d.cluster = d._cluster;
-        //            d._cluster = -1;
-        //        }
-        //    }
-        //});
+        function whitenChildren(d) {
+            if (d.children) {
+                d.children.forEach( function (e) {
+                    if (e._cluster) {
+                        e._cluster = -1;
+                    }
+                    whitenChildren(e);
+                })
+            }
+        }
 
         // _cluster is set to -1 when you don't want to show them in 5000ms
         // cluster is set to -1 when you don't want to show them right now.
@@ -205,14 +198,14 @@ d3.custom.packVis = function module() {
                 });
                 updateColor();
             }, 5000);
-
         } else {
             setTimeout(function () {
                 data.forEach(function (d) {
                     if (d.id === param_in.id) {
+                        whitenChildren(d);
                         d.children.forEach( function(e) {
                             e.cluster = n_nodes - 1 - e.id;
-                            e._cluster = -1;
+                            //e._cluster = -1;
                         });
                     }
                 });
@@ -239,7 +232,7 @@ d3.custom.packVis = function module() {
                     }
                 });
                 updateColor();
-            }, 5000);
+            }, 4000);
         }
     };
 
