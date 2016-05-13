@@ -18,10 +18,10 @@ d3.custom.treeVis = function module() {
             d3.hsl( 260, 0.75, 0.40)
         ]);
     var texts={ 1:"all",
-                2: "non-urban",
+                2: "low density",
                 3: "open, suburban",
                 4: "suburban - less green",
-                5: "urban",
+                5: "high density",
                 6: "suburban - more green",
                 7: "industrial-like",
                 8: "city center-like",
