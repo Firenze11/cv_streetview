@@ -1,94 +1,179 @@
-MapVis = function(_parentElement, _data){
+if(!d3.custom) d3.custom = {};
 
-    this.lng_fix = Math.cos(42.352131 * Math.PI/180.0);
-    this.imgRoot = "/Dropbox/thesis/img/boston/";
-
-    this.parentElement = _parentElement;
-    this.data = _data.filter( function(d) { return d.color; } );
-    // Create a map in the div #map
+d3.custom.leafletVis = function() {
     L.mapbox.accessToken = 'pk.eyJ1IjoibGV6aGlsaSIsImEiOiIwZTc1YTlkOTE1ZWIzYzNiNDdiOTYwMDkxM2U1ZmY0NyJ9.SDXoQBpQys6AdTEQ9OhnpQ';
-    //http://stackoverflow.com/questions/10337640/how-to-access-the-dom-element-that-correlates-to-a-d3-svg-object
-    this.map = L.mapbox.map(this.parentElement[0][0], 'mapbox.dark', {
-                  zoomControl: false
-                })
-                .setView([42.352131, -71.090669], 13);
-                //console.log(this.parentElement[0][0]);
-    this.initVis();
-};
 
-MapVis.prototype.initVis = function(){
-    var that = this;    
-    this.svg = d3.select(this.map.getPanes().overlayPane).append("svg"),
-    this.g = this.svg.append("g").attr("class", "leaflet-zoom-hide");    
-    // default
-    this.options = {};
-    this.c20b = d3.scale.category20()
-        .domain(unique(this.data.map( function(d) {
-            return d.label;
-        })));
-    this.wrangleData(this.options); // filter, aggregate, modify data   
-    this.updateVis(); // call the update method
+    var shapeType = "point", // OR "point"
+        c_range = [d3.hsl(-120, .6, 0.2), d3.hsl(60, .6, 0.8)];
+    var category = "color";
+    var color = d3.scale.cubehelix();
+        //colorMap; // cluster# -> color
 
-    function unique(list) {
-        var result = [];
-        $.each(list, function(i, e) {
-            if ($.inArray(e, result) == -1) result.push(e);
+    var selection, data = [], map, svg, g, markers = [];
+
+    var dispatch = d3.dispatch("locClicked");
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<strong>Neighborhood:</strong> <br> <span class='selected'>" + d.neighborhood + "</span>";
         });
-        return result;
-    }
-};
 
-MapVis.prototype.updateVis = function(){
-    var that = this;
+    function my(_selection) {
+        selection = _selection;
+        selection.each(function (_data) {
 
-    // these two statements can be moved to initvis but projectpoint will need to be attached to MapVis directly, and the "this" in projectpoint need to be changed in order to refer to "point" in "{point: this.projectPoint}" below...
-    // this.transform = d3.geo.transform({point: projectPoint}); //d3.geo.transform(methods): Creates a new stream transform using the specified hash of methods. The hash may contain implementations of any of the standard stream listener methods: sphere, point, lineStart, lineEnd, polygonStart and polygonStartonEnd
-    // this.bldg_path = d3.geo.path().projection(this.transform); //projection(location): Projects forward from spherical coordinates (in degrees) to Cartesian coordinates (in pixels). Returns an array [x, y] given the input array [longitude, latitude].
+            var center = [_data.center[1], _data.center[0]];
+            map = L.mapbox.map(this, 'mapbox.dark', { //"this" here is the _selection
+                //zoomControl: false
+            }).setView(center, 13);
 
-    var picCircles = this.g.selectAll("circle")
-                            .data(this.data);
-    picCircles.enter()
-        .append("circle")
-        .attr("r", 6)
-        .style("fill", function(d) { return d.color;})//return that.c20b(d.label); })
-        .style('opacity', 0.8)
-        .on("click", function(d) {
-            console.log(d.label);
-            var imgName = d.lat + "," + d.lng + "_" + d.dir + ".png";
-            $("img#pic").attr('src', that.imgRoot + imgName);
+            svg = d3.select(map.getPanes().overlayPane).append("svg");
+            g = svg.append("g").attr("class", "leaflet-zoom-hide");
+            svg.call(tip);
+
         });
-    picCircles.exit().remove();
 
-    this.map.on("viewreset", reset);
-    reset();
-
-    // Reposition the SVG to cover the features.
-    function reset() {
-        var xBounds = d3.extent(that.data, function(d) { return projectPoint(d.lat, d.lng)[0]; }),
-            yBounds = d3.extent(that.data, function(d) { return projectPoint(d.lat, d.lng)[1]; });
-
-        that.svg.attr("width", xBounds[1] - xBounds[0])
-            .attr("height", yBounds[1] - yBounds[0])
-            .style("left", xBounds[0] + "px")
-            .style("top", yBounds[0] + "px");
-
-        that.g.attr("transform", "translate(" + -xBounds[0] + "," + -yBounds[0] + ")");
-        picCircles
-            .attr("transform", function(d) {
-                var psudoLat = +d.lat,
-                    psudoLng = +d.lng;
-                return "translate(" + projectPoint(psudoLat, psudoLng) + ")";
-            })
+        update();
     }
 
-    // Use Leaflet to implement a D3 geometric transformation.
-    function projectPoint(x, y) {
-      var point = that.map.latLngToLayerPoint(new L.LatLng(x, y));
-      return [point.x, point.y];
-    }
-};
+    function update() {
+        selection.each(function (_data) {
+            for(i=0;i<markers.length;i++) {
+                map.removeLayer(markers[i]);
+            }
+            markers = [];
 
-MapVis.prototype.wrangleData= function(_data){
-    this.data = _data;
-    this.updateVis();
+            var center = [_data.center[1], _data.center[0]];
+            map.setView(center, 13);
+
+            var ext = d3.extent(_data.filter( function(d) {
+                return category === "entropy"? +d[category] > 4.5 : d[category]; }),
+                                function(d) { return +d[category]; });
+            color.domain(ext).range(c_range); //([ext[0], 0.5*(ext[0]+ext[1]), ext[1]]);
+
+            //var picCircles = svg.selectAll("circle")
+            //    .data(_data);
+            //
+            //picCircles.enter()
+            //    .append("circle")
+            //    .attr("r", 6)
+            //    .style('opacity', 0.8)
+            //    .on("click",  function(d) {
+            //        dispatch.locClicked(d);
+            //    });
+            //
+            //picCircles.style("fill", function (d) {
+            //    return d[category];
+            //});//return that.c20b(d.label); })
+            //
+            //picCircles.exit().remove();
+            //
+            //map.on("viewreset", reset);
+            //reset();
+            //
+            //// Reposition the SVG to cover the features.
+            //function reset() {
+            //    var xBounds = d3.extent(_data, function(d) { return projectPoint(d.lat, d.lng)[0]; }),
+            //        yBounds = d3.extent(_data, function(d) { return projectPoint(d.lat, d.lng)[1]; });
+            //
+            //    svg.attr("width", xBounds[1] - xBounds[0])
+            //        .attr("height", yBounds[1] - yBounds[0])
+            //        .style("left", xBounds[0] + "px")
+            //        .style("top", yBounds[0] + "px");
+            //
+            //    g.attr("transform", "translate(" + -xBounds[0] + "," + -yBounds[0] + ")");
+            //    picCircles
+            //        .attr("transform", function(d) {
+            //            var psudoLat = +d.lat,
+            //                psudoLng = +d.lng;
+            //            return "translate(" + projectPoint(psudoLat, psudoLng) + ")";
+            //        })
+            //}
+            //
+            //// Use Leaflet to implement a D3 geometric transformation.
+            //function projectPoint(x, y) {
+            //    var point = map.latLngToLayerPoint(new L.LatLng(x, y));
+            //    return [point.x, point.y];
+            //}
+            if (shapeType === "polygon") {
+                L.geoJson(_data.arr, {
+                    style: function (feature) {
+                        //console.log(dotColor(feature));
+                        return {color: (cluster === 'color') ? feature.value : palette(feature.value),
+                            fillOpacity: 0.4};
+                    },
+                    onEachFeature: function (feature, layer) { // probably need to change to more generic representation
+                        layer.bindPopup(feature.properties.NAME + ', cluster= ' + _that.dataMap.get(feature.properties.NAME)['cluster_outof_' + outof]);
+                    },
+                    className: function(feature) {
+                        return 'imgCircle '+ feature.properpies.OBJECTID;
+                    }
+                }).addTo(map);
+
+            } else {
+                _data.forEach(function (d) {
+                    var coor = d.dir ? psudoCoor(d) : [+d.lat, +d.lng];
+
+                    var marker = L.circleMarker(coor, {
+                        stroke: false,
+                        fillColor: (category === 'color') ? d[category] : color(+d[category]),
+                        fillOpacity: d[category] ? 0.8 : 0,
+                        radius: 6,
+                        className: 'imgCircle ' + d.label
+                    })
+                    .on('click', function(d) { dispatch.locClicked(d); })
+                    .addTo(map);
+                    markers.push(marker);
+                });
+            }
+        });
+    }
+
+    //my.width = function(_x) {
+    //    if (!arguments.length) return width;
+    //    width = parseInt(_x);
+    //    return this;
+    //};
+    my.category = function(_x) {
+        if (!arguments.length) return category;
+        category = _x;
+        return this;
+    };
+    my.colorRange = function(_x) {
+        if (!arguments.length) return c_range;
+        c_range = _x;
+        return this;
+    };
+
+
+    my.update = update;
+
+    d3.rebind(my, dispatch, 'on');
+
+
+    //this.onDataChange = function (_data, _options) {
+    //    this.data = _data;
+    //
+    //    this.options = _options;
+    //
+    //    var lat = centers [this.options.cityname] [0];
+    //    this.lng_fix = Math.cos(lat * Math.PI / 180.0);
+    //
+    //    //$.getJSON("data/boundary_boston.geojson", function(data) {
+    //    //    L.geoJson(data, {
+    //    //        //style: function (feature) {
+    //    //        //    return {color: feature.properties.color};
+    //    //        //},
+    //    //        //onEachFeature: function (feature, layer) {
+    //    //        //    layer.bindPopup(feature.properties.description);
+    //    //        //}
+    //    //    }).addTo(_that.map);
+    //    //});
+    //
+    //    this.wrangleData();
+    //};
+
+    return my;
 };
