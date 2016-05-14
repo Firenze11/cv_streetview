@@ -3,8 +3,8 @@
  * Created by lezhi on 3/17/2016.
  */
 
-var imgroot = '/Dropbox/thesis/img/',
-    imgroot_dense = '/Dropbox/thesis/img_dense/';
+var imgroot = 'img/',
+    imgroot_dense = 'img_dense/';
 var cities = ['boston', 'chicago', 'newyork', 'sanfrancisco'];
 var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
 var centers = {
