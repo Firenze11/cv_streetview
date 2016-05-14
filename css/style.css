@@ -1,0 +1,295 @@
+body {
+    font-family: 'Jura', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 100;
+    font-size: 12px;
+}
+h1 {
+    font-family: 'Jura', sans-serif;
+}
+.control {
+    margin-bottom: 20px;
+}
+.map-small {
+    height: 265px;
+}
+.fullwidth {
+    width: 100%;
+}
+ul {
+    list-style: none;
+    -webkit-padding-start: 0; /* otherwise there will be padding on the left*/
+}
+section {
+    padding: 200px 0 360px ;
+}
+.mainVis {
+    margin-top: 10px;
+}
+
+
+.d3-tip {
+    line-height: 1;
+    /*font-weight: bold;*/
+    padding: 9px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #000;
+    border-radius: 2px;
+}
+.d3-tip.tip-inverse {
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.65);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+.d3-tip.tip-inverse:after {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+#mapspolygon, #mapsdot {
+    background-color: #ddd;
+}
+#nodeVis, #parallelVis, #hierarchyVis, #hierarchyVis2 {
+    background-color: #f9f9f9;
+}
+#nodeVis, #parallelVis {
+    height: 300px;
+}
+#hierarchyVis, #hierarchyVis2 {
+    height: 200px;
+}
+
+
+#nodeVis, #parallelVis {
+    border-color: #ddd;
+    border-width: 2px;
+    border-style: dashed;
+}
+.highlight {
+    fill: #444;
+}
+
+#mapsdot circle, #mapscluster circle {
+    cursor: pointer;
+}
+
+#mapsdot circle:not(.highlight), #mapscluster circle:not(.highlight) {
+    fill: #aaa;
+}
+#mapsdot circle:hover, #mapscluster circle:hover{
+     fill: #ff0000;
+}
+#mapsdot circle.selected  {
+    /*stroke: rgba(255, 0, 0, 0.6);*/
+    /*stroke-width: 4;*/
+    fill: #ff0000;
+}
+
+#mapVis {
+    /*position: absolute;*/
+    height: 660px;
+    /*width: 100%;*/
+    background-color: #333;
+}
+
+#mapVis circle {
+    cursor: pointer;
+}
+
+#parallelVis .selected {
+    stroke: #ff0000;
+}
+
+
+.district{
+    stroke: #ddd;
+    fill: #fff;
+    fill-opacity: 0.6;
+}
+.district:hover, .district.highlight{
+    fill: #ff0000;
+    fill-opacity: 0.2;
+}
+
+select {
+    border: none;
+    border-bottom: solid;
+}
+
+/* nodeVis */
+.link {
+    stroke: #999;
+    stroke-opacity: .15;
+    fill: none;
+}
+
+/* parallelVis */
+.background path {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
+}
+
+.foreground path {
+    fill: none;
+    stroke: #444;
+}
+
+.brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+/* treeVis*/
+#hierarchyVis .node {
+    cursor: pointer;
+}
+
+#hierarchyVis .node circle {
+    stroke: #ddd;
+    /*border-style: dashed;*/
+    stroke-width: 1.5px;
+}
+
+#hierarchyVis .node text {
+    font: 10px sans-serif;
+}
+
+/* packVis*/
+#hierarchyVis2 circle {
+    fill: #999;
+    fill-opacity: .1;
+    stroke: #aaa;
+    stroke-width: 1px;
+    stroke-dasharray: 6,6;
+}
+#hierarchyVis2 circle:hover {
+    stroke: #222;
+}
+
+#hierarchyVis2 .leaf circle {
+    fill: #ff7f0e;
+    fill-opacity: 1;
+}
+
+
+/*.................................................................j carousel*/
+/*
+This is the visible area of you carousel.
+Set a width here to define how much items are visible.
+The width can be either fixed in px or flexible in %.
+Position must be relative!
+*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-shadow: 0 0 4px #ddd;
+    -moz-box-shadow: 0 0 4px #ddd;
+    box-shadow: 0 0 4px #ddd;
+}
+
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 200000em;
+    position: relative;
+
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+    width: 170px;
+    height: 130px;
+    padding: 5px 1px;
+}
+
+
+.jcarousel img {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.8;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+/*........................................................j carousel control*/
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    /*width: 30px;*/
+    /*height: 30px;*/
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 4px #666;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* do not underline*/
+.jcarousel-control-prev:focus,
+.jcarousel-control-next:focus {
+    text-decoration: none;
+    color: #fff;
+}
+.jcarousel-control-prev:hover,
+.jcarousel-control-next:hover {
+    text-decoration: none;
+    color: #aaa;
+}
+
+
+.jcarousel-control-prev {
+    left: -5px;
+}
+
+.jcarousel-control-next {
+    right: -5px;
+}

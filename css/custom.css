@@ -1,0 +1,176 @@
+body{
+    background: #666667;
+    padding: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    /*font-family: monospace; /**********/
+}
+
+/* 7 fond properties https://css-tricks.com/almanac/properties/f/font/ */
+#header{
+    font: extra-expanded normal normal bold 54px normal monospace; /**********/
+    font-family: 'Righteous', sans-serif;
+    color: #ffff66;
+    margin: 4px 0px;
+}
+
+#control, #all_maps{
+    color: #cccccc;
+}
+
+#control>ul, #all_maps>ul{
+    padding: 0px;
+    list-style-type: none; /* remove bullet */
+}
+
+#control hr, #all_maps hr {
+    border-top-color: #888877;
+}
+#control hr{
+    margin-top:18px;
+    margin-bottom:5px;
+}
+#all_maps hr{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+#control h4{
+    padding-left: 2px;
+    color: #ffff66;
+    margin-top: 4px;
+}
+
+#control li{
+    padding-left: 6px;
+}
+#control li:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+#all_maps img:hover{
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.075), 0 0 18px rgba(255, 255, 233, 0.1);
+}
+
+/* overwriting default checkboxes */
+#control [type="checkbox"]:not(:checked) + label:before,
+#control [type="checkbox"]:checked + label:before{
+    background: #707070;
+}
+#control [type="checkbox"]:not(:checked) + label:after,
+#control [type="checkbox"]:checked + label:after{
+    color: #ffffff;
+}
+#control [type="checkbox"]:disabled:not(:checked) + label:after,
+#control [type="checkbox"]:disabled:checked + label:after{
+    color: #959595;
+}
+
+#all_maps{
+    margin-top: 15px;
+    bottom:0px
+}
+#all_maps li{
+    padding-top: 15px;
+}
+
+#all_maps img {
+    border-radius: 50%;
+    max-width:84%; /**********need to query browser size*/
+    max-height:84%;
+    min-width: 100px;
+    min-heignt: 100px;
+}
+    /*[type="checkbox"]:disabled:not(:checked) + label:before,
+    .custom-checkbox > [type="checkbox"]:disabled:checked + label:before*/
+
+/* CSS used here will be applied after bootstrap.css */
+/* custom checkboxes http://www.bootply.com/ugwCnanAfm */
+.custom-checkbox > [type="checkbox"],
+.custom-checkbox > label{
+    margin-bottom:0px !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked),
+.custom-checkbox > [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label,
+.custom-checkbox > [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:before,
+.custom-checkbox > [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0;
+    top: 50%;
+    margin-top:-6px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    border-radius: 2px;
+}
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:after,
+.custom-checkbox > [type="checkbox"]:checked + label:after {
+    font: normal normal bold 12px/1 sans-serif;
+    content: '\2714';  /* \2713 ✓*/
+    position: absolute;
+    top: 50%;
+    margin-top:-5px;
+    left: 2px;
+    color: #303030;
+    xtransition: all .2s;
+}
+
+.custom-checkbox > [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+.custom-checkbox > [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after,
+.custom-checkbox > [type="checkbox"][data-indeterminate] + label:after {
+    content: '\2212';
+    left: 2px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:before,
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    background-color: #eeeeee; /***********************/
+    border-color: #eeeeee;
+    cursor: not-allowed;
+    opacity: 1;
+    color: #dadada;
+}
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:after {
+    color: #999999; cursor: not-allowed;
+}
+.custom-checkbox > [type="checkbox"]:disabled + label {
+    color: #888888; cursor: not-allowed;
+}
+.custom-checkbox > [type="checkbox"]:checked:focus + label:before,
+.custom-checkbox > [type="checkbox"]:not(:checked):focus + label:before {
+    border: 1px solid #ffff66;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 102, 0.6);
+}
+.custom-checkbox > label:hover:before {
+    border: 1px solid #ffff66 !important;
+}
+.custom-checkbox > [type="checkbox"]:disabled:not(:checked) + label:hover:before,
+.custom-checkbox > [type="checkbox"]:disabled:checked + label:hover:before{
+    border: 1px solid #E4E4E4 !important;
+}
