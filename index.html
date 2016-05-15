@@ -14,7 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <!-- Font -->
-    <link href='https://fonts.googleapis.com/css?family=Jura:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jura:400, 300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -41,8 +41,130 @@
 
     <div class="container">
 
-        <!--START of secret section-->
-        <section id="secret">
+
+        <!--START of introduction section-->
+        <section id="heading">
+            <div class="text-center col-md-12">
+                <h1 > Images of the City: <br> A Pattern Language </h1>
+                <h2 >
+                    Computer Vision Analysis of Urban District Visual Identities
+                    <br> Using Google Street View Data
+                </h2>
+                <p>
+                    This is the visualization portal for my thesis project - "Images of the City: A Pattern Language",
+                    <br>
+                    an exploration of the potential of using large-scale city imagery data set (Google Street View)
+                    in understanding and reading the cities.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="introduction">
+            <h1 > 4 Steps, 4 Experiments </h1>
+            <!--<p>-->
+
+            <!--A particular focus is placed on the idea of visual similarity in various districts in the-->
+            <!--urban space, and its relationship with existing district boundaries, such as those of neighborhoods.-->
+
+            <!--</p>-->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part1.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        First I will explore the use of city imaginary data in Collecting Spatial Statistic that
+                        can be used in the studies of urban planning and design; I will discuss my experiment
+                        about mapping urban greenery and mapping building façade colors in 4 American cities.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part2.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Then I looked at the problem of visual resemblance particularly, and played with a
+                        Convolutional Neural Net and train it to identify visually similarity patterns by
+                        recognizing cities / neighborhoods from their google street view images.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part3.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Next I will talk about the limitation of existing neighborhood boundaries,
+                        and how to redefine the boundaries based on shared visual characteristics,
+                        using a bottom-up approach which I call “the discovery of perceptual neighborhoods”
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part4.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Finally I undertook an exploration into latent urban characteristics that
+                        can be reflected visually.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!--END of introduction section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of data section-->
+        <section id="data">
+            <h1 > Data Collection </h1>
+            <div class="col-md-2"></div>
+            <img src="illustration/data_collection.gif" alt="" class="col-md-4 col-sm-6 col-xs-12">
+            <p class="col-md-4">
+                The dataset for this research is collected using
+                <a href="https://developers.google.com/maps/documentation/streetview/"> Google Street View API</a>
+                from 4 American cities: Boston, Chicago, New York and San Francisco. 4 images are sampled from each grid point
+                within a 6 km radius region covering the major urban area.
+            </p>
+
+        </section>
+
+        <!--END of data section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of statistic section-->
+        <section id="statistic">
+            <h1 > 1. Large-scale Spatial Statistic Collection </h1>
+            <div class="col-md-2"></div>
+            <img src="illustration/extract_color.gif" alt="" class="col-md-6 col-sm-8 col-xs-12">
+            <p class="col-md-4">
+                The dataset for this research is collected using
+                <a href="https://developers.google.com/maps/documentation/streetview/"> Google Street View API</a>
+                from 4 American cities: Boston, Chicago, New York and San Francisco. 4 images are sampled from each grid point
+                within a 6 km radius region covering the major urban area.
+            </p>
+
+        </section>
+
+        <!--END of statistic section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of parallel section-->
+        <section id="parallel">
 
             <div class="row ">
                 <h1 class="col-md-12"> Lots of Images at One Glance </h1>
@@ -106,7 +228,7 @@
                 <div class="col-md-12" id="parallelVis">  </div>
             </div>
         </section>
-        <!--END of secret section-->
+        <!--END of parallel section-->
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 

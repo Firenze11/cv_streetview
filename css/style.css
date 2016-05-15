@@ -1,11 +1,15 @@
 body {
     font-family: 'Jura', sans-serif;
     /*font-family: 'Roboto', sans-serif;*/
-    font-weight: 100;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Jura', sans-serif;
+    font-weight: 300;
 }
 h1 {
-    font-family: 'Jura', sans-serif;
+    margin-bottom: 60px;
 }
 .control {
     margin-bottom: 20px;
@@ -62,6 +66,27 @@ section {
     margin: -1px 0 0 0;
     top: 100%;
     left: 0;
+}
+
+#heading h1 {
+    font-size: 60px
+}
+#heading p {
+    margin-top: 150px
+}
+
+#introduction img {
+    max-width: 100%;
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform .5s ease-in-out;
+}
+#introduction img:hover {
+    transform: translate3d(0px, -50px, 0px);
+}
+
+#introduction .imContainer {
+    height: 150px;
+    overflow: hidden;
 }
 
 #mapspolygon, #mapsdot {
