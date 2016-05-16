@@ -146,16 +146,38 @@
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
         <!--START of statistic section-->
-        <section id="statistic">
-            <h1 > 1. Large-scale Spatial Statistic Collection </h1>
-            <div class="col-md-2"></div>
-            <img src="illustration/extract_color.gif" alt="" class="col-md-6 col-sm-8 col-xs-12">
-            <p class="col-md-4">
-                The dataset for this research is collected using
-                <a href="https://developers.google.com/maps/documentation/streetview/"> Google Street View API</a>
-                from 4 American cities: Boston, Chicago, New York and San Francisco. 4 images are sampled from each grid point
-                within a 6 km radius region covering the major urban area.
-            </p>
+        <section id="statistic" class="row">
+            <h1 > Large-scale Spatial Statistic Collection </h1>
+            <div class="">
+                <h3 class="col-md-12">Semantic Segmentation</h3>
+                <img src="illustration/segmentation.jpg" alt="" class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-md-6">
+
+                    In order to retrieve information from images, the first step is to isolate visual elements
+                    in images. The method I used here is <a href="http://mi.eng.cam.ac.uk/projects/segnet/">SegNet</a>,
+                    a neural network prediction model which calculates the possibility of each pixel in this image
+                    being in any of the 12 categories.
+                    <br>
+                    Simply counting the number of pixels in each class already suffices a lot of tasks such as mapping
+                    the coverage of greenery across city region, where I can use the number of tree pixels as a proxy;
+                    Also sky area should be interesting because it might correspond to building height or urban density;
+                    Building areas should be relevant to study the architectural style etc.
+
+                </p>
+            </div>
+
+            <div class="">
+                <h3 class="col-md-12">Color Quantization</h3>
+                <img src="illustration/extract_color.gif" alt="" class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-md-4">
+                    But studying building styles usually involves some additional steps; for example
+                    in this case I was looking into the dominant colors of buildings across the city
+                    and how that varies from region to region, so I did this by color quantization using
+                    <a href="http://scikit-learn.org/stable/modules/clustering.html#mean-shift"> Mean-Shift Algorithm</a>,
+                    which was to cluster the RGB values of building façade pixels and extracted the one color
+                    that has the highest number of pixels, as the representative color of this coordinate.
+                </p>
+            </div>
 
         </section>
 
@@ -263,9 +285,79 @@
 
             </div>
 
+            <div class="row">
+                <h3 > All Maps</h3>
+                <img src="illustration/all_maps.jpg" alt="" class="col-md-12">
+            </div>
+
 
         </section>
         <!--END of gradient section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of recognize section-->
+        <section id="recognize">
+            <h1> Visual Resemblance in Urban Places </h1>
+
+            <div class="row">
+                <h3>Recognizing Cities/Neighborhoods from Street View</h3>
+                <img src="illustration/recognize.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    So far we’ve looked at “named”, hand-designed visual features.
+                    In order to evaluate visual similarity in a more comprehensive way, much more visual features
+                    are needed from each image, and an automated process is required for feature extraction.
+                    Thus a convolutional neural nets (CNN) is needed for feature extraction.
+
+                    <br><br>
+
+                    We used <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">AlexNext</a> structure in
+                    <a href="http://www.vlfeat.org/matconvnet/">MatConvNet</a> framework and trained 2 models to
+                    classify images according to their city names and neighborhood names, respectively.
+                    The figure above shows how error rate and energy descends as the training epoch increases.
+                    Also noticeable is that recognizing neighborhoods is a harder task than cities judging from the final error rates.
+                </p>
+            </div>
+
+            <div class="row">
+                <h3>Epitomic Images for Each City</h3>
+                <p class="col-lg-12">
+                    So let’s look at what the algorithm has learned and whether it makes sense to human beings.
+                    Here I plotted the top 10 confident predictions for each of the 10 cities. It's discernible that
+                    those from the same category demonstrate some visual similarities, which generally conform to human's
+                    impression about those places.
+                </p>
+                <img src="illustration/epitome.jpg" alt=""  class="col-lg-12">
+
+            </div>
+
+            <div class="row">
+                <h3>Categories that the Algorithm Cannot Distinguish</h3>
+                <img src="illustration/spectral_clustering.gif" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    Apart from what’s being captured by the algorithm, what the algorithm cannot learn is also
+                    interesting to know. Intuitively, some neighborhoods are more similar to each other than others,
+                    which might reflect important facts about the cities including zoning, cultural influence, or the
+                    trend of urban sprawl. How are we going to discover these?
+
+                    <br><br>
+
+                    Here is a way to evaluate which neighborhoods may look similar to each other. On the left, I recorded
+                    all the cases of mis-classification, which formulates a matrix with ground-truth categories ("real"
+                    categories of each image) on the X axis and predicted categories on the Y axis. The matrix in turn
+                    can be considered as a node-link graph where nodes represent all the categories and links represent
+                    the levels of similarities between each pair of categories. Then a
+                    <a href="http://scikit-learn.org/stable/modules/clustering.html#spectral-clustering">Spectral Clustering Algorithm</a>
+                    can be applied to this graph and cluster the nodes based on how strongly they are linked with each other.
+                </p>
+
+            </div>
+
+
+        </section>
+        <!--END of recognize section-->
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
@@ -360,6 +452,70 @@
 
         </section>
         <!--END of appearance section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of bottomup section-->
+        <section id="bottomup">
+            <h1> Neighborhood-based Classification is not Good Enough </h1>
+
+            <div class="row">
+                <h3>Recognizing Cities/Neighborhoods from Street View</h3>
+                <img src="illustration/recognize.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    However
+                    1, Visual variances within a same neighborhood defies blanket description;
+
+
+                    <br><br>
+
+                    We used <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">AlexNext</a> structure in
+                    <a href="http://www.vlfeat.org/matconvnet/">MatConvNet</a> framework and trained 2 models to
+                    classify images according to their city names and neighborhood names, respectively.
+                    The figure above shows how error rate and energy descends as the training epoch increases.
+                    Also noticeable is that recognizing neighborhoods is a harder task than cities judging from the final error rates.
+                </p>
+            </div>
+
+            <div class="row">
+                <h3>Epitomic Images for Each City</h3>
+                <p class="col-lg-12">
+                    So let’s look at what the algorithm has learned and whether it makes sense to human beings.
+                    Here I plotted the top 10 confident predictions for each of the 10 cities. It's discernible that
+                    those from the same category demonstrate some visual similarities, which generally conform to human's
+                    impression about those places.
+                </p>
+                <img src="illustration/epitome.jpg" alt=""  class="col-lg-12">
+
+            </div>
+
+            <div class="row">
+                <h3>Categories that the Algorithm Cannot Distinguish</h3>
+                <img src="illustration/spectral_clustering.gif" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    Apart from what’s being captured by the algorithm, what the algorithm cannot learn is also
+                    interesting to know. Intuitively, some neighborhoods are more similar to each other than others,
+                    which might reflect important facts about the cities including zoning, cultural influence, or the
+                    trend of urban sprawl. How are we going to discover these?
+
+                    <br><br>
+
+                    Here is a way to evaluate which neighborhoods may look similar to each other. On the left, I recorded
+                    all the cases of mis-classification, which formulates a matrix with ground-truth categories ("real"
+                    categories of each image) on the X axis and predicted categories on the Y axis. The matrix in turn
+                    can be considered as a node-link graph where nodes represent all the categories and links represent
+                    the levels of similarities between each pair of categories. Then a
+                    <a href="http://scikit-learn.org/stable/modules/clustering.html#spectral-clustering">Spectral Clustering Algorithm</a>
+                    can be applied to this graph and cluster the nodes based on how strongly they are linked with each other.
+                </p>
+
+            </div>
+
+
+        </section>
+        <!--END of bottomup section-->
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
