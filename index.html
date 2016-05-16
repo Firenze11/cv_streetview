@@ -62,12 +62,9 @@
 
         <section id="introduction">
             <h1 > 4 Steps, 4 Experiments </h1>
-            <!--<p>-->
 
-            <!--A particular focus is placed on the idea of visual similarity in various districts in the-->
-            <!--urban space, and its relationship with existing district boundaries, such as those of neighborhoods.-->
+            <hr>
 
-            <!--</p>-->
             <div class="row">
                 <div class="col-md-3">
                     <div class="col-md-12 imContainer">
@@ -130,6 +127,9 @@
         <!--START of data section-->
         <section id="data">
             <h1 > Data Collection </h1>
+
+            <hr>
+
             <div class="col-md-2"></div>
             <img src="illustration/data_collection.gif" alt="" class="col-md-4 col-sm-6 col-xs-12">
             <p class="col-md-4">
@@ -148,8 +148,11 @@
         <!--START of statistic section-->
         <section id="statistic" class="row">
             <h1 > Large-scale Spatial Statistic Collection </h1>
-            <div class="">
-                <h3 class="col-md-12">Semantic Segmentation</h3>
+            <hr>
+
+            <h3 class="col-md-12">Semantic Segmentation</h3>
+            <div class="row">
+                <hr>
                 <img src="illustration/segmentation.jpg" alt="" class="col-md-6 col-sm-8 col-xs-12">
                 <p class="col-md-6">
 
@@ -166,8 +169,10 @@
                 </p>
             </div>
 
-            <div class="">
-                <h3 class="col-md-12">Color Quantization</h3>
+
+            <h3 class="col-md-12">Color Quantization</h3>
+            <div class="row">
+                <hr>
                 <img src="illustration/extract_color.gif" alt="" class="col-md-6 col-sm-8 col-xs-12">
                 <p class="col-md-4">
                     But studying building styles usually involves some additional steps; for example
@@ -300,6 +305,8 @@
         <section id="recognize">
             <h1> Visual Resemblance in Urban Places </h1>
 
+            <hr>
+
             <div class="row">
                 <h3>Recognizing Cities/Neighborhoods from Street View</h3>
                 <img src="illustration/recognize.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
@@ -320,6 +327,8 @@
                 </p>
             </div>
 
+            <hr>
+
             <div class="row">
                 <h3>Epitomic Images for Each City</h3>
                 <p class="col-lg-12">
@@ -331,6 +340,8 @@
                 <img src="illustration/epitome.jpg" alt=""  class="col-lg-12">
 
             </div>
+
+            <hr>
 
             <div class="row">
                 <h3>Categories that the Algorithm Cannot Distinguish</h3>
@@ -457,62 +468,70 @@
 
         <!--START of bottomup section-->
         <section id="bottomup">
-            <h1> Neighborhood-based Classification is not Good Enough </h1>
+            <h1> Discovering Perceptual Neighborhoods </h1>
+
+            <hr>
 
             <div class="row">
-                <h3>Recognizing Cities/Neighborhoods from Street View</h3>
-                <img src="illustration/recognize.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <h3>Neighborhood-based Classification is not Good Enough</h3>
+                <div class="col-md-2"></div>
+                <img src="illustration/gerrymandering.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
                 <p class="col-lg-6">
 
-                    However
-                    1, Visual variances within a same neighborhood defies blanket description;
+                    However, neighborhood-based classification is not good enough for the task of urban district visual
+                    property identification. The reasons are:
+                    <br><br>
+                    1, The granularity of neighbrhood is simply not fine enough. Visual variance within a same
+                    neighborhood usually defies blanket description;
+                    <br>
+                    2, “Official” boundaries of neighborhoods are prone to human manipulation and don’t necessarily conform
+                    to “perceptual neighborhoods”. One example here is <a href="https://en.wikipedia.org/wiki/Gerrymandering">gerrymandering</a>,
+                    where politicians for specific reasons, redistrict natural neighborhoods into new political boundaries
+                    so that they get more vote from the populations by region;
+                    <br>
+                    3, The method is not adequate to detect visually similar sub-regions among different neighborhoods,
+                    an interesting pattern that indicates how prototypical design patterns have influence across borders.
 
+                </p>
+            </div>
 
+            <hr>
+
+            <div class="row">
+                <h3>Bottom-Up Deep Features Clustering Approach</h3>
+                <img src="illustration/deep_features.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-4">
+                    And that’s why a new method is needed in order to redefine the boundary of neighborhoods,
+                    possibly purely from image features, using a bottom-up approach.
                     <br><br>
 
-                    We used <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">AlexNext</a> structure in
-                    <a href="http://www.vlfeat.org/matconvnet/">MatConvNet</a> framework and trained 2 models to
-                    classify images according to their city names and neighborhood names, respectively.
-                    The figure above shows how error rate and energy descends as the training epoch increases.
-                    Also noticeable is that recognizing neighborhoods is a harder task than cities judging from the final error rates.
+                    Here is how I went about it. Going back to the neural network, instead of looking at the prediction
+                    result, I only extracted the second-to-last layer of the neural nets which contains “deep features”
+                    of each image. These feature are extracted by all the previous layers, and are just ready to do the
+                    classification.
+
                 </p>
             </div>
 
-            <div class="row">
-                <h3>Epitomic Images for Each City</h3>
-                <p class="col-lg-12">
-                    So let’s look at what the algorithm has learned and whether it makes sense to human beings.
-                    Here I plotted the top 10 confident predictions for each of the 10 cities. It's discernible that
-                    those from the same category demonstrate some visual similarities, which generally conform to human's
-                    impression about those places.
-                </p>
-                <img src="illustration/epitome.jpg" alt=""  class="col-lg-12">
-
-            </div>
+            <hr>
 
             <div class="row">
-                <h3>Categories that the Algorithm Cannot Distinguish</h3>
-                <img src="illustration/spectral_clustering.gif" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <div class="col-md-2"></div>
+                <img src="illustration/agglomerative.jpg" alt=""  class="col-md-4 col-sm-6 col-xs-8">
                 <p class="col-lg-6">
-
-                    Apart from what’s being captured by the algorithm, what the algorithm cannot learn is also
-                    interesting to know. Intuitively, some neighborhoods are more similar to each other than others,
-                    which might reflect important facts about the cities including zoning, cultural influence, or the
-                    trend of urban sprawl. How are we going to discover these?
-
+                    Then I implemented a bottom-up clustering algorithm on these features. In this matrix you can
+                    imaging that each row represent each of the images, and all the columns represent all the 4096
+                    features of each image. The way this algorithm works, is by merging the most similar pair of images
+                    into one cluster, and then merge with the second most similar, and then the third… all the way up
+                    to the top there everything becomes one cluster.
                     <br><br>
 
-                    Here is a way to evaluate which neighborhoods may look similar to each other. On the left, I recorded
-                    all the cases of mis-classification, which formulates a matrix with ground-truth categories ("real"
-                    categories of each image) on the X axis and predicted categories on the Y axis. The matrix in turn
-                    can be considered as a node-link graph where nodes represent all the categories and links represent
-                    the levels of similarities between each pair of categories. Then a
-                    <a href="http://scikit-learn.org/stable/modules/clustering.html#spectral-clustering">Spectral Clustering Algorithm</a>
-                    can be applied to this graph and cluster the nodes based on how strongly they are linked with each other.
+                    The nice thing about this algorithm is that not only it produces a specific clustering, but also
+                    computes a hierarchy of clusters and we can cut the dendrogram at any desired threshold (i.e.
+                    level of similarity), to get any number of clusters.
+
                 </p>
-
             </div>
-
 
         </section>
         <!--END of bottomup section-->
@@ -526,14 +545,28 @@
                 <h1 class="col-md-12"> The Structure of Urban Space </h1>
 
                 <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+                    Click on th root node (which contains all the images) and watch it branches out. Different colors
+                    in all three charts represent the same set of images.
+                    <br>
+                    From the tree diagram on the top, you could
+                    find out the similarity hierarchy, as well as the threshold level at which they are merged with
+                    sibling categories (indicated by their X coordinates). On the other hand, the circle-packing chart
+                    at the bottom expresses more clearly the containment or parent-child relationship between different
+                    sets of images. The sizes of the circles correspond to the number of images in that set.
+                    <br>
+                    Also, click on the circles there to view samples of images from each set.
+                </p>
+                <p class="col-md-6">
+                    As can be seen from the map, the geo-spatial distribution of image clusters conforms to humans'
+                    intuition about the outcome of this image clustering approach:
+                    <br>
+                    At a local scale:
+                    Visually similar images should also display a tendency to be geo-spatially close to each other
+                    (because e.g. high-density areas within one city tend to concentrate);
+                    <br>
+                    At a global scale:
+                    Corresponding districts in different cities / regions should also be visually close to each other
+                    (because e.g. high-density areas in Boston tend to look like high-density areas in Chicago)
                 </p>
             </div>
 
@@ -594,6 +627,47 @@
 
         </section>
         <!--END of hierarchy section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of latent section-->
+        <section id="latent">
+            <h1> The Visible and the Invisible </h1>
+
+            <hr>
+
+            <div class="row">
+                <h3>Visual Features and Housing Prices</h3>
+                <div class="col-md-2"></div>
+                <img src="illustration/assign_price.jpg" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <p class="col-lg-6">
+
+                    The last piece of the research is an evaluation about what connotations the idea of visual
+                    similarity might have in non-visual aspects. I decided to asses whether we could predict housing
+                    prices using image features.
+                    <br>
+                    Using web-scraping and API provided by <a href="http://www.zillow.com/howto/api/APIOverview.htm">Zillow</a>, 
+                    I was able to collect 500+ housing price listings from the City of Boston. I assigned the values to the image
+                    points and used <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html">
+                    Ridge Regression</a> to predict unit housing prices (normalized by area and housing type) based on
+                    deep image features only. The chart below (left) is a scatter plot comparing the actual prices (X axis)
+                    and the predicted values (Y axis). The prediction is not great (R squared = 0.4); but nevertheless
+                    much better compared with the baseline model where I only used image coordinates as variables. Result:
+                    Taking into consideration of what the place looks like results in a higher predictability.
+
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <img src="illustration/regression.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <img src="illustration/regression_base.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+            </div>
+
+        </section>
+        <!--END of latent section-->
 
 
 
