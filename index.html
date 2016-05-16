@@ -39,11 +39,9 @@
 
 <body id="page-top" class="index">
 
-    <div class="container">
-
 
         <!--START of introduction section-->
-        <section id="heading">
+        <section id="heading" class="row">
             <div class="text-center col-md-12">
                 <h1 > Images of the City: <br> A Pattern Language </h1>
                 <h2 >
@@ -51,15 +49,27 @@
                     <br> Using Google Street View Data
                 </h2>
                 <p>
-                    This is the visualization portal for my thesis project - "Images of the City: A Pattern Language",
-                    <br>
+                    This is the visualization portal for my thesis project - "Images of the City: A Pattern Language", <br>
                     an exploration of the potential of using large-scale city imagery data set (Google Street View)
                     in understanding and reading the cities.
+                    <!--<br>-->
+                    <!--Particularly, the research will focus on the idea of visual similarity and its relationship with existing district boundaries, such as those of neighborhoods.-->
+
+                    <br><br>
+                    What is the typical image of a city that makes it distinguishable from others? To what extent <br>
+                    different areas within a city are visually consistent? How much visual similarity can we find <br>
+                    across different cities? And what other aspects of the cities can be inferred from their appearances?
+                    <br>
+                    Data will provide us with insights.
                 </p>
+                <img src="illustration/heading.jpg" alt="" style="min-width: 100%; max-width: 100%">
+
+
             </div>
 
         </section>
 
+    <div class="container" data-spy="scroll" data-target="#myScrollspy" data-offset="50">
         <section id="introduction">
             <h1 > 4 Steps, 4 Experiments </h1>
 
@@ -67,54 +77,66 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <div class="col-md-12 imContainer">
-                        <img src="illustration/part1.png" href="">
+                    <div class="imContainer">
+                        <img src="illustration/part1.jpg" href="">
                     </div>
-                    <p class="col-md-12">
-                        First I will explore the use of city imaginary data in Collecting Spatial Statistic that
-                        can be used in the studies of urban planning and design; I will discuss my experiment
-                        about mapping urban greenery and mapping building façade colors in 4 American cities.
+                    <p class="">
+                        <b>Large Scale Spatial Statistic Collection</b>
+                        <br><br>
+                        Street view images provide an opportunity for automatically collecting and digesting spatial
+                        information at a large scale. I will discuss my experiment about
+                        mapping urban greenery and mapping building façade colors in 4 American cities.
+                        <br><br>
+                        <a href="#statistic"> Method </a>
+                        <a href="#parallel"> Visualization </a>
                     </p>
-                    <a href=""> Method </a>
-                    <a href=""> Visualization </a>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="col-md-12 imContainer">
-                        <img src="illustration/part2.png" href="">
+                    <div class="imContainer">
+                        <img src="illustration/part2.jpg" href="">
                     </div>
-                    <p class="col-md-12">
-                        Then I looked at the problem of visual resemblance particularly, and played with a
+                    <p class="">
+                        <b>Recognizing Cities from Images</b>
+                        <br><br>
+                        Then we will be diving into the problem of visual resemblance particularly, and play with a
                         Convolutional Neural Net and train it to identify visually similarity patterns by
                         recognizing cities / neighborhoods from their google street view images.
+                        <br><br>
+                        <a href="#recognize"> Method </a>
+                        <a href="#similarity"> Visualization </a>
                     </p>
-                    <a href=""> Method </a>
-                    <a href=""> Visualization </a>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="col-md-12 imContainer">
-                        <img src="illustration/part3.png" href="">
+                    <div class="imContainer">
+                        <img src="illustration/part3.jpg" href="">
                     </div>
-                    <p class="col-md-12">
-                        Next I will talk about the limitation of existing neighborhood boundaries,
+                    <p class="">
+                        <b>Discovering Perceptual Neighborhoods</b>
+                        <br><br>
+                        Next we will look at the limitation of existing neighborhood boundaries,
                         and how to redefine the boundaries based on shared visual characteristics,
-                        using a bottom-up approach which I call “the discovery of perceptual neighborhoods”
+                        using a bottom-up approach which I call “the discovery of perceptual neighborhoods”.
+                        <br><br>
+                        <a href="#bottomup"> Method </a>
+                        <a href="#hierarchy"> Visualization </a>
                     </p>
-                    <a href=""> Method </a>
-                    <a href=""> Visualization </a>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="col-md-12 imContainer">
-                        <img src="illustration/part4.png" href="">
+                    <div class="imContainer">
+                        <img src="illustration/part4.jpg" href="">
                     </div>
-                    <p class="col-md-12">
-                        Finally I undertook an exploration into latent urban characteristics that
-                        can be reflected visually.
+                    <p class="">
+                        <b>The Visible and the Invisible</b>
+                        <br><br>
+                        Finally we will undertake an exploration into latent urban characteristics that
+                        can be reflected visually. The question we will ask is whether visual characteristics
+                        have some predictability towards other aspects of the city, such as housing prices.
+                        <br><br>
+                        <a href="#latent"> Method & Visualization </a>
                     </p>
-                    <a href=""> Method </a>
-                    <a href=""> Visualization </a>
                 </div>
             </div>
 
@@ -199,14 +221,11 @@
 
             <div class="row">
                 <p class="col-md-4">
-                    Wouldn't it be great if a map could tell me what a place looks like?
-                    How tall the buildings are; how much plantation the area tends to have;
-                    and even what colors people there would like to have on their walls.
-                    Actually, the information is already collected somewhere
-                    (thanks to Google street view!) and all we need is an algorithmic digest. <br>
+                    This visualization presents the urban imagery dataset after the algorithmic digest. Each polyline
+                    represents one image; its intersection with each axis is determined by its attribute value. <br>
 
-                    Brush the axes to see the whether the spatial distribution of visual signals
-                    aligns with your conception of these cities.
+                    Brush the axes to see the whether the spatial distribution of visual signals aligns with your
+                    conception about these cities. Click on the map to see whether the attribute values make sense.
 
                 </p>
                 <div class="col-md-8 metavis">
@@ -379,20 +398,15 @@
                 <h1 class="col-md-12"> Which Neighborhoods Look Alike </h1>
 
                 <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+                    The Node-Link chart shows the affinity graph based on visual confusion among neighborhoods, which
+                    are represented by circles whose colors denote their city. Their spatial approximation is determined
+                    by link lengths which are reversely related to their visual similarities.
                 </p>
-                <div class="col-md-12 control">
-                    <h3>
-                        <button id="force" type="button" class="btn btn-secondary">Start</button>
-                    </h3>
-                </div>
+                <!--<div class="col-md-12 control">-->
+                    <!--<h3>-->
+                        <!--<button id="force" type="button" class="btn btn-secondary">Start</button>-->
+                    <!--</h3>-->
+                <!--</div>-->
             </div>
 
             <div class="row mainVis">
@@ -446,14 +460,8 @@
                 </div>
 
                 <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+                    Select a city to view epitomical images for each of its neighborhoods. These images are high-confidence
+                    predictions  made by the neural network algorithm.
                 </p>
             </div>
 
@@ -474,8 +482,8 @@
 
             <div class="row">
                 <h3>Neighborhood-based Classification is not Good Enough</h3>
-                <div class="col-md-2"></div>
-                <img src="illustration/gerrymandering.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <div class="col-md-3"></div>
+                <img src="illustration/gerrymandering.png" alt=""  class="col-md-3 col-sm-4 col-xs-6">
                 <p class="col-lg-6">
 
                     However, neighborhood-based classification is not good enough for the task of urban district visual
@@ -638,8 +646,8 @@
 
             <div class="row">
                 <h3>Visual Features and Housing Prices</h3>
-                <div class="col-md-2"></div>
-                <img src="illustration/assign_price.jpg" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <div class="col-md-1"></div>
+                <img src="illustration/assign_price.jpg" alt=""  class="col-md-5 col-sm-6 col-xs-8">
                 <p class="col-lg-6">
 
                     The last piece of the research is an evaluation about what connotations the idea of visual
@@ -661,9 +669,9 @@
             <hr>
 
             <div class="row">
-                <div class="col-md-2"></div>
-                <img src="illustration/regression.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
-                <img src="illustration/regression_base.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <div class="col-md-1"></div>
+                <img src="illustration/regression.png" alt=""  class="col-md-5 col-sm-6 col-xs-8">
+                <img src="illustration/regression_base.png" alt=""  class="col-md-5 col-sm-6 col-xs-8">
             </div>
 
         </section>
