@@ -14,7 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <!-- Font -->
-    <link href='https://fonts.googleapis.com/css?family=Jura:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jura:400, 300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -41,8 +41,157 @@
 
     <div class="container">
 
-        <!--START of secret section-->
-        <section id="secret">
+
+        <!--START of introduction section-->
+        <section id="heading">
+            <div class="text-center col-md-12">
+                <h1 > Images of the City: <br> A Pattern Language </h1>
+                <h2 >
+                    Computer Vision Analysis of Urban District Visual Identities
+                    <br> Using Google Street View Data
+                </h2>
+                <p>
+                    This is the visualization portal for my thesis project - "Images of the City: A Pattern Language",
+                    <br>
+                    an exploration of the potential of using large-scale city imagery data set (Google Street View)
+                    in understanding and reading the cities.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="introduction">
+            <h1 > 4 Steps, 4 Experiments </h1>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part1.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        First I will explore the use of city imaginary data in Collecting Spatial Statistic that
+                        can be used in the studies of urban planning and design; I will discuss my experiment
+                        about mapping urban greenery and mapping building façade colors in 4 American cities.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part2.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Then I looked at the problem of visual resemblance particularly, and played with a
+                        Convolutional Neural Net and train it to identify visually similarity patterns by
+                        recognizing cities / neighborhoods from their google street view images.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part3.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Next I will talk about the limitation of existing neighborhood boundaries,
+                        and how to redefine the boundaries based on shared visual characteristics,
+                        using a bottom-up approach which I call “the discovery of perceptual neighborhoods”
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12 imContainer">
+                        <img src="illustration/part4.png" href="">
+                    </div>
+                    <p class="col-md-12">
+                        Finally I undertook an exploration into latent urban characteristics that
+                        can be reflected visually.
+                    </p>
+                    <a href=""> Method </a>
+                    <a href=""> Visualization </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!--END of introduction section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of data section-->
+        <section id="data">
+            <h1 > Data Collection </h1>
+
+            <hr>
+
+            <div class="col-md-2"></div>
+            <img src="illustration/data_collection.gif" alt="" class="col-md-4 col-sm-6 col-xs-12">
+            <p class="col-md-4">
+                The dataset for this research is collected using
+                <a href="https://developers.google.com/maps/documentation/streetview/"> Google Street View API</a>
+                from 4 American cities: Boston, Chicago, New York and San Francisco. 4 images are sampled from each grid point
+                within a 6 km radius region covering the major urban area.
+            </p>
+
+        </section>
+
+        <!--END of data section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of statistic section-->
+        <section id="statistic" class="row">
+            <h1 > Large-scale Spatial Statistic Collection </h1>
+            <hr>
+
+            <h3 class="col-md-12">Semantic Segmentation</h3>
+            <div class="row">
+                <hr>
+                <img src="illustration/segmentation.jpg" alt="" class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-md-6">
+
+                    In order to retrieve information from images, the first step is to isolate visual elements
+                    in images. The method I used here is <a href="http://mi.eng.cam.ac.uk/projects/segnet/">SegNet</a>,
+                    a neural network prediction model which calculates the possibility of each pixel in this image
+                    being in any of the 12 categories.
+                    <br>
+                    Simply counting the number of pixels in each class already suffices a lot of tasks such as mapping
+                    the coverage of greenery across city region, where I can use the number of tree pixels as a proxy;
+                    Also sky area should be interesting because it might correspond to building height or urban density;
+                    Building areas should be relevant to study the architectural style etc.
+
+                </p>
+            </div>
+
+
+            <h3 class="col-md-12">Color Quantization</h3>
+            <div class="row">
+                <hr>
+                <img src="illustration/extract_color.gif" alt="" class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-md-4">
+                    But studying building styles usually involves some additional steps; for example
+                    in this case I was looking into the dominant colors of buildings across the city
+                    and how that varies from region to region, so I did this by color quantization using
+                    <a href="http://scikit-learn.org/stable/modules/clustering.html#mean-shift"> Mean-Shift Algorithm</a>,
+                    which was to cluster the RGB values of building façade pixels and extracted the one color
+                    that has the highest number of pixels, as the representative color of this coordinate.
+                </p>
+            </div>
+
+        </section>
+
+        <!--END of statistic section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of parallel section-->
+        <section id="parallel">
 
             <div class="row ">
                 <h1 class="col-md-12"> Lots of Images at One Glance </h1>
@@ -50,14 +199,11 @@
 
             <div class="row">
                 <p class="col-md-4">
-                    Wouldn't it be great if a map could tell me what a place looks like?
-                    How tall the buildings are; how much plantation the area tends to have;
-                    and even what colors people there would like to have on their walls.
-                    Actually, the information is already collected somewhere
-                    (thanks to Google street view!) and all we need is an algorithmic digest. <br>
+                    This visualization presents the urban imagery dataset after the algorithmic digest. Each polyline
+                    represents one image; its intersection with each axis is determined by its attribute value. <br>
 
-                    Brush the axes to see the whether the spatial distribution of visual signals
-                    aligns with your conception of these cities.
+                    Brush the axes to see the whether the spatial distribution of visual signals aligns with your
+                    conception about these cities. Click on the map to see whether the attribute values make sense.
 
                 </p>
                 <div class="col-md-8 metavis">
@@ -106,7 +252,7 @@
                 <div class="col-md-12" id="parallelVis">  </div>
             </div>
         </section>
-        <!--END of secret section-->
+        <!--END of parallel section-->
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
@@ -141,9 +287,85 @@
 
             </div>
 
+            <div class="row">
+                <h3 > All Maps</h3>
+                <img src="illustration/all_maps.jpg" alt="" class="col-md-12">
+            </div>
+
 
         </section>
         <!--END of gradient section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of recognize section-->
+        <section id="recognize">
+            <h1> Visual Resemblance in Urban Places </h1>
+
+            <hr>
+
+            <div class="row">
+                <h3>Recognizing Cities/Neighborhoods from Street View</h3>
+                <img src="illustration/recognize.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    So far we’ve looked at “named”, hand-designed visual features.
+                    In order to evaluate visual similarity in a more comprehensive way, much more visual features
+                    are needed from each image, and an automated process is required for feature extraction.
+                    Thus a convolutional neural nets (CNN) is needed for feature extraction.
+
+                    <br><br>
+
+                    We used <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">AlexNext</a> structure in
+                    <a href="http://www.vlfeat.org/matconvnet/">MatConvNet</a> framework and trained 2 models to
+                    classify images according to their city names and neighborhood names, respectively.
+                    The figure above shows how error rate and energy descends as the training epoch increases.
+                    Also noticeable is that recognizing neighborhoods is a harder task than cities judging from the final error rates.
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <h3>Epitomic Images for Each City</h3>
+                <p class="col-lg-12">
+                    So let’s look at what the algorithm has learned and whether it makes sense to human beings.
+                    Here I plotted the top 10 confident predictions for each of the 10 cities. It's discernible that
+                    those from the same category demonstrate some visual similarities, which generally conform to human's
+                    impression about those places.
+                </p>
+                <img src="illustration/epitome.jpg" alt=""  class="col-lg-12">
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <h3>Categories that the Algorithm Cannot Distinguish</h3>
+                <img src="illustration/spectral_clustering.gif" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-6">
+
+                    Apart from what’s being captured by the algorithm, what the algorithm cannot learn is also
+                    interesting to know. Intuitively, some neighborhoods are more similar to each other than others,
+                    which might reflect important facts about the cities including zoning, cultural influence, or the
+                    trend of urban sprawl. How are we going to discover these?
+
+                    <br><br>
+
+                    Here is a way to evaluate which neighborhoods may look similar to each other. On the left, I recorded
+                    all the cases of mis-classification, which formulates a matrix with ground-truth categories ("real"
+                    categories of each image) on the X axis and predicted categories on the Y axis. The matrix in turn
+                    can be considered as a node-link graph where nodes represent all the categories and links represent
+                    the levels of similarities between each pair of categories. Then a
+                    <a href="http://scikit-learn.org/stable/modules/clustering.html#spectral-clustering">Spectral Clustering Algorithm</a>
+                    can be applied to this graph and cluster the nodes based on how strongly they are linked with each other.
+                </p>
+
+            </div>
+
+
+        </section>
+        <!--END of recognize section-->
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
@@ -154,20 +376,15 @@
                 <h1 class="col-md-12"> Which Neighborhoods Look Alike </h1>
 
                 <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+                    The Node-Link chart shows the affinity graph based on visual confusion among neighborhoods, which
+                    are represented by circles whose colors denote their city. Their spatial approximation is determined
+                    by link lengths which are reversely related to their visual similarities.
                 </p>
-                <div class="col-md-12 control">
-                    <h3>
-                        <button id="force" type="button" class="btn btn-secondary">Start</button>
-                    </h3>
-                </div>
+                <!--<div class="col-md-12 control">-->
+                    <!--<h3>-->
+                        <!--<button id="force" type="button" class="btn btn-secondary">Start</button>-->
+                    <!--</h3>-->
+                <!--</div>-->
             </div>
 
             <div class="row mainVis">
@@ -241,6 +458,78 @@
 
         <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
+        <!--START of bottomup section-->
+        <section id="bottomup">
+            <h1> Discovering Perceptual Neighborhoods </h1>
+
+            <hr>
+
+            <div class="row">
+                <h3>Neighborhood-based Classification is not Good Enough</h3>
+                <div class="col-md-2"></div>
+                <img src="illustration/gerrymandering.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <p class="col-lg-6">
+
+                    However, neighborhood-based classification is not good enough for the task of urban district visual
+                    property identification. The reasons are:
+                    <br><br>
+                    1, The granularity of neighbrhood is simply not fine enough. Visual variance within a same
+                    neighborhood usually defies blanket description;
+                    <br>
+                    2, “Official” boundaries of neighborhoods are prone to human manipulation and don’t necessarily conform
+                    to “perceptual neighborhoods”. One example here is <a href="https://en.wikipedia.org/wiki/Gerrymandering">gerrymandering</a>,
+                    where politicians for specific reasons, redistrict natural neighborhoods into new political boundaries
+                    so that they get more vote from the populations by region;
+                    <br>
+                    3, The method is not adequate to detect visually similar sub-regions among different neighborhoods,
+                    an interesting pattern that indicates how prototypical design patterns have influence across borders.
+
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <h3>Bottom-Up Deep Features Clustering Approach</h3>
+                <img src="illustration/deep_features.jpg" alt=""  class="col-md-6 col-sm-8 col-xs-12">
+                <p class="col-lg-4">
+                    And that’s why a new method is needed in order to redefine the boundary of neighborhoods,
+                    possibly purely from image features, using a bottom-up approach.
+                    <br><br>
+
+                    Here is how I went about it. Going back to the neural network, instead of looking at the prediction
+                    result, I only extracted the second-to-last layer of the neural nets which contains “deep features”
+                    of each image. These feature are extracted by all the previous layers, and are just ready to do the
+                    classification.
+
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <img src="illustration/agglomerative.jpg" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <p class="col-lg-6">
+                    Then I implemented a bottom-up clustering algorithm on these features. In this matrix you can
+                    imaging that each row represent each of the images, and all the columns represent all the 4096
+                    features of each image. The way this algorithm works, is by merging the most similar pair of images
+                    into one cluster, and then merge with the second most similar, and then the third… all the way up
+                    to the top there everything becomes one cluster.
+                    <br><br>
+
+                    The nice thing about this algorithm is that not only it produces a specific clustering, but also
+                    computes a hierarchy of clusters and we can cut the dendrogram at any desired threshold (i.e.
+                    level of similarity), to get any number of clusters.
+
+                </p>
+            </div>
+
+        </section>
+        <!--END of bottomup section-->
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
         <!--START of hierarchy section-->
         <section id="hierarchy">
 
@@ -248,14 +537,28 @@
                 <h1 class="col-md-12"> The Structure of Urban Space </h1>
 
                 <p class="col-md-6">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                    pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    Nullam dictum felis eu pede mollis pretium. Integer
+                    Click on th root node (which contains all the images) and watch it branches out. Different colors
+                    in all three charts represent the same set of images.
+                    <br>
+                    From the tree diagram on the top, you could
+                    find out the similarity hierarchy, as well as the threshold level at which they are merged with
+                    sibling categories (indicated by their X coordinates). On the other hand, the circle-packing chart
+                    at the bottom expresses more clearly the containment or parent-child relationship between different
+                    sets of images. The sizes of the circles correspond to the number of images in that set.
+                    <br>
+                    Also, click on the circles there to view samples of images from each set.
+                </p>
+                <p class="col-md-6">
+                    As can be seen from the map, the geo-spatial distribution of image clusters conforms to humans'
+                    intuition about the outcome of this image clustering approach:
+                    <br>
+                    At a local scale:
+                    Visually similar images should also display a tendency to be geo-spatially close to each other
+                    (because e.g. high-density areas within one city tend to concentrate);
+                    <br>
+                    At a global scale:
+                    Corresponding districts in different cities / regions should also be visually close to each other
+                    (because e.g. high-density areas in Boston tend to look like high-density areas in Chicago)
                 </p>
             </div>
 
@@ -317,12 +620,53 @@
         </section>
         <!--END of hierarchy section-->
 
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+        <!--START of latent section-->
+        <section id="latent">
+            <h1> The Visible and the Invisible </h1>
+
+            <hr>
+
+            <div class="row">
+                <h3>Visual Features and Housing Prices</h3>
+                <div class="col-md-2"></div>
+                <img src="illustration/assign_price.jpg" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <p class="col-lg-6">
+
+                    The last piece of the research is an evaluation about what connotations the idea of visual
+                    similarity might have in non-visual aspects. I decided to asses whether we could predict housing
+                    prices using image features.
+                    <br>
+                    Using web-scraping and API provided by <a href="http://www.zillow.com/howto/api/APIOverview.htm">Zillow</a>, 
+                    I was able to collect 500+ housing price listings from the City of Boston. I assigned the values to the image
+                    points and used <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html">
+                    Ridge Regression</a> to predict unit housing prices (normalized by area and housing type) based on
+                    deep image features only. The chart below (left) is a scatter plot comparing the actual prices (X axis)
+                    and the predicted values (Y axis). The prediction is not great (R squared = 0.4); but nevertheless
+                    much better compared with the baseline model where I only used image coordinates as variables. Result:
+                    Taking into consideration of what the place looks like results in a higher predictability.
+
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <img src="illustration/regression.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+                <img src="illustration/regression_base.png" alt=""  class="col-md-4 col-sm-6 col-xs-8">
+            </div>
+
+        </section>
+        <!--END of latent section-->
+
 
 
     </div>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/mapvis.js"></script>
-    <script type="text/javascript" src="js/leafletvis2.js"></script>
+    <script type="text/javascript" src="js/leafletvis.js"></script>
     <script type="text/javascript" src="js/forcevis.js"></script>
     <script type="text/javascript" src="js/parallelvis.js"></script>
     <script type="text/javascript" src="js/demersvis.js"></script>

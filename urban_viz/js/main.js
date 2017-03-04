@@ -3,8 +3,12 @@
  * Created by lezhi on 3/17/2016.
  */
 
+//var imgroot = 'img/',
+//    imgroot_dense = 'img_dense/';
+
 var imgroot = '/Dropbox/thesis/img/',
     imgroot_dense = '/Dropbox/thesis/img_dense/';
+
 var cities = ['boston', 'chicago', 'newyork', 'sanfrancisco'];
 var citynummap = {boston: 0, chicago: 1, newyork: 2, sanfrancisco: 3};
 var centers = {
@@ -24,7 +28,10 @@ var centers = {
 
 $(function(){
 
-
+    //$(window).scroll(function() {
+    //    console.log($(window).scrollTop());
+    //    console.log($('#parallel').offset().top);
+    //});
 
 
     var carousel_1 = $('#carousel1.jcarousel').jcarousel({
@@ -121,6 +128,8 @@ $(function(){
         var myTreeVis = d3.custom.treeVis();
         var clusterMap = d3.custom.mapVis().shapeType("hexbin").tip('label');
         var myPackVis = d3.custom.packVis();
+
+
 
 
         d3.selectAll(".map-point")
